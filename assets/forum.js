@@ -26,9 +26,9 @@ flarum.core = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var i = Object.create(null);
         if (n.r(i), Object.defineProperty(i, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var r in t) n.d(i, r, function (e) {
                 return t[e]
             }.bind(null, r));
@@ -43,7 +43,8 @@ flarum.core = function (t) {
     }, n.o = function (t, e) {
         return Object.prototype.hasOwnProperty.call(t, e)
     }, n.p = "", n(n.s = 151)
-}([function (t, e, n) {
+}
+([function (t, e, n) {
     "use strict";
 
     function i(t, e) {
@@ -212,7 +213,7 @@ flarum.core = function (t) {
             this.element = t.dom
         }, e.onbeforeupdate = function (t) {
             this.setAttrs(t.attrs)
-        }, e.onupdate = function (t) {}, e.onbeforeremove = function (t) {}, e.onremove = function (t) {}, e.$ = function (t) {
+        }, e.onupdate = function (t) { }, e.onbeforeremove = function (t) { }, e.onremove = function (t) { }, e.$ = function (t) {
             function e(e) {
                 return t.apply(this, arguments)
             }
@@ -232,7 +233,7 @@ flarum.core = function (t) {
                 if ("tag" in t) throw new Error("[" + this.constructor.name + '] You cannot use the "tag" attribute name with Mithril 2.')
             }
             this.attrs = t
-        }, t.initAttrs = function (t) {}, t
+        }, t.initAttrs = function (t) { }, t
     }()
 }, function (t, e, n) {
     "use strict";
@@ -240,8 +241,8 @@ flarum.core = function (t) {
         return r
     }));
     var i = function (t, e) {
-            this.content = void 0, this.priority = void 0, this.key = void 0, this.content = t, this.priority = e
-        },
+        this.content = void 0, this.priority = void 0, this.key = void 0, this.content = t, this.priority = e
+    },
         r = function () {
             function t() {
                 this.items = {}
@@ -449,7 +450,7 @@ flarum.core = function (t) {
                 }, this.title())), this.alertAttrs ? m("div", {
                     className: "Modal-alert"
                 }, o.a.component(this.alertAttrs)) : "", this.content())))
-            }, n.className = function () {}, n.title = function () {}, n.content = function () {}, n.onsubmit = function () {}, n.onready = function () {
+            }, n.className = function () { }, n.title = function () { }, n.content = function () { }, n.onsubmit = function () { }, n.onready = function () {
                 this.$("form").find("input, select, textarea").first().focus().select()
             }, n.hide = function () {
                 this.attrs.state.close()
@@ -801,8 +802,8 @@ flarum.core = function (t) {
             v = {};
         v[m] = p;
         var g = function (t) {
-                return t instanceof x
-            },
+            return t instanceof x
+        },
             b = function (t, e, n) {
                 var i;
                 if (!t) return m;
@@ -828,196 +829,196 @@ flarum.core = function (t) {
             })
         };
         var x = function () {
-                function p(t) {
-                    this.$L = b(t.locale, null, !0), this.parse(t)
-                }
-                var h = p.prototype;
-                return h.parse = function (t) {
-                    this.$d = function (t) {
-                        var e = t.date,
-                            n = t.utc;
-                        if (null === e) return new Date(NaN);
-                        if (w.u(e)) return new Date;
-                        if (e instanceof Date) return new Date(e);
-                        if ("string" == typeof e && !/Z$/i.test(e)) {
-                            var i = e.match(l);
-                            if (i) {
-                                var r = i[2] - 1 || 0,
-                                    o = (i[7] || "0").substring(0, 3);
-                                return n ? new Date(Date.UTC(i[1], r, i[3] || 1, i[4] || 0, i[5] || 0, i[6] || 0, o)) : new Date(i[1], r, i[3] || 1, i[4] || 0, i[5] || 0, i[6] || 0, o)
-                            }
+            function p(t) {
+                this.$L = b(t.locale, null, !0), this.parse(t)
+            }
+            var h = p.prototype;
+            return h.parse = function (t) {
+                this.$d = function (t) {
+                    var e = t.date,
+                        n = t.utc;
+                    if (null === e) return new Date(NaN);
+                    if (w.u(e)) return new Date;
+                    if (e instanceof Date) return new Date(e);
+                    if ("string" == typeof e && !/Z$/i.test(e)) {
+                        var i = e.match(l);
+                        if (i) {
+                            var r = i[2] - 1 || 0,
+                                o = (i[7] || "0").substring(0, 3);
+                            return n ? new Date(Date.UTC(i[1], r, i[3] || 1, i[4] || 0, i[5] || 0, i[6] || 0, o)) : new Date(i[1], r, i[3] || 1, i[4] || 0, i[5] || 0, i[6] || 0, o)
                         }
-                        return new Date(e)
-                    }(t), this.$x = t.x || {}, this.init()
-                }, h.init = function () {
-                    var t = this.$d;
-                    this.$y = t.getFullYear(), this.$M = t.getMonth(), this.$D = t.getDate(), this.$W = t.getDay(), this.$H = t.getHours(), this.$m = t.getMinutes(), this.$s = t.getSeconds(), this.$ms = t.getMilliseconds()
-                }, h.$utils = function () {
-                    return w
-                }, h.isValid = function () {
-                    return !("Invalid Date" === this.$d.toString())
-                }, h.isSame = function (t, e) {
-                    var n = y(t);
-                    return this.startOf(e) <= n && n <= this.endOf(e)
-                }, h.isAfter = function (t, e) {
-                    return y(t) < this.startOf(e)
-                }, h.isBefore = function (t, e) {
-                    return this.endOf(e) < y(t)
-                }, h.$g = function (t, e, n) {
-                    return w.u(t) ? this[e] : this.set(n, t)
-                }, h.unix = function () {
-                    return Math.floor(this.valueOf() / 1e3)
-                }, h.valueOf = function () {
-                    return this.$d.getTime()
-                }, h.startOf = function (t, a) {
-                    var l = this,
-                        d = !!w.u(a) || a,
-                        p = w.p(t),
-                        h = function (t, e) {
-                            var n = w.w(l.$u ? Date.UTC(l.$y, e, t) : new Date(l.$y, e, t), l);
-                            return d ? n : n.endOf(r)
-                        },
-                        f = function (t, e) {
-                            return w.w(l.toDate()[t].apply(l.toDate("s"), (d ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e)), l)
-                        },
-                        m = this.$W,
-                        v = this.$M,
-                        g = this.$D,
-                        b = "set" + (this.$u ? "UTC" : "");
-                    switch (p) {
-                        case c:
-                            return d ? h(1, 0) : h(31, 11);
-                        case s:
-                            return d ? h(1, v) : h(0, v + 1);
-                        case o:
-                            var y = this.$locale().weekStart || 0,
-                                x = (m < y ? m + 7 : m) - y;
-                            return h(d ? g - x : g + (6 - x), v);
-                        case r:
-                        case u:
-                            return f(b + "Hours", 0);
-                        case i:
-                            return f(b + "Minutes", 1);
-                        case n:
-                            return f(b + "Seconds", 2);
-                        case e:
-                            return f(b + "Milliseconds", 3);
-                        default:
-                            return this.clone()
                     }
-                }, h.endOf = function (t) {
-                    return this.startOf(t, !1)
-                }, h.$set = function (o, a) {
-                    var l, d = w.p(o),
-                        p = "set" + (this.$u ? "UTC" : ""),
-                        h = (l = {}, l[r] = p + "Date", l[u] = p + "Date", l[s] = p + "Month", l[c] = p + "FullYear", l[i] = p + "Hours", l[n] = p + "Minutes", l[e] = p + "Seconds", l[t] = p + "Milliseconds", l)[d],
-                        f = d === r ? this.$D + (a - this.$W) : a;
-                    if (d === s || d === c) {
-                        var m = this.clone().set(u, 1);
-                        m.$d[h](f), m.init(), this.$d = m.set(u, Math.min(this.$D, m.daysInMonth())).$d
-                    } else h && this.$d[h](f);
-                    return this.init(), this
-                }, h.set = function (t, e) {
-                    return this.clone().$set(t, e)
-                }, h.get = function (t) {
-                    return this[w.p(t)]()
-                }, h.add = function (t, a) {
-                    var u, l = this;
-                    t = Number(t);
-                    var d = w.p(a),
-                        p = function (e) {
-                            var n = y(l);
-                            return w.w(n.date(n.date() + Math.round(e * t)), l)
-                        };
-                    if (d === s) return this.set(s, this.$M + t);
-                    if (d === c) return this.set(c, this.$y + t);
-                    if (d === r) return p(1);
-                    if (d === o) return p(7);
-                    var h = (u = {}, u[n] = 6e4, u[i] = 36e5, u[e] = 1e3, u)[d] || 1,
-                        f = this.$d.getTime() + t * h;
-                    return w.w(f, this)
-                }, h.subtract = function (t, e) {
-                    return this.add(-1 * t, e)
-                }, h.format = function (t) {
-                    var e = this;
-                    if (!this.isValid()) return "Invalid Date";
-                    var n = t || "YYYY-MM-DDTHH:mm:ssZ",
-                        i = w.z(this),
-                        r = this.$locale(),
-                        o = this.$H,
-                        s = this.$m,
-                        a = this.$M,
-                        c = r.weekdays,
-                        u = r.months,
-                        l = function (t, i, r, o) {
-                            return t && (t[i] || t(e, n)) || r[i].substr(0, o)
-                        },
-                        p = function (t) {
-                            return w.s(o % 12 || 12, t, "0")
-                        },
-                        h = r.meridiem || function (t, e, n) {
-                            var i = t < 12 ? "AM" : "PM";
-                            return n ? i.toLowerCase() : i
-                        },
-                        f = {
-                            YY: String(this.$y).slice(-2),
-                            YYYY: this.$y,
-                            M: a + 1,
-                            MM: w.s(a + 1, 2, "0"),
-                            MMM: l(r.monthsShort, a, u, 3),
-                            MMMM: l(u, a),
-                            D: this.$D,
-                            DD: w.s(this.$D, 2, "0"),
-                            d: String(this.$W),
-                            dd: l(r.weekdaysMin, this.$W, c, 2),
-                            ddd: l(r.weekdaysShort, this.$W, c, 3),
-                            dddd: c[this.$W],
-                            H: String(o),
-                            HH: w.s(o, 2, "0"),
-                            h: p(1),
-                            hh: p(2),
-                            a: h(o, s, !0),
-                            A: h(o, s, !1),
-                            m: String(s),
-                            mm: w.s(s, 2, "0"),
-                            s: String(this.$s),
-                            ss: w.s(this.$s, 2, "0"),
-                            SSS: w.s(this.$ms, 3, "0"),
-                            Z: i
-                        };
-                    return n.replace(d, (function (t, e) {
-                        return e || f[t] || i.replace(":", "")
-                    }))
-                }, h.utcOffset = function () {
-                    return 15 * -Math.round(this.$d.getTimezoneOffset() / 15)
-                }, h.diff = function (t, u, l) {
-                    var d, p = w.p(u),
-                        h = y(t),
-                        f = 6e4 * (h.utcOffset() - this.utcOffset()),
-                        m = this - h,
-                        v = w.m(this, h);
-                    return v = (d = {}, d[c] = v / 12, d[s] = v, d[a] = v / 3, d[o] = (m - f) / 6048e5, d[r] = (m - f) / 864e5, d[i] = m / 36e5, d[n] = m / 6e4, d[e] = m / 1e3, d)[p] || m, l ? v : w.a(v)
-                }, h.daysInMonth = function () {
-                    return this.endOf(s).$D
-                }, h.$locale = function () {
-                    return v[this.$L]
-                }, h.locale = function (t, e) {
-                    if (!t) return this.$L;
-                    var n = this.clone(),
-                        i = b(t, e, !0);
-                    return i && (n.$L = i), n
-                }, h.clone = function () {
-                    return w.w(this.$d, this)
-                }, h.toDate = function () {
-                    return new Date(this.valueOf())
-                }, h.toJSON = function () {
-                    return this.isValid() ? this.toISOString() : null
-                }, h.toISOString = function () {
-                    return this.$d.toISOString()
-                }, h.toString = function () {
-                    return this.$d.toUTCString()
-                }, p
-            }(),
+                    return new Date(e)
+                }(t), this.$x = t.x || {}, this.init()
+            }, h.init = function () {
+                var t = this.$d;
+                this.$y = t.getFullYear(), this.$M = t.getMonth(), this.$D = t.getDate(), this.$W = t.getDay(), this.$H = t.getHours(), this.$m = t.getMinutes(), this.$s = t.getSeconds(), this.$ms = t.getMilliseconds()
+            }, h.$utils = function () {
+                return w
+            }, h.isValid = function () {
+                return !("Invalid Date" === this.$d.toString())
+            }, h.isSame = function (t, e) {
+                var n = y(t);
+                return this.startOf(e) <= n && n <= this.endOf(e)
+            }, h.isAfter = function (t, e) {
+                return y(t) < this.startOf(e)
+            }, h.isBefore = function (t, e) {
+                return this.endOf(e) < y(t)
+            }, h.$g = function (t, e, n) {
+                return w.u(t) ? this[e] : this.set(n, t)
+            }, h.unix = function () {
+                return Math.floor(this.valueOf() / 1e3)
+            }, h.valueOf = function () {
+                return this.$d.getTime()
+            }, h.startOf = function (t, a) {
+                var l = this,
+                    d = !!w.u(a) || a,
+                    p = w.p(t),
+                    h = function (t, e) {
+                        var n = w.w(l.$u ? Date.UTC(l.$y, e, t) : new Date(l.$y, e, t), l);
+                        return d ? n : n.endOf(r)
+                    },
+                    f = function (t, e) {
+                        return w.w(l.toDate()[t].apply(l.toDate("s"), (d ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e)), l)
+                    },
+                    m = this.$W,
+                    v = this.$M,
+                    g = this.$D,
+                    b = "set" + (this.$u ? "UTC" : "");
+                switch (p) {
+                    case c:
+                        return d ? h(1, 0) : h(31, 11);
+                    case s:
+                        return d ? h(1, v) : h(0, v + 1);
+                    case o:
+                        var y = this.$locale().weekStart || 0,
+                            x = (m < y ? m + 7 : m) - y;
+                        return h(d ? g - x : g + (6 - x), v);
+                    case r:
+                    case u:
+                        return f(b + "Hours", 0);
+                    case i:
+                        return f(b + "Minutes", 1);
+                    case n:
+                        return f(b + "Seconds", 2);
+                    case e:
+                        return f(b + "Milliseconds", 3);
+                    default:
+                        return this.clone()
+                }
+            }, h.endOf = function (t) {
+                return this.startOf(t, !1)
+            }, h.$set = function (o, a) {
+                var l, d = w.p(o),
+                    p = "set" + (this.$u ? "UTC" : ""),
+                    h = (l = {}, l[r] = p + "Date", l[u] = p + "Date", l[s] = p + "Month", l[c] = p + "FullYear", l[i] = p + "Hours", l[n] = p + "Minutes", l[e] = p + "Seconds", l[t] = p + "Milliseconds", l)[d],
+                    f = d === r ? this.$D + (a - this.$W) : a;
+                if (d === s || d === c) {
+                    var m = this.clone().set(u, 1);
+                    m.$d[h](f), m.init(), this.$d = m.set(u, Math.min(this.$D, m.daysInMonth())).$d
+                } else h && this.$d[h](f);
+                return this.init(), this
+            }, h.set = function (t, e) {
+                return this.clone().$set(t, e)
+            }, h.get = function (t) {
+                return this[w.p(t)]()
+            }, h.add = function (t, a) {
+                var u, l = this;
+                t = Number(t);
+                var d = w.p(a),
+                    p = function (e) {
+                        var n = y(l);
+                        return w.w(n.date(n.date() + Math.round(e * t)), l)
+                    };
+                if (d === s) return this.set(s, this.$M + t);
+                if (d === c) return this.set(c, this.$y + t);
+                if (d === r) return p(1);
+                if (d === o) return p(7);
+                var h = (u = {}, u[n] = 6e4, u[i] = 36e5, u[e] = 1e3, u)[d] || 1,
+                    f = this.$d.getTime() + t * h;
+                return w.w(f, this)
+            }, h.subtract = function (t, e) {
+                return this.add(-1 * t, e)
+            }, h.format = function (t) {
+                var e = this;
+                if (!this.isValid()) return "Invalid Date";
+                var n = t || "YYYY-MM-DDTHH:mm:ssZ",
+                    i = w.z(this),
+                    r = this.$locale(),
+                    o = this.$H,
+                    s = this.$m,
+                    a = this.$M,
+                    c = r.weekdays,
+                    u = r.months,
+                    l = function (t, i, r, o) {
+                        return t && (t[i] || t(e, n)) || r[i].substr(0, o)
+                    },
+                    p = function (t) {
+                        return w.s(o % 12 || 12, t, "0")
+                    },
+                    h = r.meridiem || function (t, e, n) {
+                        var i = t < 12 ? "AM" : "PM";
+                        return n ? i.toLowerCase() : i
+                    },
+                    f = {
+                        YY: String(this.$y).slice(-2),
+                        YYYY: this.$y,
+                        M: a + 1,
+                        MM: w.s(a + 1, 2, "0"),
+                        MMM: l(r.monthsShort, a, u, 3),
+                        MMMM: l(u, a),
+                        D: this.$D,
+                        DD: w.s(this.$D, 2, "0"),
+                        d: String(this.$W),
+                        dd: l(r.weekdaysMin, this.$W, c, 2),
+                        ddd: l(r.weekdaysShort, this.$W, c, 3),
+                        dddd: c[this.$W],
+                        H: String(o),
+                        HH: w.s(o, 2, "0"),
+                        h: p(1),
+                        hh: p(2),
+                        a: h(o, s, !0),
+                        A: h(o, s, !1),
+                        m: String(s),
+                        mm: w.s(s, 2, "0"),
+                        s: String(this.$s),
+                        ss: w.s(this.$s, 2, "0"),
+                        SSS: w.s(this.$ms, 3, "0"),
+                        Z: i
+                    };
+                return n.replace(d, (function (t, e) {
+                    return e || f[t] || i.replace(":", "")
+                }))
+            }, h.utcOffset = function () {
+                return 15 * -Math.round(this.$d.getTimezoneOffset() / 15)
+            }, h.diff = function (t, u, l) {
+                var d, p = w.p(u),
+                    h = y(t),
+                    f = 6e4 * (h.utcOffset() - this.utcOffset()),
+                    m = this - h,
+                    v = w.m(this, h);
+                return v = (d = {}, d[c] = v / 12, d[s] = v, d[a] = v / 3, d[o] = (m - f) / 6048e5, d[r] = (m - f) / 864e5, d[i] = m / 36e5, d[n] = m / 6e4, d[e] = m / 1e3, d)[p] || m, l ? v : w.a(v)
+            }, h.daysInMonth = function () {
+                return this.endOf(s).$D
+            }, h.$locale = function () {
+                return v[this.$L]
+            }, h.locale = function (t, e) {
+                if (!t) return this.$L;
+                var n = this.clone(),
+                    i = b(t, e, !0);
+                return i && (n.$L = i), n
+            }, h.clone = function () {
+                return w.w(this.$d, this)
+            }, h.toDate = function () {
+                return new Date(this.valueOf())
+            }, h.toJSON = function () {
+                return this.isValid() ? this.toISOString() : null
+            }, h.toISOString = function () {
+                return this.$d.toISOString()
+            }, h.toString = function () {
+                return this.$d.toUTCString()
+            }, p
+        }(),
             N = x.prototype;
         return y.prototype = N, [
             ["$ms", t],
@@ -1296,8 +1297,8 @@ flarum.core = function (t) {
         return r
     }));
     var i = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (t) {
-            return window.setTimeout(t, 1e3 / 60)
-        },
+        return window.setTimeout(t, 1e3 / 60)
+    },
         r = function () {
             function t(t) {
                 this.callback = t, this.ticking = !1
@@ -2570,8 +2571,8 @@ flarum.core = function (t) {
 
     function w(t) {
         for (var e = function (t) {
-                return /\s/.test(t)
-            }, n = [], i = {}, r = 0, o = null, s = !1, a = 0; a < t.length;) {
+            return /\s/.test(t)
+        }, n = [], i = {}, r = 0, o = null, s = !1, a = 0; a < t.length;) {
             if (s && (e(t[a]) || "{" === t[a])) s = !1, o = t.slice(r, a), "{" === t[a] && a--;
             else if (!s && !e(t[a])) {
                 var c = "{" === t[a];
@@ -2746,7 +2747,7 @@ flarum.core = function (t) {
                             if (f.newSegmentIndex && (s = f.newSegmentIndex), f.processedSegment && (d = !0), f.break) break;
                             c = !1, u = null, l = !1
                         } else l && (o = a[p], !/[a-zA-Z-_]/.test(o)) && (c = !1, u = null, l = !1);
-                else u = p, l = !0, "/" === a[p + 1] && (c = !0, p++);
+                    else u = p, l = !0, "/" === a[p + 1] && (c = !0, p++);
                 d || i.push(a)
             } else i.push(a)
         }
@@ -2758,7 +2759,7 @@ flarum.core = function (t) {
             if (Reflect.construct.sham) return !1;
             if ("function" == typeof Proxy) return !0;
             try {
-                return Date.prototype.toString.call(Reflect.construct(Date, [], (function () {}))), !0
+                return Date.prototype.toString.call(Reflect.construct(Date, [], (function () { }))), !0
             } catch (t) {
                 return !1
             }
@@ -2968,13 +2969,13 @@ flarum.core = function (t) {
         var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
         if (n) return (n = n.call(t)).next.bind(n);
         if (Array.isArray(t) || (n = function (t, e) {
-                if (!t) return;
-                if ("string" == typeof t) return P(t, e);
-                var n = Object.prototype.toString.call(t).slice(8, -1);
-                "Object" === n && t.constructor && (n = t.constructor.name);
-                if ("Map" === n || "Set" === n) return Array.from(t);
-                if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return P(t, e)
-            }(t)) || e && t && "number" == typeof t.length) {
+            if (!t) return;
+            if ("string" == typeof t) return P(t, e);
+            var n = Object.prototype.toString.call(t).slice(8, -1);
+            "Object" === n && t.constructor && (n = t.constructor.name);
+            if ("Map" === n || "Set" === n) return Array.from(t);
+            if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return P(t, e)
+        }(t)) || e && t && "number" == typeof t.length) {
             n && (t = n);
             var i = 0;
             return function () {
@@ -3071,8 +3072,8 @@ flarum.core = function (t) {
             var e = this,
                 n = Object.assign({}, t);
             if (n.background = n.background || !0, Object(b.extend)(n, "config", (function (t, n) {
-                    return n.setRequestHeader("X-CSRF-Token", e.session.csrfToken)
-                })), "GET" !== n.method && "POST" !== n.method) {
+                return n.setRequestHeader("X-CSRF-Token", e.session.csrfToken)
+            })), "GET" !== n.method && "POST" !== n.method) {
                 var i = n.method;
                 Object(b.extend)(n, "config", (function (t, e) {
                     return e.setRequestHeader("X-HTTP-Method-Override", i)
@@ -3234,8 +3235,8 @@ flarum.core = function (t) {
             u = {};
         r(u, e);
         var l = c.replace(/:([^\/\.-]+)(\.{3})?/g, (function (t, n, i) {
-                return delete u[n], null == e[n] ? t : i ? e[n] : encodeURIComponent(String(e[n]))
-            })),
+            return delete u[n], null == e[n] ? t : i ? e[n] : encodeURIComponent(String(e[n]))
+        })),
             d = l.indexOf("?"),
             p = l.indexOf("#"),
             h = p < 0 ? l.length : p,
@@ -3286,44 +3287,44 @@ flarum.core = function (t) {
             }
             n.en.relativeTime = r, i.fromToBase = function (e, i, o, s, a) {
                 for (var c, u, l, d = o.$locale().relativeTime || r, p = t.thresholds || [{
-                        l: "s",
-                        r: 44,
-                        d: "second"
-                    }, {
-                        l: "m",
-                        r: 89
-                    }, {
-                        l: "mm",
-                        r: 44,
-                        d: "minute"
-                    }, {
-                        l: "h",
-                        r: 89
-                    }, {
-                        l: "hh",
-                        r: 21,
-                        d: "hour"
-                    }, {
-                        l: "d",
-                        r: 35
-                    }, {
-                        l: "dd",
-                        r: 25,
-                        d: "day"
-                    }, {
-                        l: "M",
-                        r: 45
-                    }, {
-                        l: "MM",
-                        r: 10,
-                        d: "month"
-                    }, {
-                        l: "y",
-                        r: 17
-                    }, {
-                        l: "yy",
-                        d: "year"
-                    }], h = p.length, f = 0; f < h; f += 1) {
+                    l: "s",
+                    r: 44,
+                    d: "second"
+                }, {
+                    l: "m",
+                    r: 89
+                }, {
+                    l: "mm",
+                    r: 44,
+                    d: "minute"
+                }, {
+                    l: "h",
+                    r: 89
+                }, {
+                    l: "hh",
+                    r: 21,
+                    d: "hour"
+                }, {
+                    l: "d",
+                    r: 35
+                }, {
+                    l: "dd",
+                    r: 25,
+                    d: "day"
+                }, {
+                    l: "M",
+                    r: 45
+                }, {
+                    l: "MM",
+                    r: 10,
+                    d: "month"
+                }, {
+                    l: "y",
+                    r: 17
+                }, {
+                    l: "yy",
+                    d: "year"
+                }], h = p.length, f = 0; f < h; f += 1) {
                     var m = p[f];
                     m.d && (c = s ? n(e).diff(o, m.d, !0) : o.diff(e, m.d, !0));
                     var v = (t.rounding || Math.round)(Math.abs(c));
@@ -3792,7 +3793,7 @@ flarum.core = function (t) {
             return new o(r.call(setInterval, i, arguments), clearInterval)
         }, e.clearTimeout = e.clearInterval = function (t) {
             t && t.close()
-        }, o.prototype.unref = o.prototype.ref = function () {}, o.prototype.close = function () {
+        }, o.prototype.unref = o.prototype.ref = function () { }, o.prototype.close = function () {
             this._clearFn.call(i, this._id)
         }, e.enroll = function (t, e) {
             clearTimeout(t._idleTimeoutId), t._idleTimeout = e
@@ -4220,11 +4221,11 @@ flarum.core = function (t) {
         "utils/ItemList": l.a,
         "utils/mixin": function (t) {
             for (var e = function (t) {
-                    function e() {
-                        return t.apply(this, arguments) || this
-                    }
-                    return Object(d.a)(e, t), e
-                }(t), n = arguments.length, i = new Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++) i[r - 1] = arguments[r];
+                function e() {
+                    return t.apply(this, arguments) || this
+                }
+                return Object(d.a)(e, t), e
+            }(t), n = arguments.length, i = new Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++) i[r - 1] = arguments[r];
             return i.forEach((function (t) {
                 Object.assign(e.prototype, t)
             })), e
@@ -4247,11 +4248,11 @@ flarum.core = function (t) {
                 }
                 var d = c.split("\n");
                 if (d.every((function (t) {
-                        return o.test(t)
-                    }))) {
+                    return o.test(t)
+                }))) {
                     if (u = d.map((function (t) {
-                            return t.replace(o, "")
-                        })), a = u.join("\n"), s && i && r) {
+                        return t.replace(o, "")
+                    })), a = u.join("\n"), s && i && r) {
                         var p = d[0].length - u[0].length;
                         n = e = t.selectionStart - p, t.selectionStart = i, t.selectionEnd = r
                     }
@@ -4283,13 +4284,13 @@ flarum.core = function (t) {
                     a = t.selectionEnd,
                     c = o.split("\n");
                 if (c.every((function (t) {
-                        return t.startsWith(n) && t.endsWith(i)
-                    }))) o = c.map((function (t) {
+                    return t.startsWith(n) && t.endsWith(i)
+                }))) o = c.map((function (t) {
                     return t.slice(n.length, t.length - i.length)
                 })).join("\n"), a = s + o.length;
                 else if (o = c.map((function (t) {
-                        return n + t + i
-                    })).join("\n"), r) {
+                    return n + t + i
+                })).join("\n"), r) {
                     var u = w(t),
                         l = u.newlinesToAppend,
                         d = u.newlinesToPrepend;
@@ -4515,7 +4516,7 @@ flarum.core = function (t) {
         function x(t, e, n) {
             var i, r, o = (n = n || y).createElement("script");
             if (o.text = t, e)
-                for (i in w)(r = e[i] || e.getAttribute && e.getAttribute(i)) && o.setAttribute(i, r);
+                for (i in w) (r = e[i] || e.getAttribute && e.getAttribute(i)) && o.setAttribute(i, r);
             n.head.appendChild(o).parentNode.removeChild(o)
         }
 
@@ -4598,7 +4599,7 @@ flarum.core = function (t) {
             error: function (t) {
                 throw new Error(t)
             },
-            noop: function () {},
+            noop: function () { },
             isPlainObject: function (t) {
                 var e, n;
                 return !(!t || "[object Object]" !== p.call(t)) && (!(e = s(t)) || "function" == typeof (n = h.call(e, "constructor") && e.constructor) && f.call(n) === m)
@@ -4843,346 +4844,346 @@ flarum.core = function (t) {
                     return t && void 0 !== t.getElementsByTagName && t
                 }
                 for (e in n = at.support = {}, o = at.isXML = function (t) {
-                        var e = t && t.namespaceURI,
-                            n = t && (t.ownerDocument || t).documentElement;
-                        return !K.test(e || n && n.nodeName || "HTML")
-                    }, p = at.setDocument = function (t) {
-                        var e, r, s = t ? t.ownerDocument || t : x;
-                        return s != h && 9 === s.nodeType && s.documentElement ? (f = (h = s).documentElement, m = !o(h), x != h && (r = h.defaultView) && r.top !== r && (r.addEventListener ? r.addEventListener("unload", ot, !1) : r.attachEvent && r.attachEvent("onunload", ot)), n.scope = lt((function (t) {
-                            return f.appendChild(t).appendChild(h.createElement("div")), void 0 !== t.querySelectorAll && !t.querySelectorAll(":scope fieldset div").length
-                        })), n.attributes = lt((function (t) {
-                            return t.className = "i", !t.getAttribute("className")
-                        })), n.getElementsByTagName = lt((function (t) {
-                            return t.appendChild(h.createComment("")), !t.getElementsByTagName("*").length
-                        })), n.getElementsByClassName = Q.test(h.getElementsByClassName), n.getById = lt((function (t) {
-                            return f.appendChild(t).id = w, !h.getElementsByName || !h.getElementsByName(w).length
-                        })), n.getById ? (i.filter.ID = function (t) {
-                            var e = t.replace(et, nt);
-                            return function (t) {
-                                return t.getAttribute("id") === e
-                            }
-                        }, i.find.ID = function (t, e) {
-                            if (void 0 !== e.getElementById && m) {
-                                var n = e.getElementById(t);
-                                return n ? [n] : []
-                            }
-                        }) : (i.filter.ID = function (t) {
-                            var e = t.replace(et, nt);
-                            return function (t) {
-                                var n = void 0 !== t.getAttributeNode && t.getAttributeNode("id");
-                                return n && n.value === e
-                            }
-                        }, i.find.ID = function (t, e) {
-                            if (void 0 !== e.getElementById && m) {
-                                var n, i, r, o = e.getElementById(t);
-                                if (o) {
-                                    if ((n = o.getAttributeNode("id")) && n.value === t) return [o];
-                                    for (r = e.getElementsByName(t), i = 0; o = r[i++];)
-                                        if ((n = o.getAttributeNode("id")) && n.value === t) return [o]
-                                }
-                                return []
-                            }
-                        }), i.find.TAG = n.getElementsByTagName ? function (t, e) {
-                            return void 0 !== e.getElementsByTagName ? e.getElementsByTagName(t) : n.qsa ? e.querySelectorAll(t) : void 0
-                        } : function (t, e) {
-                            var n, i = [],
-                                r = 0,
-                                o = e.getElementsByTagName(t);
-                            if ("*" === t) {
-                                for (; n = o[r++];) 1 === n.nodeType && i.push(n);
-                                return i
-                            }
-                            return o
-                        }, i.find.CLASS = n.getElementsByClassName && function (t, e) {
-                            if (void 0 !== e.getElementsByClassName && m) return e.getElementsByClassName(t)
-                        }, g = [], v = [], (n.qsa = Q.test(h.querySelectorAll)) && (lt((function (t) {
-                            var e;
-                            f.appendChild(t).innerHTML = "<a id='" + w + "'></a><select id='" + w + "-\r\\' msallowcapture=''><option selected=''></option></select>", t.querySelectorAll("[msallowcapture^='']").length && v.push("[*^$]=" + L + "*(?:''|\"\")"), t.querySelectorAll("[selected]").length || v.push("\\[" + L + "*(?:value|" + M + ")"), t.querySelectorAll("[id~=" + w + "-]").length || v.push("~="), (e = h.createElement("input")).setAttribute("name", ""), t.appendChild(e), t.querySelectorAll("[name='']").length || v.push("\\[" + L + "*name" + L + "*=" + L + "*(?:''|\"\")"), t.querySelectorAll(":checked").length || v.push(":checked"), t.querySelectorAll("a#" + w + "+*").length || v.push(".#.+[+~]"), t.querySelectorAll("\\\f"), v.push("[\\r\\n\\f]")
-                        })), lt((function (t) {
-                            t.innerHTML = "<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>";
-                            var e = h.createElement("input");
-                            e.setAttribute("type", "hidden"), t.appendChild(e).setAttribute("name", "D"), t.querySelectorAll("[name=d]").length && v.push("name" + L + "*[*^$|!~]?="), 2 !== t.querySelectorAll(":enabled").length && v.push(":enabled", ":disabled"), f.appendChild(t).disabled = !0, 2 !== t.querySelectorAll(":disabled").length && v.push(":enabled", ":disabled"), t.querySelectorAll("*,:x"), v.push(",.*:")
-                        }))), (n.matchesSelector = Q.test(b = f.matches || f.webkitMatchesSelector || f.mozMatchesSelector || f.oMatchesSelector || f.msMatchesSelector)) && lt((function (t) {
-                            n.disconnectedMatch = b.call(t, "*"), b.call(t, "[s!='']:x"), g.push("!=", B)
-                        })), v = v.length && new RegExp(v.join("|")), g = g.length && new RegExp(g.join("|")), e = Q.test(f.compareDocumentPosition), y = e || Q.test(f.contains) ? function (t, e) {
-                            var n = 9 === t.nodeType ? t.documentElement : t,
-                                i = e && e.parentNode;
-                            return t === i || !(!i || 1 !== i.nodeType || !(n.contains ? n.contains(i) : t.compareDocumentPosition && 16 & t.compareDocumentPosition(i)))
-                        } : function (t, e) {
-                            if (e)
-                                for (; e = e.parentNode;)
-                                    if (e === t) return !0;
-                            return !1
-                        }, j = e ? function (t, e) {
-                            if (t === e) return d = !0, 0;
-                            var i = !t.compareDocumentPosition - !e.compareDocumentPosition;
-                            return i || (1 & (i = (t.ownerDocument || t) == (e.ownerDocument || e) ? t.compareDocumentPosition(e) : 1) || !n.sortDetached && e.compareDocumentPosition(t) === i ? t == h || t.ownerDocument == x && y(x, t) ? -1 : e == h || e.ownerDocument == x && y(x, e) ? 1 : l ? I(l, t) - I(l, e) : 0 : 4 & i ? -1 : 1)
-                        } : function (t, e) {
-                            if (t === e) return d = !0, 0;
-                            var n, i = 0,
-                                r = t.parentNode,
-                                o = e.parentNode,
-                                s = [t],
-                                a = [e];
-                            if (!r || !o) return t == h ? -1 : e == h ? 1 : r ? -1 : o ? 1 : l ? I(l, t) - I(l, e) : 0;
-                            if (r === o) return pt(t, e);
-                            for (n = t; n = n.parentNode;) s.unshift(n);
-                            for (n = e; n = n.parentNode;) a.unshift(n);
-                            for (; s[i] === a[i];) i++;
-                            return i ? pt(s[i], a[i]) : s[i] == x ? -1 : a[i] == x ? 1 : 0
-                        }, h) : h
-                    }, at.matches = function (t, e) {
-                        return at(t, null, null, e)
-                    }, at.matchesSelector = function (t, e) {
-                        if (p(t), n.matchesSelector && m && !k[e + " "] && (!g || !g.test(e)) && (!v || !v.test(e))) try {
-                            var i = b.call(t, e);
-                            if (i || n.disconnectedMatch || t.document && 11 !== t.document.nodeType) return i
-                        } catch (t) {
-                            k(e, !0)
+                    var e = t && t.namespaceURI,
+                        n = t && (t.ownerDocument || t).documentElement;
+                    return !K.test(e || n && n.nodeName || "HTML")
+                }, p = at.setDocument = function (t) {
+                    var e, r, s = t ? t.ownerDocument || t : x;
+                    return s != h && 9 === s.nodeType && s.documentElement ? (f = (h = s).documentElement, m = !o(h), x != h && (r = h.defaultView) && r.top !== r && (r.addEventListener ? r.addEventListener("unload", ot, !1) : r.attachEvent && r.attachEvent("onunload", ot)), n.scope = lt((function (t) {
+                        return f.appendChild(t).appendChild(h.createElement("div")), void 0 !== t.querySelectorAll && !t.querySelectorAll(":scope fieldset div").length
+                    })), n.attributes = lt((function (t) {
+                        return t.className = "i", !t.getAttribute("className")
+                    })), n.getElementsByTagName = lt((function (t) {
+                        return t.appendChild(h.createComment("")), !t.getElementsByTagName("*").length
+                    })), n.getElementsByClassName = Q.test(h.getElementsByClassName), n.getById = lt((function (t) {
+                        return f.appendChild(t).id = w, !h.getElementsByName || !h.getElementsByName(w).length
+                    })), n.getById ? (i.filter.ID = function (t) {
+                        var e = t.replace(et, nt);
+                        return function (t) {
+                            return t.getAttribute("id") === e
                         }
-                        return at(e, h, null, [t]).length > 0
-                    }, at.contains = function (t, e) {
-                        return (t.ownerDocument || t) != h && p(t), y(t, e)
-                    }, at.attr = function (t, e) {
-                        (t.ownerDocument || t) != h && p(t);
-                        var r = i.attrHandle[e.toLowerCase()],
-                            o = r && A.call(i.attrHandle, e.toLowerCase()) ? r(t, e, !m) : void 0;
-                        return void 0 !== o ? o : n.attributes || !m ? t.getAttribute(e) : (o = t.getAttributeNode(e)) && o.specified ? o.value : null
-                    }, at.escape = function (t) {
-                        return (t + "").replace(it, rt)
-                    }, at.error = function (t) {
-                        throw new Error("Syntax error, unrecognized expression: " + t)
-                    }, at.uniqueSort = function (t) {
-                        var e, i = [],
+                    }, i.find.ID = function (t, e) {
+                        if (void 0 !== e.getElementById && m) {
+                            var n = e.getElementById(t);
+                            return n ? [n] : []
+                        }
+                    }) : (i.filter.ID = function (t) {
+                        var e = t.replace(et, nt);
+                        return function (t) {
+                            var n = void 0 !== t.getAttributeNode && t.getAttributeNode("id");
+                            return n && n.value === e
+                        }
+                    }, i.find.ID = function (t, e) {
+                        if (void 0 !== e.getElementById && m) {
+                            var n, i, r, o = e.getElementById(t);
+                            if (o) {
+                                if ((n = o.getAttributeNode("id")) && n.value === t) return [o];
+                                for (r = e.getElementsByName(t), i = 0; o = r[i++];)
+                                    if ((n = o.getAttributeNode("id")) && n.value === t) return [o]
+                            }
+                            return []
+                        }
+                    }), i.find.TAG = n.getElementsByTagName ? function (t, e) {
+                        return void 0 !== e.getElementsByTagName ? e.getElementsByTagName(t) : n.qsa ? e.querySelectorAll(t) : void 0
+                    } : function (t, e) {
+                        var n, i = [],
                             r = 0,
-                            o = 0;
-                        if (d = !n.detectDuplicates, l = !n.sortStable && t.slice(0), t.sort(j), d) {
-                            for (; e = t[o++];) e === t[o] && (r = i.push(o));
-                            for (; r--;) t.splice(i[r], 1)
+                            o = e.getElementsByTagName(t);
+                        if ("*" === t) {
+                            for (; n = o[r++];) 1 === n.nodeType && i.push(n);
+                            return i
                         }
-                        return l = null, t
-                    }, r = at.getText = function (t) {
-                        var e, n = "",
-                            i = 0,
-                            o = t.nodeType;
-                        if (o) {
-                            if (1 === o || 9 === o || 11 === o) {
-                                if ("string" == typeof t.textContent) return t.textContent;
-                                for (t = t.firstChild; t; t = t.nextSibling) n += r(t)
-                            } else if (3 === o || 4 === o) return t.nodeValue
-                        } else
-                            for (; e = t[i++];) n += r(e);
-                        return n
-                    }, (i = at.selectors = {
-                        cacheLength: 50,
-                        createPseudo: ut,
-                        match: G,
-                        attrHandle: {},
-                        find: {},
-                        relative: {
-                            ">": {
-                                dir: "parentNode",
-                                first: !0
-                            },
-                            " ": {
-                                dir: "parentNode"
-                            },
-                            "+": {
-                                dir: "previousSibling",
-                                first: !0
-                            },
-                            "~": {
-                                dir: "previousSibling"
-                            }
+                        return o
+                    }, i.find.CLASS = n.getElementsByClassName && function (t, e) {
+                        if (void 0 !== e.getElementsByClassName && m) return e.getElementsByClassName(t)
+                    }, g = [], v = [], (n.qsa = Q.test(h.querySelectorAll)) && (lt((function (t) {
+                        var e;
+                        f.appendChild(t).innerHTML = "<a id='" + w + "'></a><select id='" + w + "-\r\\' msallowcapture=''><option selected=''></option></select>", t.querySelectorAll("[msallowcapture^='']").length && v.push("[*^$]=" + L + "*(?:''|\"\")"), t.querySelectorAll("[selected]").length || v.push("\\[" + L + "*(?:value|" + M + ")"), t.querySelectorAll("[id~=" + w + "-]").length || v.push("~="), (e = h.createElement("input")).setAttribute("name", ""), t.appendChild(e), t.querySelectorAll("[name='']").length || v.push("\\[" + L + "*name" + L + "*=" + L + "*(?:''|\"\")"), t.querySelectorAll(":checked").length || v.push(":checked"), t.querySelectorAll("a#" + w + "+*").length || v.push(".#.+[+~]"), t.querySelectorAll("\\\f"), v.push("[\\r\\n\\f]")
+                    })), lt((function (t) {
+                        t.innerHTML = "<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>";
+                        var e = h.createElement("input");
+                        e.setAttribute("type", "hidden"), t.appendChild(e).setAttribute("name", "D"), t.querySelectorAll("[name=d]").length && v.push("name" + L + "*[*^$|!~]?="), 2 !== t.querySelectorAll(":enabled").length && v.push(":enabled", ":disabled"), f.appendChild(t).disabled = !0, 2 !== t.querySelectorAll(":disabled").length && v.push(":enabled", ":disabled"), t.querySelectorAll("*,:x"), v.push(",.*:")
+                    }))), (n.matchesSelector = Q.test(b = f.matches || f.webkitMatchesSelector || f.mozMatchesSelector || f.oMatchesSelector || f.msMatchesSelector)) && lt((function (t) {
+                        n.disconnectedMatch = b.call(t, "*"), b.call(t, "[s!='']:x"), g.push("!=", B)
+                    })), v = v.length && new RegExp(v.join("|")), g = g.length && new RegExp(g.join("|")), e = Q.test(f.compareDocumentPosition), y = e || Q.test(f.contains) ? function (t, e) {
+                        var n = 9 === t.nodeType ? t.documentElement : t,
+                            i = e && e.parentNode;
+                        return t === i || !(!i || 1 !== i.nodeType || !(n.contains ? n.contains(i) : t.compareDocumentPosition && 16 & t.compareDocumentPosition(i)))
+                    } : function (t, e) {
+                        if (e)
+                            for (; e = e.parentNode;)
+                                if (e === t) return !0;
+                        return !1
+                    }, j = e ? function (t, e) {
+                        if (t === e) return d = !0, 0;
+                        var i = !t.compareDocumentPosition - !e.compareDocumentPosition;
+                        return i || (1 & (i = (t.ownerDocument || t) == (e.ownerDocument || e) ? t.compareDocumentPosition(e) : 1) || !n.sortDetached && e.compareDocumentPosition(t) === i ? t == h || t.ownerDocument == x && y(x, t) ? -1 : e == h || e.ownerDocument == x && y(x, e) ? 1 : l ? I(l, t) - I(l, e) : 0 : 4 & i ? -1 : 1)
+                    } : function (t, e) {
+                        if (t === e) return d = !0, 0;
+                        var n, i = 0,
+                            r = t.parentNode,
+                            o = e.parentNode,
+                            s = [t],
+                            a = [e];
+                        if (!r || !o) return t == h ? -1 : e == h ? 1 : r ? -1 : o ? 1 : l ? I(l, t) - I(l, e) : 0;
+                        if (r === o) return pt(t, e);
+                        for (n = t; n = n.parentNode;) s.unshift(n);
+                        for (n = e; n = n.parentNode;) a.unshift(n);
+                        for (; s[i] === a[i];) i++;
+                        return i ? pt(s[i], a[i]) : s[i] == x ? -1 : a[i] == x ? 1 : 0
+                    }, h) : h
+                }, at.matches = function (t, e) {
+                    return at(t, null, null, e)
+                }, at.matchesSelector = function (t, e) {
+                    if (p(t), n.matchesSelector && m && !k[e + " "] && (!g || !g.test(e)) && (!v || !v.test(e))) try {
+                        var i = b.call(t, e);
+                        if (i || n.disconnectedMatch || t.document && 11 !== t.document.nodeType) return i
+                    } catch (t) {
+                        k(e, !0)
+                    }
+                    return at(e, h, null, [t]).length > 0
+                }, at.contains = function (t, e) {
+                    return (t.ownerDocument || t) != h && p(t), y(t, e)
+                }, at.attr = function (t, e) {
+                    (t.ownerDocument || t) != h && p(t);
+                    var r = i.attrHandle[e.toLowerCase()],
+                        o = r && A.call(i.attrHandle, e.toLowerCase()) ? r(t, e, !m) : void 0;
+                    return void 0 !== o ? o : n.attributes || !m ? t.getAttribute(e) : (o = t.getAttributeNode(e)) && o.specified ? o.value : null
+                }, at.escape = function (t) {
+                    return (t + "").replace(it, rt)
+                }, at.error = function (t) {
+                    throw new Error("Syntax error, unrecognized expression: " + t)
+                }, at.uniqueSort = function (t) {
+                    var e, i = [],
+                        r = 0,
+                        o = 0;
+                    if (d = !n.detectDuplicates, l = !n.sortStable && t.slice(0), t.sort(j), d) {
+                        for (; e = t[o++];) e === t[o] && (r = i.push(o));
+                        for (; r--;) t.splice(i[r], 1)
+                    }
+                    return l = null, t
+                }, r = at.getText = function (t) {
+                    var e, n = "",
+                        i = 0,
+                        o = t.nodeType;
+                    if (o) {
+                        if (1 === o || 9 === o || 11 === o) {
+                            if ("string" == typeof t.textContent) return t.textContent;
+                            for (t = t.firstChild; t; t = t.nextSibling) n += r(t)
+                        } else if (3 === o || 4 === o) return t.nodeValue
+                    } else
+                        for (; e = t[i++];) n += r(e);
+                    return n
+                }, (i = at.selectors = {
+                    cacheLength: 50,
+                    createPseudo: ut,
+                    match: G,
+                    attrHandle: {},
+                    find: {},
+                    relative: {
+                        ">": {
+                            dir: "parentNode",
+                            first: !0
                         },
-                        preFilter: {
-                            ATTR: function (t) {
-                                return t[1] = t[1].replace(et, nt), t[3] = (t[3] || t[4] || t[5] || "").replace(et, nt), "~=" === t[2] && (t[3] = " " + t[3] + " "), t.slice(0, 4)
-                            },
-                            CHILD: function (t) {
-                                return t[1] = t[1].toLowerCase(), "nth" === t[1].slice(0, 3) ? (t[3] || at.error(t[0]), t[4] = +(t[4] ? t[5] + (t[6] || 1) : 2 * ("even" === t[3] || "odd" === t[3])), t[5] = +(t[7] + t[8] || "odd" === t[3])) : t[3] && at.error(t[0]), t
-                            },
-                            PSEUDO: function (t) {
-                                var e, n = !t[6] && t[2];
-                                return G.CHILD.test(t[0]) ? null : (t[3] ? t[2] = t[4] || t[5] || "" : n && V.test(n) && (e = s(n, !0)) && (e = n.indexOf(")", n.length - e) - n.length) && (t[0] = t[0].slice(0, e), t[2] = n.slice(0, e)), t.slice(0, 3))
-                            }
+                        " ": {
+                            dir: "parentNode"
                         },
-                        filter: {
-                            TAG: function (t) {
-                                var e = t.replace(et, nt).toLowerCase();
-                                return "*" === t ? function () {
-                                    return !0
-                                } : function (t) {
-                                    return t.nodeName && t.nodeName.toLowerCase() === e
-                                }
-                            },
-                            CLASS: function (t) {
-                                var e = T[t + " "];
-                                return e || (e = new RegExp("(^|" + L + ")" + t + "(" + L + "|$)")) && T(t, (function (t) {
-                                    return e.test("string" == typeof t.className && t.className || void 0 !== t.getAttribute && t.getAttribute("class") || "")
-                                }))
-                            },
-                            ATTR: function (t, e, n) {
-                                return function (i) {
-                                    var r = at.attr(i, t);
-                                    return null == r ? "!=" === e : !e || (r += "", "=" === e ? r === n : "!=" === e ? r !== n : "^=" === e ? n && 0 === r.indexOf(n) : "*=" === e ? n && r.indexOf(n) > -1 : "$=" === e ? n && r.slice(-n.length) === n : "~=" === e ? (" " + r.replace(U, " ") + " ").indexOf(n) > -1 : "|=" === e && (r === n || r.slice(0, n.length + 1) === n + "-"))
-                                }
-                            },
-                            CHILD: function (t, e, n, i, r) {
-                                var o = "nth" !== t.slice(0, 3),
-                                    s = "last" !== t.slice(-4),
-                                    a = "of-type" === e;
-                                return 1 === i && 0 === r ? function (t) {
-                                    return !!t.parentNode
-                                } : function (e, n, c) {
-                                    var u, l, d, p, h, f, m = o !== s ? "nextSibling" : "previousSibling",
-                                        v = e.parentNode,
-                                        g = a && e.nodeName.toLowerCase(),
-                                        b = !c && !a,
-                                        y = !1;
-                                    if (v) {
-                                        if (o) {
-                                            for (; m;) {
-                                                for (p = e; p = p[m];)
-                                                    if (a ? p.nodeName.toLowerCase() === g : 1 === p.nodeType) return !1;
-                                                f = m = "only" === t && !f && "nextSibling"
-                                            }
-                                            return !0
-                                        }
-                                        if (f = [s ? v.firstChild : v.lastChild], s && b) {
-                                            for (y = (h = (u = (l = (d = (p = v)[w] || (p[w] = {}))[p.uniqueID] || (d[p.uniqueID] = {}))[t] || [])[0] === N && u[1]) && u[2], p = h && v.childNodes[h]; p = ++h && p && p[m] || (y = h = 0) || f.pop();)
-                                                if (1 === p.nodeType && ++y && p === e) {
-                                                    l[t] = [N, h, y];
-                                                    break
-                                                }
-                                        } else if (b && (y = h = (u = (l = (d = (p = e)[w] || (p[w] = {}))[p.uniqueID] || (d[p.uniqueID] = {}))[t] || [])[0] === N && u[1]), !1 === y)
-                                            for (;
-                                                (p = ++h && p && p[m] || (y = h = 0) || f.pop()) && ((a ? p.nodeName.toLowerCase() !== g : 1 !== p.nodeType) || !++y || (b && ((l = (d = p[w] || (p[w] = {}))[p.uniqueID] || (d[p.uniqueID] = {}))[t] = [N, y]), p !== e)););
-                                        return (y -= r) === i || y % i == 0 && y / i >= 0
-                                    }
-                                }
-                            },
-                            PSEUDO: function (t, e) {
-                                var n, r = i.pseudos[t] || i.setFilters[t.toLowerCase()] || at.error("unsupported pseudo: " + t);
-                                return r[w] ? r(e) : r.length > 1 ? (n = [t, t, "", e], i.setFilters.hasOwnProperty(t.toLowerCase()) ? ut((function (t, n) {
-                                    for (var i, o = r(t, e), s = o.length; s--;) t[i = I(t, o[s])] = !(n[i] = o[s])
-                                })) : function (t) {
-                                    return r(t, 0, n)
-                                }) : r
-                            }
+                        "+": {
+                            dir: "previousSibling",
+                            first: !0
                         },
-                        pseudos: {
-                            not: ut((function (t) {
-                                var e = [],
-                                    n = [],
-                                    i = a(t.replace(F, "$1"));
-                                return i[w] ? ut((function (t, e, n, r) {
-                                    for (var o, s = i(t, null, r, []), a = t.length; a--;)(o = s[a]) && (t[a] = !(e[a] = o))
-                                })) : function (t, r, o) {
-                                    return e[0] = t, i(e, null, o, n), e[0] = null, !n.pop()
-                                }
-                            })),
-                            has: ut((function (t) {
-                                return function (e) {
-                                    return at(t, e).length > 0
-                                }
-                            })),
-                            contains: ut((function (t) {
-                                return t = t.replace(et, nt),
-                                    function (e) {
-                                        return (e.textContent || r(e)).indexOf(t) > -1
-                                    }
-                            })),
-                            lang: ut((function (t) {
-                                return Y.test(t || "") || at.error("unsupported lang: " + t), t = t.replace(et, nt).toLowerCase(),
-                                    function (e) {
-                                        var n;
-                                        do {
-                                            if (n = m ? e.lang : e.getAttribute("xml:lang") || e.getAttribute("lang")) return (n = n.toLowerCase()) === t || 0 === n.indexOf(t + "-")
-                                        } while ((e = e.parentNode) && 1 === e.nodeType);
-                                        return !1
-                                    }
-                            })),
-                            target: function (e) {
-                                var n = t.location && t.location.hash;
-                                return n && n.slice(1) === e.id
-                            },
-                            root: function (t) {
-                                return t === f
-                            },
-                            focus: function (t) {
-                                return t === h.activeElement && (!h.hasFocus || h.hasFocus()) && !!(t.type || t.href || ~t.tabIndex)
-                            },
-                            enabled: mt(!1),
-                            disabled: mt(!0),
-                            checked: function (t) {
-                                var e = t.nodeName.toLowerCase();
-                                return "input" === e && !!t.checked || "option" === e && !!t.selected
-                            },
-                            selected: function (t) {
-                                return t.parentNode && t.parentNode.selectedIndex, !0 === t.selected
-                            },
-                            empty: function (t) {
-                                for (t = t.firstChild; t; t = t.nextSibling)
-                                    if (t.nodeType < 6) return !1;
+                        "~": {
+                            dir: "previousSibling"
+                        }
+                    },
+                    preFilter: {
+                        ATTR: function (t) {
+                            return t[1] = t[1].replace(et, nt), t[3] = (t[3] || t[4] || t[5] || "").replace(et, nt), "~=" === t[2] && (t[3] = " " + t[3] + " "), t.slice(0, 4)
+                        },
+                        CHILD: function (t) {
+                            return t[1] = t[1].toLowerCase(), "nth" === t[1].slice(0, 3) ? (t[3] || at.error(t[0]), t[4] = +(t[4] ? t[5] + (t[6] || 1) : 2 * ("even" === t[3] || "odd" === t[3])), t[5] = +(t[7] + t[8] || "odd" === t[3])) : t[3] && at.error(t[0]), t
+                        },
+                        PSEUDO: function (t) {
+                            var e, n = !t[6] && t[2];
+                            return G.CHILD.test(t[0]) ? null : (t[3] ? t[2] = t[4] || t[5] || "" : n && V.test(n) && (e = s(n, !0)) && (e = n.indexOf(")", n.length - e) - n.length) && (t[0] = t[0].slice(0, e), t[2] = n.slice(0, e)), t.slice(0, 3))
+                        }
+                    },
+                    filter: {
+                        TAG: function (t) {
+                            var e = t.replace(et, nt).toLowerCase();
+                            return "*" === t ? function () {
                                 return !0
-                            },
-                            parent: function (t) {
-                                return !i.pseudos.empty(t)
-                            },
-                            header: function (t) {
-                                return J.test(t.nodeName)
-                            },
-                            input: function (t) {
-                                return X.test(t.nodeName)
-                            },
-                            button: function (t) {
-                                var e = t.nodeName.toLowerCase();
-                                return "input" === e && "button" === t.type || "button" === e
-                            },
-                            text: function (t) {
-                                var e;
-                                return "input" === t.nodeName.toLowerCase() && "text" === t.type && (null == (e = t.getAttribute("type")) || "text" === e.toLowerCase())
-                            },
-                            first: vt((function () {
-                                return [0]
-                            })),
-                            last: vt((function (t, e) {
-                                return [e - 1]
-                            })),
-                            eq: vt((function (t, e, n) {
-                                return [n < 0 ? n + e : n]
-                            })),
-                            even: vt((function (t, e) {
-                                for (var n = 0; n < e; n += 2) t.push(n);
-                                return t
-                            })),
-                            odd: vt((function (t, e) {
-                                for (var n = 1; n < e; n += 2) t.push(n);
-                                return t
-                            })),
-                            lt: vt((function (t, e, n) {
-                                for (var i = n < 0 ? n + e : n > e ? e : n; --i >= 0;) t.push(i);
-                                return t
-                            })),
-                            gt: vt((function (t, e, n) {
-                                for (var i = n < 0 ? n + e : n; ++i < e;) t.push(i);
-                                return t
+                            } : function (t) {
+                                return t.nodeName && t.nodeName.toLowerCase() === e
+                            }
+                        },
+                        CLASS: function (t) {
+                            var e = T[t + " "];
+                            return e || (e = new RegExp("(^|" + L + ")" + t + "(" + L + "|$)")) && T(t, (function (t) {
+                                return e.test("string" == typeof t.className && t.className || void 0 !== t.getAttribute && t.getAttribute("class") || "")
                             }))
+                        },
+                        ATTR: function (t, e, n) {
+                            return function (i) {
+                                var r = at.attr(i, t);
+                                return null == r ? "!=" === e : !e || (r += "", "=" === e ? r === n : "!=" === e ? r !== n : "^=" === e ? n && 0 === r.indexOf(n) : "*=" === e ? n && r.indexOf(n) > -1 : "$=" === e ? n && r.slice(-n.length) === n : "~=" === e ? (" " + r.replace(U, " ") + " ").indexOf(n) > -1 : "|=" === e && (r === n || r.slice(0, n.length + 1) === n + "-"))
+                            }
+                        },
+                        CHILD: function (t, e, n, i, r) {
+                            var o = "nth" !== t.slice(0, 3),
+                                s = "last" !== t.slice(-4),
+                                a = "of-type" === e;
+                            return 1 === i && 0 === r ? function (t) {
+                                return !!t.parentNode
+                            } : function (e, n, c) {
+                                var u, l, d, p, h, f, m = o !== s ? "nextSibling" : "previousSibling",
+                                    v = e.parentNode,
+                                    g = a && e.nodeName.toLowerCase(),
+                                    b = !c && !a,
+                                    y = !1;
+                                if (v) {
+                                    if (o) {
+                                        for (; m;) {
+                                            for (p = e; p = p[m];)
+                                                if (a ? p.nodeName.toLowerCase() === g : 1 === p.nodeType) return !1;
+                                            f = m = "only" === t && !f && "nextSibling"
+                                        }
+                                        return !0
+                                    }
+                                    if (f = [s ? v.firstChild : v.lastChild], s && b) {
+                                        for (y = (h = (u = (l = (d = (p = v)[w] || (p[w] = {}))[p.uniqueID] || (d[p.uniqueID] = {}))[t] || [])[0] === N && u[1]) && u[2], p = h && v.childNodes[h]; p = ++h && p && p[m] || (y = h = 0) || f.pop();)
+                                            if (1 === p.nodeType && ++y && p === e) {
+                                                l[t] = [N, h, y];
+                                                break
+                                            }
+                                    } else if (b && (y = h = (u = (l = (d = (p = e)[w] || (p[w] = {}))[p.uniqueID] || (d[p.uniqueID] = {}))[t] || [])[0] === N && u[1]), !1 === y)
+                                        for (;
+                                            (p = ++h && p && p[m] || (y = h = 0) || f.pop()) && ((a ? p.nodeName.toLowerCase() !== g : 1 !== p.nodeType) || !++y || (b && ((l = (d = p[w] || (p[w] = {}))[p.uniqueID] || (d[p.uniqueID] = {}))[t] = [N, y]), p !== e)););
+                                    return (y -= r) === i || y % i == 0 && y / i >= 0
+                                }
+                            }
+                        },
+                        PSEUDO: function (t, e) {
+                            var n, r = i.pseudos[t] || i.setFilters[t.toLowerCase()] || at.error("unsupported pseudo: " + t);
+                            return r[w] ? r(e) : r.length > 1 ? (n = [t, t, "", e], i.setFilters.hasOwnProperty(t.toLowerCase()) ? ut((function (t, n) {
+                                for (var i, o = r(t, e), s = o.length; s--;) t[i = I(t, o[s])] = !(n[i] = o[s])
+                            })) : function (t) {
+                                return r(t, 0, n)
+                            }) : r
                         }
-                    }).pseudos.nth = i.pseudos.eq, {
-                        radio: !0,
-                        checkbox: !0,
-                        file: !0,
-                        password: !0,
-                        image: !0
-                    }) i.pseudos[e] = ht(e);
+                    },
+                    pseudos: {
+                        not: ut((function (t) {
+                            var e = [],
+                                n = [],
+                                i = a(t.replace(F, "$1"));
+                            return i[w] ? ut((function (t, e, n, r) {
+                                for (var o, s = i(t, null, r, []), a = t.length; a--;)(o = s[a]) && (t[a] = !(e[a] = o))
+                            })) : function (t, r, o) {
+                                return e[0] = t, i(e, null, o, n), e[0] = null, !n.pop()
+                            }
+                        })),
+                        has: ut((function (t) {
+                            return function (e) {
+                                return at(t, e).length > 0
+                            }
+                        })),
+                        contains: ut((function (t) {
+                            return t = t.replace(et, nt),
+                                function (e) {
+                                    return (e.textContent || r(e)).indexOf(t) > -1
+                                }
+                        })),
+                        lang: ut((function (t) {
+                            return Y.test(t || "") || at.error("unsupported lang: " + t), t = t.replace(et, nt).toLowerCase(),
+                                function (e) {
+                                    var n;
+                                    do {
+                                        if (n = m ? e.lang : e.getAttribute("xml:lang") || e.getAttribute("lang")) return (n = n.toLowerCase()) === t || 0 === n.indexOf(t + "-")
+                                    } while ((e = e.parentNode) && 1 === e.nodeType);
+                                    return !1
+                                }
+                        })),
+                        target: function (e) {
+                            var n = t.location && t.location.hash;
+                            return n && n.slice(1) === e.id
+                        },
+                        root: function (t) {
+                            return t === f
+                        },
+                        focus: function (t) {
+                            return t === h.activeElement && (!h.hasFocus || h.hasFocus()) && !!(t.type || t.href || ~t.tabIndex)
+                        },
+                        enabled: mt(!1),
+                        disabled: mt(!0),
+                        checked: function (t) {
+                            var e = t.nodeName.toLowerCase();
+                            return "input" === e && !!t.checked || "option" === e && !!t.selected
+                        },
+                        selected: function (t) {
+                            return t.parentNode && t.parentNode.selectedIndex, !0 === t.selected
+                        },
+                        empty: function (t) {
+                            for (t = t.firstChild; t; t = t.nextSibling)
+                                if (t.nodeType < 6) return !1;
+                            return !0
+                        },
+                        parent: function (t) {
+                            return !i.pseudos.empty(t)
+                        },
+                        header: function (t) {
+                            return J.test(t.nodeName)
+                        },
+                        input: function (t) {
+                            return X.test(t.nodeName)
+                        },
+                        button: function (t) {
+                            var e = t.nodeName.toLowerCase();
+                            return "input" === e && "button" === t.type || "button" === e
+                        },
+                        text: function (t) {
+                            var e;
+                            return "input" === t.nodeName.toLowerCase() && "text" === t.type && (null == (e = t.getAttribute("type")) || "text" === e.toLowerCase())
+                        },
+                        first: vt((function () {
+                            return [0]
+                        })),
+                        last: vt((function (t, e) {
+                            return [e - 1]
+                        })),
+                        eq: vt((function (t, e, n) {
+                            return [n < 0 ? n + e : n]
+                        })),
+                        even: vt((function (t, e) {
+                            for (var n = 0; n < e; n += 2) t.push(n);
+                            return t
+                        })),
+                        odd: vt((function (t, e) {
+                            for (var n = 1; n < e; n += 2) t.push(n);
+                            return t
+                        })),
+                        lt: vt((function (t, e, n) {
+                            for (var i = n < 0 ? n + e : n > e ? e : n; --i >= 0;) t.push(i);
+                            return t
+                        })),
+                        gt: vt((function (t, e, n) {
+                            for (var i = n < 0 ? n + e : n; ++i < e;) t.push(i);
+                            return t
+                        }))
+                    }
+                }).pseudos.nth = i.pseudos.eq, {
+                    radio: !0,
+                    checkbox: !0,
+                    file: !0,
+                    password: !0,
+                    image: !0
+                }) i.pseudos[e] = ht(e);
                 for (e in {
-                        submit: !0,
-                        reset: !0
-                    }) i.pseudos[e] = ft(e);
+                    submit: !0,
+                    reset: !0
+                }) i.pseudos[e] = ft(e);
 
-                function bt() {}
+                function bt() { }
 
                 function yt(t) {
                     for (var e = 0, n = t.length, i = ""; e < n; e++) i += t[e].value;
@@ -5255,13 +5256,13 @@ flarum.core = function (t) {
 
                 function Tt(t) {
                     for (var e, n, r, o = t.length, s = i.relative[t[0].type], a = s || i.relative[" "], c = s ? 1 : 0, l = wt((function (t) {
-                            return t === e
-                        }), a, !0), d = wt((function (t) {
-                            return I(e, t) > -1
-                        }), a, !0), p = [function (t, n, i) {
-                            var r = !s && (i || n !== u) || ((e = n).nodeType ? l(t, n, i) : d(t, n, i));
-                            return e = null, r
-                        }]; c < o; c++)
+                        return t === e
+                    }), a, !0), d = wt((function (t) {
+                        return I(e, t) > -1
+                    }), a, !0), p = [function (t, n, i) {
+                        var r = !s && (i || n !== u) || ((e = n).nodeType ? l(t, n, i) : d(t, n, i));
+                        return e = null, r
+                    }]; c < o; c++)
                         if (n = i.relative[t[c].type]) p = [wt(xt(p), n)];
                         else {
                             if ((n = i.filter[t[c].type].apply(null, t[c].matches))[w]) {
@@ -5279,9 +5280,9 @@ flarum.core = function (t) {
                     if (l) return e ? 0 : l.slice(0);
                     for (a = t, c = [], u = i.preFilter; a;) {
                         for (s in n && !(r = q.exec(a)) || (r && (a = a.slice(r[0].length) || a), c.push(o = [])), n = !1, (r = z.exec(a)) && (n = r.shift(), o.push({
-                                value: n,
-                                type: r[0].replace(F, " ")
-                            }), a = a.slice(n.length)), i.filter) !(r = G[s].exec(a)) || u[s] && !(r = u[s](r)) || (n = r.shift(), o.push({
+                            value: n,
+                            type: r[0].replace(F, " ")
+                        }), a = a.slice(n.length)), i.filter) !(r = G[s].exec(a)) || u[s] && !(r = u[s](r)) || (n = r.shift(), o.push({
                             value: n,
                             type: s,
                             matches: r
@@ -5367,14 +5368,14 @@ flarum.core = function (t) {
             }(n);
         C.find = S, (C.expr = S.selectors)[":"] = C.expr.pseudos, C.uniqueSort = C.unique = S.uniqueSort, C.text = S.getText, C.isXMLDoc = S.isXML, C.contains = S.contains, C.escapeSelector = S.escape;
         var O = function (t, e, n) {
-                for (var i = [], r = void 0 !== n;
-                    (t = t[e]) && 9 !== t.nodeType;)
-                    if (1 === t.nodeType) {
-                        if (r && C(t).is(n)) break;
-                        i.push(t)
-                    }
-                return i
-            },
+            for (var i = [], r = void 0 !== n;
+                (t = t[e]) && 9 !== t.nodeType;)
+                if (1 === t.nodeType) {
+                    if (r && C(t).is(n)) break;
+                    i.push(t)
+                }
+            return i
+        },
             k = function (t, e) {
                 for (var n = []; t; t = t.nextSibling) 1 === t.nodeType && t !== e && n.push(t);
                 return n
@@ -5604,10 +5605,10 @@ flarum.core = function (t) {
         }, C.extend({
             Deferred: function (t) {
                 var e = [
-                        ["notify", "progress", C.Callbacks("memory"), C.Callbacks("memory"), 2],
-                        ["resolve", "done", C.Callbacks("once memory"), C.Callbacks("once memory"), 0, "resolved"],
-                        ["reject", "fail", C.Callbacks("once memory"), C.Callbacks("once memory"), 1, "rejected"]
-                    ],
+                    ["notify", "progress", C.Callbacks("memory"), C.Callbacks("memory"), 2],
+                    ["resolve", "done", C.Callbacks("once memory"), C.Callbacks("once memory"), 0, "resolved"],
+                    ["reject", "fail", C.Callbacks("once memory"), C.Callbacks("once memory"), 1, "rejected"]
+                ],
                     i = "pending",
                     r = {
                         state: function () {
@@ -5715,17 +5716,17 @@ flarum.core = function (t) {
             }
         }), C.ready.then = F.then, "complete" === y.readyState || "loading" !== y.readyState && !y.documentElement.doScroll ? n.setTimeout(C.ready) : (y.addEventListener("DOMContentLoaded", q), n.addEventListener("load", q));
         var z = function t(e, n, i, r, o, s, a) {
-                var c = 0,
-                    u = e.length,
-                    l = null == i;
-                if ("object" === N(i))
-                    for (c in o = !0, i) t(e, n, c, i[c], !0, s, a);
-                else if (void 0 !== r && (o = !0, g(r) || (a = !0), l && (a ? (n.call(e, r), n = null) : (l = n, n = function (t, e, n) {
-                        return l.call(C(t), n)
-                    })), n))
-                    for (; c < u; c++) n(e[c], i, a ? r : r.call(e[c], c, n(e[c], i)));
-                return o ? e : l ? n.call(e) : u ? n(e[0], i) : s
-            },
+            var c = 0,
+                u = e.length,
+                l = null == i;
+            if ("object" === N(i))
+                for (c in o = !0, i) t(e, n, c, i[c], !0, s, a);
+            else if (void 0 !== r && (o = !0, g(r) || (a = !0), l && (a ? (n.call(e, r), n = null) : (l = n, n = function (t, e, n) {
+                return l.call(C(t), n)
+            })), n))
+                for (; c < u; c++) n(e[c], i, a ? r : r.call(e[c], c, n(e[c], i)));
+            return o ? e : l ? n.call(e) : u ? n(e[0], i) : s
+        },
             W = /^-ms-/,
             V = /-([a-z])/g;
 
@@ -5770,7 +5771,7 @@ flarum.core = function (t) {
                     if (void 0 !== e) {
                         n = (e = Array.isArray(e) ? e.map(G) : (e = G(e)) in i ? [e] : e.match(L) || []).length;
                         for (; n--;) delete i[e[n]]
-                    }(void 0 === e || C.isEmptyObject(i)) && (t.nodeType ? t[this.expando] = void 0 : delete t[this.expando])
+                    } (void 0 === e || C.isEmptyObject(i)) && (t.nodeType ? t[this.expando] = void 0 : delete t[this.expando])
                 }
             },
             hasData: function (t) {
@@ -5791,7 +5792,7 @@ flarum.core = function (t) {
                         n = function (t) {
                             return "true" === t || "false" !== t && ("null" === t ? null : t === +t + "" ? +t : Z.test(t) ? JSON.parse(t) : t)
                         }(n)
-                    } catch (t) {}
+                    } catch (t) { }
                     Q.set(t, e, n)
                 } else n = void 0;
             return n
@@ -5976,13 +5977,13 @@ flarum.core = function (t) {
                 if ((o = t[h]) || 0 === o)
                     if ("object" === N(o)) C.merge(p, o.nodeType ? [o] : o);
                     else if (xt.test(o)) {
-                for (s = s || d.appendChild(e.createElement("div")), a = (vt.exec(o) || ["", ""])[1].toLowerCase(), c = bt[a] || bt._default, s.innerHTML = c[1] + C.htmlPrefilter(o) + c[2], l = c[0]; l--;) s = s.lastChild;
-                C.merge(p, s.childNodes), (s = d.firstChild).textContent = ""
-            } else p.push(e.createTextNode(o));
+                        for (s = s || d.appendChild(e.createElement("div")), a = (vt.exec(o) || ["", ""])[1].toLowerCase(), c = bt[a] || bt._default, s.innerHTML = c[1] + C.htmlPrefilter(o) + c[2], l = c[0]; l--;) s = s.lastChild;
+                        C.merge(p, s.childNodes), (s = d.firstChild).textContent = ""
+                    } else p.push(e.createTextNode(o));
             for (d.textContent = "", h = 0; o = p[h++];)
                 if (i && C.inArray(o, i) > -1) r && r.push(o);
                 else if (u = st(o), s = yt(d.appendChild(o), "script"), u && wt(s), n)
-                for (l = 0; o = s[l++];) gt.test(o.type || "") && n.push(o);
+                    for (l = 0; o = s[l++];) gt.test(o.type || "") && n.push(o);
             return d
         }
         var Ct = /^([^.]*)(?:\.(.+)|)/;
@@ -5999,7 +6000,7 @@ flarum.core = function (t) {
             return t === function () {
                 try {
                     return y.activeElement
-                } catch (t) {}
+                } catch (t) { }
             }() == ("focus" === e)
         }
 
@@ -6024,7 +6025,7 @@ flarum.core = function (t) {
                 handler: function (t) {
                     var i, r, o = J.get(this, e);
                     if (1 & t.isTrigger && this[e]) {
-                        if (o.length)(C.event.special[e] || {}).delegateType && t.stopPropagation();
+                        if (o.length) (C.event.special[e] || {}).delegateType && t.stopPropagation();
                         else if (o = a.call(arguments), J.set(this, e, o), i = n(this, e), this[e](), o !== (r = J.get(this, e)) || i ? J.set(this, e, !1) : r = {}, o !== r) return t.stopImmediatePropagation(), t.preventDefault(), r && r.value
                     } else o.length && (J.set(this, e, {
                         value: C.event.trigger(C.extend(o[0], C.Event.prototype), o.slice(1), this)
@@ -6038,8 +6039,8 @@ flarum.core = function (t) {
                 var o, s, a, c, u, l, d, p, h, f, m, v = J.get(t);
                 if (K(t))
                     for (n.handler && (n = (o = n).handler, r = o.selector), r && C.find.matchesSelector(ot, r), n.guid || (n.guid = C.guid++), (c = v.events) || (c = v.events = Object.create(null)), (s = v.handle) || (s = v.handle = function (e) {
-                            return void 0 !== C && C.event.triggered !== e.type ? C.event.dispatch.apply(t, arguments) : void 0
-                        }), u = (e = (e || "").match(L) || [""]).length; u--;) h = m = (a = Ct.exec(e[u]) || [])[1], f = (a[2] || "").split(".").sort(), h && (d = C.event.special[h] || {}, h = (r ? d.delegateType : d.bindType) || h, d = C.event.special[h] || {}, l = C.extend({
+                        return void 0 !== C && C.event.triggered !== e.type ? C.event.dispatch.apply(t, arguments) : void 0
+                    }), u = (e = (e || "").match(L) || [""]).length; u--;) h = m = (a = Ct.exec(e[u]) || [])[1], f = (a[2] || "").split(".").sort(), h && (d = C.event.special[h] || {}, h = (r ? d.delegateType : d.bindType) || h, d = C.event.special[h] || {}, l = C.extend({
                         type: h,
                         origType: m,
                         data: i,
@@ -6146,106 +6147,106 @@ flarum.core = function (t) {
             if (!(this instanceof C.Event)) return new C.Event(t, e);
             t && t.type ? (this.originalEvent = t, this.type = t.type, this.isDefaultPrevented = t.defaultPrevented || void 0 === t.defaultPrevented && !1 === t.returnValue ? Tt : St, this.target = t.target && 3 === t.target.nodeType ? t.target.parentNode : t.target, this.currentTarget = t.currentTarget, this.relatedTarget = t.relatedTarget) : this.type = t, e && C.extend(this, e), this.timeStamp = t && t.timeStamp || Date.now(), this[C.expando] = !0
         }).prototype = {
-            constructor: C.Event,
-            isDefaultPrevented: St,
-            isPropagationStopped: St,
-            isImmediatePropagationStopped: St,
-            isSimulated: !1,
-            preventDefault: function () {
-                var t = this.originalEvent;
-                this.isDefaultPrevented = Tt, t && !this.isSimulated && t.preventDefault()
-            },
-            stopPropagation: function () {
-                var t = this.originalEvent;
-                this.isPropagationStopped = Tt, t && !this.isSimulated && t.stopPropagation()
-            },
-            stopImmediatePropagation: function () {
-                var t = this.originalEvent;
-                this.isImmediatePropagationStopped = Tt, t && !this.isSimulated && t.stopImmediatePropagation(), this.stopPropagation()
-            }
-        }, C.each({
-            altKey: !0,
-            bubbles: !0,
-            cancelable: !0,
-            changedTouches: !0,
-            ctrlKey: !0,
-            detail: !0,
-            eventPhase: !0,
-            metaKey: !0,
-            pageX: !0,
-            pageY: !0,
-            shiftKey: !0,
-            view: !0,
-            char: !0,
-            code: !0,
-            charCode: !0,
-            key: !0,
-            keyCode: !0,
-            button: !0,
-            buttons: !0,
-            clientX: !0,
-            clientY: !0,
-            offsetX: !0,
-            offsetY: !0,
-            pointerId: !0,
-            pointerType: !0,
-            screenX: !0,
-            screenY: !0,
-            targetTouches: !0,
-            toElement: !0,
-            touches: !0,
-            which: !0
-        }, C.event.addProp), C.each({
-            focus: "focusin",
-            blur: "focusout"
-        }, (function (t, e) {
-            C.event.special[t] = {
-                setup: function () {
-                    return jt(this, t, Ot), !1
+                constructor: C.Event,
+                isDefaultPrevented: St,
+                isPropagationStopped: St,
+                isImmediatePropagationStopped: St,
+                isSimulated: !1,
+                preventDefault: function () {
+                    var t = this.originalEvent;
+                    this.isDefaultPrevented = Tt, t && !this.isSimulated && t.preventDefault()
                 },
-                trigger: function () {
-                    return jt(this, t), !0
+                stopPropagation: function () {
+                    var t = this.originalEvent;
+                    this.isPropagationStopped = Tt, t && !this.isSimulated && t.stopPropagation()
                 },
-                _default: function () {
-                    return !0
-                },
-                delegateType: e
-            }
-        })), C.each({
-            mouseenter: "mouseover",
-            mouseleave: "mouseout",
-            pointerenter: "pointerover",
-            pointerleave: "pointerout"
-        }, (function (t, e) {
-            C.event.special[t] = {
-                delegateType: e,
-                bindType: e,
-                handle: function (t) {
-                    var n, i = this,
-                        r = t.relatedTarget,
-                        o = t.handleObj;
-                    return r && (r === i || C.contains(i, r)) || (t.type = o.origType, n = o.handler.apply(this, arguments), t.type = e), n
+                stopImmediatePropagation: function () {
+                    var t = this.originalEvent;
+                    this.isImmediatePropagationStopped = Tt, t && !this.isSimulated && t.stopImmediatePropagation(), this.stopPropagation()
                 }
-            }
-        })), C.fn.extend({
-            on: function (t, e, n, i) {
-                return kt(this, t, e, n, i)
-            },
-            one: function (t, e, n, i) {
-                return kt(this, t, e, n, i, 1)
-            },
-            off: function (t, e, n) {
-                var i, r;
-                if (t && t.preventDefault && t.handleObj) return i = t.handleObj, C(t.delegateTarget).off(i.namespace ? i.origType + "." + i.namespace : i.origType, i.selector, i.handler), this;
-                if ("object" == typeof t) {
-                    for (r in t) this.off(r, e, t[r]);
-                    return this
+            }, C.each({
+                altKey: !0,
+                bubbles: !0,
+                cancelable: !0,
+                changedTouches: !0,
+                ctrlKey: !0,
+                detail: !0,
+                eventPhase: !0,
+                metaKey: !0,
+                pageX: !0,
+                pageY: !0,
+                shiftKey: !0,
+                view: !0,
+                char: !0,
+                code: !0,
+                charCode: !0,
+                key: !0,
+                keyCode: !0,
+                button: !0,
+                buttons: !0,
+                clientX: !0,
+                clientY: !0,
+                offsetX: !0,
+                offsetY: !0,
+                pointerId: !0,
+                pointerType: !0,
+                screenX: !0,
+                screenY: !0,
+                targetTouches: !0,
+                toElement: !0,
+                touches: !0,
+                which: !0
+            }, C.event.addProp), C.each({
+                focus: "focusin",
+                blur: "focusout"
+            }, (function (t, e) {
+                C.event.special[t] = {
+                    setup: function () {
+                        return jt(this, t, Ot), !1
+                    },
+                    trigger: function () {
+                        return jt(this, t), !0
+                    },
+                    _default: function () {
+                        return !0
+                    },
+                    delegateType: e
                 }
-                return !1 !== e && "function" != typeof e || (n = e, e = void 0), !1 === n && (n = St), this.each((function () {
-                    C.event.remove(this, t, n, e)
-                }))
-            }
-        });
+            })), C.each({
+                mouseenter: "mouseover",
+                mouseleave: "mouseout",
+                pointerenter: "pointerover",
+                pointerleave: "pointerout"
+            }, (function (t, e) {
+                C.event.special[t] = {
+                    delegateType: e,
+                    bindType: e,
+                    handle: function (t) {
+                        var n, i = this,
+                            r = t.relatedTarget,
+                            o = t.handleObj;
+                        return r && (r === i || C.contains(i, r)) || (t.type = o.origType, n = o.handler.apply(this, arguments), t.type = e), n
+                    }
+                }
+            })), C.fn.extend({
+                on: function (t, e, n, i) {
+                    return kt(this, t, e, n, i)
+                },
+                one: function (t, e, n, i) {
+                    return kt(this, t, e, n, i, 1)
+                },
+                off: function (t, e, n) {
+                    var i, r;
+                    if (t && t.preventDefault && t.handleObj) return i = t.handleObj, C(t.delegateTarget).off(i.namespace ? i.origType + "." + i.namespace : i.origType, i.selector, i.handler), this;
+                    if ("object" == typeof t) {
+                        for (r in t) this.off(r, e, t[r]);
+                        return this
+                    }
+                    return !1 !== e && "function" != typeof e || (n = e, e = void 0), !1 === n && (n = St), this.each((function () {
+                        C.event.remove(this, t, n, e)
+                    }))
+                }
+            });
         var At = /<script|<style|<link/i,
             Et = /checked\s*(?:[^=]|=\s*.checked.)/i,
             Pt = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
@@ -6385,7 +6386,7 @@ flarum.core = function (t) {
                         try {
                             for (; n < i; n++) 1 === (e = this[n] || {}).nodeType && (C.cleanData(yt(e, !1)), e.innerHTML = t);
                             e = 0
-                        } catch (t) {}
+                        } catch (t) { }
                     }
                     e && this.empty().append(t)
                 }), null, t, arguments.length)
@@ -6434,7 +6435,7 @@ flarum.core = function (t) {
                     delete this.get
                 }
             }
-        }! function () {
+        } ! function () {
             function t() {
                 if (l) {
                     u.style.cssText = "position:absolute;left:-11111px;width:60px;margin-top:1px;padding:0;border:0", l.style.cssText = "position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%", ot.appendChild(u).appendChild(l);
@@ -6714,12 +6715,12 @@ flarum.core = function (t) {
                 }),
                 l = u.props;
             for (! function (t, e) {
-                    var n, i, r, o, s;
-                    for (n in t)
-                        if (r = e[i = G(n)], o = t[n], Array.isArray(o) && (r = o[1], o = t[n] = o[0]), n !== i && (t[i] = o, delete t[n]), (s = C.cssHooks[i]) && "expand" in s)
-                            for (n in o = s.expand(o), delete t[i], o) n in t || (t[n] = o[n], e[n] = r);
-                        else e[i] = r
-                }(l, u.opts.specialEasing); o < s; o++)
+                var n, i, r, o, s;
+                for (n in t)
+                    if (r = e[i = G(n)], o = t[n], Array.isArray(o) && (r = o[1], o = t[n] = o[0]), n !== i && (t[i] = o, delete t[n]), (s = C.cssHooks[i]) && "expand" in s)
+                        for (n in o = s.expand(o), delete t[i], o) n in t || (t[n] = o[n], e[n] = r);
+                    else e[i] = r
+            }(l, u.opts.specialEasing); o < s; o++)
                 if (i = de.prefilters[o].call(u, t, l, u.opts)) return g(i.stop) && (C._queueHooks(u.elem, u.opts.queue).stop = i.stop.bind(i)), i;
             return C.map(l, le, u), g(u.opts.start) && u.opts.start.call(t, u), u.progress(u.opts.progress).done(u.opts.done, u.opts.complete).fail(u.opts.fail).always(u.opts.always), C.fx.timer(C.extend(c, {
                 elem: t,
@@ -6728,149 +6729,149 @@ flarum.core = function (t) {
             })), u
         }
         C.Animation = C.extend(de, {
-                tweeners: {
-                    "*": [function (t, e) {
-                        var n = this.createTween(t, e);
-                        return ut(n.elem, t, it.exec(e), n), n
-                    }]
-                },
-                tweener: function (t, e) {
-                    g(t) ? (e = t, t = ["*"]) : t = t.match(L);
-                    for (var n, i = 0, r = t.length; i < r; i++) n = t[i], de.tweeners[n] = de.tweeners[n] || [], de.tweeners[n].unshift(e)
-                },
-                prefilters: [function (t, e, n) {
-                    var i, r, o, s, a, c, u, l, d = "width" in e || "height" in e,
-                        p = this,
-                        h = {},
-                        f = t.style,
-                        m = t.nodeType && ct(t),
-                        v = J.get(t, "fxshow");
-                    for (i in n.queue || (null == (s = C._queueHooks(t, "fx")).unqueued && (s.unqueued = 0, a = s.empty.fire, s.empty.fire = function () {
-                            s.unqueued || a()
-                        }), s.unqueued++, p.always((function () {
-                            p.always((function () {
-                                s.unqueued--, C.queue(t, "fx").length || s.empty.fire()
-                            }))
-                        }))), e)
-                        if (r = e[i], oe.test(r)) {
-                            if (delete e[i], o = o || "toggle" === r, r === (m ? "hide" : "show")) {
-                                if ("show" !== r || !v || void 0 === v[i]) continue;
-                                m = !0
-                            }
-                            h[i] = v && v[i] || C.style(t, i)
+            tweeners: {
+                "*": [function (t, e) {
+                    var n = this.createTween(t, e);
+                    return ut(n.elem, t, it.exec(e), n), n
+                }]
+            },
+            tweener: function (t, e) {
+                g(t) ? (e = t, t = ["*"]) : t = t.match(L);
+                for (var n, i = 0, r = t.length; i < r; i++) n = t[i], de.tweeners[n] = de.tweeners[n] || [], de.tweeners[n].unshift(e)
+            },
+            prefilters: [function (t, e, n) {
+                var i, r, o, s, a, c, u, l, d = "width" in e || "height" in e,
+                    p = this,
+                    h = {},
+                    f = t.style,
+                    m = t.nodeType && ct(t),
+                    v = J.get(t, "fxshow");
+                for (i in n.queue || (null == (s = C._queueHooks(t, "fx")).unqueued && (s.unqueued = 0, a = s.empty.fire, s.empty.fire = function () {
+                    s.unqueued || a()
+                }), s.unqueued++, p.always((function () {
+                    p.always((function () {
+                        s.unqueued--, C.queue(t, "fx").length || s.empty.fire()
+                    }))
+                }))), e)
+                    if (r = e[i], oe.test(r)) {
+                        if (delete e[i], o = o || "toggle" === r, r === (m ? "hide" : "show")) {
+                            if ("show" !== r || !v || void 0 === v[i]) continue;
+                            m = !0
                         }
-                    if ((c = !C.isEmptyObject(e)) || !C.isEmptyObject(h))
-                        for (i in d && 1 === t.nodeType && (n.overflow = [f.overflow, f.overflowX, f.overflowY], null == (u = v && v.display) && (u = J.get(t, "display")), "none" === (l = C.css(t, "display")) && (u ? l = u : (pt([t], !0), u = t.style.display || u, l = C.css(t, "display"), pt([t]))), ("inline" === l || "inline-block" === l && null != u) && "none" === C.css(t, "float") && (c || (p.done((function () {
-                                f.display = u
-                            })), null == u && (l = f.display, u = "none" === l ? "" : l)), f.display = "inline-block")), n.overflow && (f.overflow = "hidden", p.always((function () {
-                                f.overflow = n.overflow[0], f.overflowX = n.overflow[1], f.overflowY = n.overflow[2]
-                            }))), c = !1, h) c || (v ? "hidden" in v && (m = v.hidden) : v = J.access(t, "fxshow", {
-                            display: u
-                        }), o && (v.hidden = !m), m && pt([t], !0), p.done((function () {
-                            for (i in m || pt([t]), J.remove(t, "fxshow"), h) C.style(t, i, h[i])
-                        }))), c = le(m ? v[i] : 0, i, p), i in v || (v[i] = c.start, m && (c.end = c.start, c.start = 0))
-                }],
-                prefilter: function (t, e) {
-                    e ? de.prefilters.unshift(t) : de.prefilters.push(t)
-                }
-            }), C.speed = function (t, e, n) {
-                var i = t && "object" == typeof t ? C.extend({}, t) : {
-                    complete: n || !n && e || g(t) && t,
-                    duration: t,
-                    easing: n && e || e && !g(e) && e
-                };
-                return C.fx.off ? i.duration = 0 : "number" != typeof i.duration && (i.duration in C.fx.speeds ? i.duration = C.fx.speeds[i.duration] : i.duration = C.fx.speeds._default), null != i.queue && !0 !== i.queue || (i.queue = "fx"), i.old = i.complete, i.complete = function () {
-                    g(i.old) && i.old.call(this), i.queue && C.dequeue(this, i.queue)
-                }, i
-            }, C.fn.extend({
-                fadeTo: function (t, e, n, i) {
-                    return this.filter(ct).css("opacity", 0).show().end().animate({
-                        opacity: e
-                    }, t, n, i)
-                },
-                animate: function (t, e, n, i) {
-                    var r = C.isEmptyObject(t),
-                        o = C.speed(e, n, i),
-                        s = function () {
-                            var e = de(this, C.extend({}, t), o);
-                            (r || J.get(this, "finish")) && e.stop(!0)
-                        };
-                    return s.finish = s, r || !1 === o.queue ? this.each(s) : this.queue(o.queue, s)
-                },
-                stop: function (t, e, n) {
-                    var i = function (t) {
-                        var e = t.stop;
-                        delete t.stop, e(n)
-                    };
-                    return "string" != typeof t && (n = e, e = t, t = void 0), e && this.queue(t || "fx", []), this.each((function () {
-                        var e = !0,
-                            r = null != t && t + "queueHooks",
-                            o = C.timers,
-                            s = J.get(this);
-                        if (r) s[r] && s[r].stop && i(s[r]);
-                        else
-                            for (r in s) s[r] && s[r].stop && se.test(r) && i(s[r]);
-                        for (r = o.length; r--;) o[r].elem !== this || null != t && o[r].queue !== t || (o[r].anim.stop(n), e = !1, o.splice(r, 1));
-                        !e && n || C.dequeue(this, t)
-                    }))
-                },
-                finish: function (t) {
-                    return !1 !== t && (t = t || "fx"), this.each((function () {
-                        var e, n = J.get(this),
-                            i = n[t + "queue"],
-                            r = n[t + "queueHooks"],
-                            o = C.timers,
-                            s = i ? i.length : 0;
-                        for (n.finish = !0, C.queue(this, t, []), r && r.stop && r.stop.call(this, !0), e = o.length; e--;) o[e].elem === this && o[e].queue === t && (o[e].anim.stop(!0), o.splice(e, 1));
-                        for (e = 0; e < s; e++) i[e] && i[e].finish && i[e].finish.call(this);
-                        delete n.finish
-                    }))
-                }
-            }), C.each(["toggle", "show", "hide"], (function (t, e) {
-                var n = C.fn[e];
-                C.fn[e] = function (t, i, r) {
-                    return null == t || "boolean" == typeof t ? n.apply(this, arguments) : this.animate(ue(e, !0), t, i, r)
-                }
-            })), C.each({
-                slideDown: ue("show"),
-                slideUp: ue("hide"),
-                slideToggle: ue("toggle"),
-                fadeIn: {
-                    opacity: "show"
-                },
-                fadeOut: {
-                    opacity: "hide"
-                },
-                fadeToggle: {
-                    opacity: "toggle"
-                }
-            }, (function (t, e) {
-                C.fn[t] = function (t, n, i) {
-                    return this.animate(e, t, n, i)
-                }
-            })), C.timers = [], C.fx.tick = function () {
-                var t, e = 0,
-                    n = C.timers;
-                for (ie = Date.now(); e < n.length; e++)(t = n[e])() || n[e] !== t || n.splice(e--, 1);
-                n.length || C.fx.stop(), ie = void 0
-            }, C.fx.timer = function (t) {
-                C.timers.push(t), C.fx.start()
-            }, C.fx.interval = 13, C.fx.start = function () {
-                re || (re = !0, ae())
-            }, C.fx.stop = function () {
-                re = null
-            }, C.fx.speeds = {
-                slow: 600,
-                fast: 200,
-                _default: 400
-            }, C.fn.delay = function (t, e) {
-                return t = C.fx && C.fx.speeds[t] || t, e = e || "fx", this.queue(e, (function (e, i) {
-                    var r = n.setTimeout(e, t);
-                    i.stop = function () {
-                        n.clearTimeout(r)
+                        h[i] = v && v[i] || C.style(t, i)
                     }
+                if ((c = !C.isEmptyObject(e)) || !C.isEmptyObject(h))
+                    for (i in d && 1 === t.nodeType && (n.overflow = [f.overflow, f.overflowX, f.overflowY], null == (u = v && v.display) && (u = J.get(t, "display")), "none" === (l = C.css(t, "display")) && (u ? l = u : (pt([t], !0), u = t.style.display || u, l = C.css(t, "display"), pt([t]))), ("inline" === l || "inline-block" === l && null != u) && "none" === C.css(t, "float") && (c || (p.done((function () {
+                        f.display = u
+                    })), null == u && (l = f.display, u = "none" === l ? "" : l)), f.display = "inline-block")), n.overflow && (f.overflow = "hidden", p.always((function () {
+                        f.overflow = n.overflow[0], f.overflowX = n.overflow[1], f.overflowY = n.overflow[2]
+                    }))), c = !1, h) c || (v ? "hidden" in v && (m = v.hidden) : v = J.access(t, "fxshow", {
+                        display: u
+                    }), o && (v.hidden = !m), m && pt([t], !0), p.done((function () {
+                        for (i in m || pt([t]), J.remove(t, "fxshow"), h) C.style(t, i, h[i])
+                    }))), c = le(m ? v[i] : 0, i, p), i in v || (v[i] = c.start, m && (c.end = c.start, c.start = 0))
+            }],
+            prefilter: function (t, e) {
+                e ? de.prefilters.unshift(t) : de.prefilters.push(t)
+            }
+        }), C.speed = function (t, e, n) {
+            var i = t && "object" == typeof t ? C.extend({}, t) : {
+                complete: n || !n && e || g(t) && t,
+                duration: t,
+                easing: n && e || e && !g(e) && e
+            };
+            return C.fx.off ? i.duration = 0 : "number" != typeof i.duration && (i.duration in C.fx.speeds ? i.duration = C.fx.speeds[i.duration] : i.duration = C.fx.speeds._default), null != i.queue && !0 !== i.queue || (i.queue = "fx"), i.old = i.complete, i.complete = function () {
+                g(i.old) && i.old.call(this), i.queue && C.dequeue(this, i.queue)
+            }, i
+        }, C.fn.extend({
+            fadeTo: function (t, e, n, i) {
+                return this.filter(ct).css("opacity", 0).show().end().animate({
+                    opacity: e
+                }, t, n, i)
+            },
+            animate: function (t, e, n, i) {
+                var r = C.isEmptyObject(t),
+                    o = C.speed(e, n, i),
+                    s = function () {
+                        var e = de(this, C.extend({}, t), o);
+                        (r || J.get(this, "finish")) && e.stop(!0)
+                    };
+                return s.finish = s, r || !1 === o.queue ? this.each(s) : this.queue(o.queue, s)
+            },
+            stop: function (t, e, n) {
+                var i = function (t) {
+                    var e = t.stop;
+                    delete t.stop, e(n)
+                };
+                return "string" != typeof t && (n = e, e = t, t = void 0), e && this.queue(t || "fx", []), this.each((function () {
+                    var e = !0,
+                        r = null != t && t + "queueHooks",
+                        o = C.timers,
+                        s = J.get(this);
+                    if (r) s[r] && s[r].stop && i(s[r]);
+                    else
+                        for (r in s) s[r] && s[r].stop && se.test(r) && i(s[r]);
+                    for (r = o.length; r--;) o[r].elem !== this || null != t && o[r].queue !== t || (o[r].anim.stop(n), e = !1, o.splice(r, 1));
+                    !e && n || C.dequeue(this, t)
                 }))
             },
+            finish: function (t) {
+                return !1 !== t && (t = t || "fx"), this.each((function () {
+                    var e, n = J.get(this),
+                        i = n[t + "queue"],
+                        r = n[t + "queueHooks"],
+                        o = C.timers,
+                        s = i ? i.length : 0;
+                    for (n.finish = !0, C.queue(this, t, []), r && r.stop && r.stop.call(this, !0), e = o.length; e--;) o[e].elem === this && o[e].queue === t && (o[e].anim.stop(!0), o.splice(e, 1));
+                    for (e = 0; e < s; e++) i[e] && i[e].finish && i[e].finish.call(this);
+                    delete n.finish
+                }))
+            }
+        }), C.each(["toggle", "show", "hide"], (function (t, e) {
+            var n = C.fn[e];
+            C.fn[e] = function (t, i, r) {
+                return null == t || "boolean" == typeof t ? n.apply(this, arguments) : this.animate(ue(e, !0), t, i, r)
+            }
+        })), C.each({
+            slideDown: ue("show"),
+            slideUp: ue("hide"),
+            slideToggle: ue("toggle"),
+            fadeIn: {
+                opacity: "show"
+            },
+            fadeOut: {
+                opacity: "hide"
+            },
+            fadeToggle: {
+                opacity: "toggle"
+            }
+        }, (function (t, e) {
+            C.fn[t] = function (t, n, i) {
+                return this.animate(e, t, n, i)
+            }
+        })), C.timers = [], C.fx.tick = function () {
+            var t, e = 0,
+                n = C.timers;
+            for (ie = Date.now(); e < n.length; e++)(t = n[e])() || n[e] !== t || n.splice(e--, 1);
+            n.length || C.fx.stop(), ie = void 0
+        }, C.fx.timer = function (t) {
+            C.timers.push(t), C.fx.start()
+        }, C.fx.interval = 13, C.fx.start = function () {
+            re || (re = !0, ae())
+        }, C.fx.stop = function () {
+            re = null
+        }, C.fx.speeds = {
+            slow: 600,
+            fast: 200,
+            _default: 400
+        }, C.fn.delay = function (t, e) {
+            return t = C.fx && C.fx.speeds[t] || t, e = e || "fx", this.queue(e, (function (e, i) {
+                var r = n.setTimeout(e, t);
+                i.stop = function () {
+                    n.clearTimeout(r)
+                }
+            }))
+        },
             function () {
                 var t = y.createElement("input"),
                     e = y.createElement("select").appendChild(y.createElement("option"));
@@ -7131,7 +7132,7 @@ flarum.core = function (t) {
             if (!t || "string" != typeof t) return null;
             try {
                 e = (new n.DOMParser).parseFromString(t, "text/xml")
-            } catch (t) {}
+            } catch (t) { }
             return i = e && e.getElementsByTagName("parsererror")[0], e && !i || C.error("Invalid XML: " + (i ? C.map(i.childNodes, (function (t) {
                 return t.textContent
             })).join("\n") : t)), e
@@ -7364,7 +7365,7 @@ flarum.core = function (t) {
                             o = o || s
                         }
                         if (o) return o !== c[0] && c.unshift(o), n[o]
-                    }(h, T, s)), !d && C.inArray("script", h.dataTypes) > -1 && C.inArray("json", h.dataTypes) < 0 && (h.converters["text script"] = function () {}), w = function (t, e, n, i) {
+                    }(h, T, s)), !d && C.inArray("script", h.dataTypes) > -1 && C.inArray("json", h.dataTypes) < 0 && (h.converters["text script"] = function () { }), w = function (t, e, n, i) {
                         var r, o, s, a, c, u = {},
                             l = t.dataTypes.slice();
                         if (l[1])
@@ -7373,23 +7374,23 @@ flarum.core = function (t) {
                             if (t.responseFields[o] && (n[t.responseFields[o]] = e), !c && i && t.dataFilter && (e = t.dataFilter(e, t.dataType)), c = o, o = l.shift())
                                 if ("*" === o) o = c;
                                 else if ("*" !== c && c !== o) {
-                            if (!(s = u[c + " " + o] || u["* " + o]))
-                                for (r in u)
-                                    if ((a = r.split(" "))[1] === o && (s = u[c + " " + a[0]] || u["* " + a[0]])) {
-                                        !0 === s ? s = u[r] : !0 !== u[r] && (o = a[0], l.unshift(a[1]));
-                                        break
-                                    }
-                            if (!0 !== s)
-                                if (s && t.throws) e = s(e);
-                                else try {
-                                    e = s(e)
-                                } catch (t) {
-                                    return {
-                                        state: "parsererror",
-                                        error: s ? t : "No conversion from " + c + " to " + o
-                                    }
+                                    if (!(s = u[c + " " + o] || u["* " + o]))
+                                        for (r in u)
+                                            if ((a = r.split(" "))[1] === o && (s = u[c + " " + a[0]] || u["* " + a[0]])) {
+                                                !0 === s ? s = u[r] : !0 !== u[r] && (o = a[0], l.unshift(a[1]));
+                                                break
+                                            }
+                                    if (!0 !== s)
+                                        if (s && t.throws) e = s(e);
+                                        else try {
+                                            e = s(e)
+                                        } catch (t) {
+                                            return {
+                                                state: "parsererror",
+                                                error: s ? t : "No conversion from " + c + " to " + o
+                                            }
+                                        }
                                 }
-                        }
                         return {
                             state: "success",
                             data: e
@@ -7426,7 +7427,7 @@ flarum.core = function (t) {
                 async: !1,
                 global: !1,
                 converters: {
-                    "text script": function () {}
+                    "text script": function () { }
                 },
                 dataFilter: function (t) {
                     C.globalEval(t, e, n)
@@ -7467,12 +7468,12 @@ flarum.core = function (t) {
         }, C.ajaxSettings.xhr = function () {
             try {
                 return new n.XMLHttpRequest
-            } catch (t) {}
+            } catch (t) { }
         };
         var qe = {
-                0: 200,
-                1223: 204
-            },
+            0: 200,
+            1223: 204
+        },
             ze = C.ajaxSettings.xhr();
         v.cors = !!ze && "withCredentials" in ze, v.ajax = ze = !!ze, C.ajaxTransport((function (t) {
             var e, i;
@@ -7848,7 +7849,7 @@ flarum.core = function (t) {
                 return n.call(this, t, 0)
             }
         }
-    }! function () {
+    } ! function () {
         try {
             n = "function" == typeof setTimeout ? setTimeout : o
         } catch (t) {
@@ -7897,7 +7898,7 @@ flarum.core = function (t) {
         this.fun = t, this.array = e
     }
 
-    function m() {}
+    function m() { }
     r.nextTick = function (t) {
         var e = new Array(arguments.length - 1);
         if (arguments.length > 1)
@@ -8045,41 +8046,41 @@ flarum.core = function (t) {
             if (e !== n && (null != e || null != n))
                 if (null == e || 0 === e.length) u(t, n, 0, n.length, i, r, o);
                 else if (null == n || 0 === n.length) x(t, e, 0, e.length);
-            else {
-                var s = null != e[0] && null != e[0].key,
-                    a = null != n[0] && null != n[0].key,
-                    c = 0,
-                    d = 0;
-                if (!s)
-                    for (; d < e.length && null == e[d];) d++;
-                if (!a)
-                    for (; c < n.length && null == n[c];) c++;
-                if (null === a && null == s) return;
-                if (s !== a) x(t, e, d, e.length), u(t, n, c, n.length, i, r, o);
-                else if (a) {
-                    for (var p, h, y, w, C, T = e.length - 1, S = n.length - 1; T >= d && S >= c && (y = e[T], w = n[S], y.key === w.key);) y !== w && f(t, y, w, i, r, o), null != w.dom && (r = w.dom), T--, S--;
-                    for (; T >= d && S >= c && (p = e[d], h = n[c], p.key === h.key);) d++, c++, p !== h && f(t, p, h, i, g(e, d, r), o);
-                    for (; T >= d && S >= c && c !== S && p.key === w.key && y.key === h.key;) b(t, y, C = g(e, d, r)), y !== h && f(t, y, h, i, C, o), ++c <= --S && b(t, p, r), p !== w && f(t, p, w, i, r, o), null != w.dom && (r = w.dom), d++, y = e[--T], w = n[S], p = e[d], h = n[c];
-                    for (; T >= d && S >= c && y.key === w.key;) y !== w && f(t, y, w, i, r, o), null != w.dom && (r = w.dom), S--, y = e[--T], w = n[S];
-                    if (c > S) x(t, e, d, T + 1);
-                    else if (d > T) u(t, n, c, S + 1, i, r, o);
-                    else {
-                        var O, k, j = r,
-                            A = S - c + 1,
-                            E = new Array(A),
-                            P = 0,
-                            _ = 0,
-                            D = 2147483647,
-                            $ = 0;
-                        for (_ = 0; _ < A; _++) E[_] = -1;
-                        for (_ = S; _ >= c; _--) {
-                            null == O && (O = m(e, d, T + 1));
-                            var I = O[(w = n[_]).key];
-                            null != I && (D = I < D ? I : -1, E[_ - c] = I, y = e[I], e[I] = null, y !== w && f(t, y, w, i, r, o), null != w.dom && (r = w.dom), $++)
-                        }
-                        if (r = j, $ !== T - d + 1 && x(t, e, d, T + 1), 0 === $) u(t, n, c, S + 1, i, r, o);
-                        else if (-1 === D)
-                            for (P = (k = function (t) {
+                else {
+                    var s = null != e[0] && null != e[0].key,
+                        a = null != n[0] && null != n[0].key,
+                        c = 0,
+                        d = 0;
+                    if (!s)
+                        for (; d < e.length && null == e[d];) d++;
+                    if (!a)
+                        for (; c < n.length && null == n[c];) c++;
+                    if (null === a && null == s) return;
+                    if (s !== a) x(t, e, d, e.length), u(t, n, c, n.length, i, r, o);
+                    else if (a) {
+                        for (var p, h, y, w, C, T = e.length - 1, S = n.length - 1; T >= d && S >= c && (y = e[T], w = n[S], y.key === w.key);) y !== w && f(t, y, w, i, r, o), null != w.dom && (r = w.dom), T--, S--;
+                        for (; T >= d && S >= c && (p = e[d], h = n[c], p.key === h.key);) d++, c++, p !== h && f(t, p, h, i, g(e, d, r), o);
+                        for (; T >= d && S >= c && c !== S && p.key === w.key && y.key === h.key;) b(t, y, C = g(e, d, r)), y !== h && f(t, y, h, i, C, o), ++c <= --S && b(t, p, r), p !== w && f(t, p, w, i, r, o), null != w.dom && (r = w.dom), d++, y = e[--T], w = n[S], p = e[d], h = n[c];
+                        for (; T >= d && S >= c && y.key === w.key;) y !== w && f(t, y, w, i, r, o), null != w.dom && (r = w.dom), S--, y = e[--T], w = n[S];
+                        if (c > S) x(t, e, d, T + 1);
+                        else if (d > T) u(t, n, c, S + 1, i, r, o);
+                        else {
+                            var O, k, j = r,
+                                A = S - c + 1,
+                                E = new Array(A),
+                                P = 0,
+                                _ = 0,
+                                D = 2147483647,
+                                $ = 0;
+                            for (_ = 0; _ < A; _++) E[_] = -1;
+                            for (_ = S; _ >= c; _--) {
+                                null == O && (O = m(e, d, T + 1));
+                                var I = O[(w = n[_]).key];
+                                null != I && (D = I < D ? I : -1, E[_ - c] = I, y = e[I], e[I] = null, y !== w && f(t, y, w, i, r, o), null != w.dom && (r = w.dom), $++)
+                            }
+                            if (r = j, $ !== T - d + 1 && x(t, e, d, T + 1), 0 === $) u(t, n, c, S + 1, i, r, o);
+                            else if (-1 === D)
+                                for (P = (k = function (t) {
                                     var e = [0],
                                         n = 0,
                                         i = 0,
@@ -8102,31 +8103,31 @@ flarum.core = function (t) {
                                     for (; n-- > 0;) e[n] = i, i = v[i];
                                     return v.length = 0, e
                                 }(E)).length - 1, _ = S; _ >= c; _--) h = n[_], -1 === E[_ - c] ? l(t, h, i, o, r) : k[P] === _ - c ? P-- : b(t, h, r), null != h.dom && (r = n[_].dom);
-                        else
-                            for (_ = S; _ >= c; _--) h = n[_], -1 === E[_ - c] && l(t, h, i, o, r), null != h.dom && (r = n[_].dom)
+                            else
+                                for (_ = S; _ >= c; _--) h = n[_], -1 === E[_ - c] && l(t, h, i, o, r), null != h.dom && (r = n[_].dom)
+                        }
+                    } else {
+                        var M = e.length < n.length ? e.length : n.length;
+                        for (c = c < d ? c : d; c < M; c++)(p = e[c]) === (h = n[c]) || null == p && null == h || (null == p ? l(t, h, i, o, g(e, c + 1, r)) : null == h ? N(t, p) : f(t, p, h, i, g(e, c + 1, r), o));
+                        e.length > M && x(t, e, c, e.length), n.length > M && u(t, n, c, n.length, i, r, o)
                     }
-                } else {
-                    var M = e.length < n.length ? e.length : n.length;
-                    for (c = c < d ? c : d; c < M; c++)(p = e[c]) === (h = n[c]) || null == p && null == h || (null == p ? l(t, h, i, o, g(e, c + 1, r)) : null == h ? N(t, p) : f(t, p, h, i, g(e, c + 1, r), o));
-                    e.length > M && x(t, e, c, e.length), n.length > M && u(t, n, c, n.length, i, r, o)
                 }
-            }
         }
 
         function f(t, e, n, r, s, c) {
             var u = e.tag;
             if (u === n.tag) {
                 if (n.state = e.state, n.events = e.events, function (t, e) {
-                        do {
-                            var n;
-                            if (null != t.attrs && "function" == typeof t.attrs.onbeforeupdate)
-                                if (void 0 !== (n = a.call(t.attrs.onbeforeupdate, t, e)) && !n) break;
-                            if ("string" != typeof t.tag && "function" == typeof t.state.onbeforeupdate)
-                                if (void 0 !== (n = a.call(t.state.onbeforeupdate, t, e)) && !n) break;
-                            return !1
-                        } while (0);
-                        return t.dom = e.dom, t.domSize = e.domSize, t.instance = e.instance, t.attrs = e.attrs, t.children = e.children, t.text = e.text, !0
-                    }(n, e)) return;
+                    do {
+                        var n;
+                        if (null != t.attrs && "function" == typeof t.attrs.onbeforeupdate)
+                            if (void 0 !== (n = a.call(t.attrs.onbeforeupdate, t, e)) && !n) break;
+                        if ("string" != typeof t.tag && "function" == typeof t.state.onbeforeupdate)
+                            if (void 0 !== (n = a.call(t.state.onbeforeupdate, t, e)) && !n) break;
+                        return !1
+                    } while (0);
+                    return t.dom = e.dom, t.domSize = e.domSize, t.instance = e.instance, t.attrs = e.attrs, t.children = e.children, t.text = e.text, !0
+                }(n, e)) return;
                 if ("string" == typeof u) switch (null != n.attrs && L(n.attrs, n, r), u) {
                     case "#":
                         ! function (t, e) {
@@ -8295,8 +8296,8 @@ flarum.core = function (t) {
 
         function O(t, e, i, r, o) {
             if ("key" !== e && "is" !== e && null != r && !j(e) && (i !== r || function (t, e) {
-                    return "value" === e || "checked" === e || "selectedIndex" === e || "selected" === e && t.dom === c() || "option" === t.tag && t.dom.parentNode === n.activeElement
-                }(t, e) || "object" == typeof r)) {
+                return "value" === e || "checked" === e || "selectedIndex" === e || "selected" === e && t.dom === c() || "option" === t.tag && t.dom.parentNode === n.activeElement
+            }(t, e) || "object" == typeof r)) {
                 if ("o" === e[0] && "n" === e[1]) return I(t, e, r);
                 if ("xlink:" === e.slice(0, 6)) t.dom.setAttributeNS("http://www.w3.org/1999/xlink", e.slice(6), r);
                 else if ("style" === e) D(t.dom, i, r);
@@ -8316,9 +8317,9 @@ flarum.core = function (t) {
                 if ("o" !== e[0] || "n" !== e[1] || j(e))
                     if ("style" === e) D(t.dom, n, null);
                     else if (!A(t, e, i) || "className" === e || "value" === e && ("option" === t.tag || "select" === t.tag && -1 === t.dom.selectedIndex && t.dom === c()) || "input" === t.tag && "type" === e) {
-                var r = e.indexOf(":"); - 1 !== r && (e = e.slice(r + 1)), !1 !== n && t.dom.removeAttribute("className" === e ? "class" : e)
-            } else t.dom[e] = null;
-            else I(t, e, void 0)
+                        var r = e.indexOf(":"); - 1 !== r && (e = e.slice(r + 1)), !1 !== n && t.dom.removeAttribute("className" === e ? "class" : e)
+                    } else t.dom[e] = null;
+                else I(t, e, void 0)
         }
 
         function j(t) {
@@ -8346,12 +8347,12 @@ flarum.core = function (t) {
                 for (var i in t.style.cssText = "", n) {
                     null != (r = n[i]) && t.style.setProperty(_(i), String(r))
                 } else {
-                    for (var i in n) {
-                        var r;
-                        null != (r = n[i]) && (r = String(r)) !== String(e[i]) && t.style.setProperty(_(i), r)
-                    }
-                    for (var i in e) null != e[i] && null == n[i] && t.style.removeProperty(_(i))
+                for (var i in n) {
+                    var r;
+                    null != (r = n[i]) && (r = String(r)) !== String(e[i]) && t.style.setProperty(_(i), r)
                 }
+                for (var i in e) null != e[i] && null == n[i] && t.style.removeProperty(_(i))
+            }
         }
 
         function $() {
@@ -8373,9 +8374,9 @@ flarum.core = function (t) {
             "function" == typeof t.onupdate && n.push(a.bind(t.onupdate, e))
         }
         return $.prototype = Object.create(null), $.prototype.handleEvent = function (t) {
-                var e, n = this["on" + t.type];
-                "function" == typeof n ? e = n.call(t.currentTarget, t) : "function" == typeof n.handleEvent && n.handleEvent(t), this._ && !1 !== t.redraw && (0, this._)(), !1 === e && (t.preventDefault(), t.stopPropagation())
-            },
+            var e, n = this["on" + t.type];
+            "function" == typeof n ? e = n.call(t.currentTarget, t) : "function" == typeof n.handleEvent && n.handleEvent(t), this._ && !1 !== t.redraw && (0, this._)(), !1 === e && (t.preventDefault(), t.stopPropagation())
+        },
             function (t, n, r) {
                 if (!t) throw new TypeError("Ensure the DOM element being passed to m.route/m.mount/m.render is not undefined.");
                 var o = [],
@@ -8482,8 +8483,8 @@ flarum.core = function (t) {
                     h = d,
                     f = d.abort;
                 for (var m in d.abort = function () {
-                        p = !0, f.call(this)
-                    }, d.open(s, e, !1 !== n.async, "string" == typeof n.user ? n.user : void 0, "string" == typeof n.password ? n.password : void 0), u && null != c && !a(n, /^content-type$/i) && d.setRequestHeader("Content-Type", "application/json; charset=utf-8"), "function" == typeof n.deserialize || a(n, /^accept$/i) || d.setRequestHeader("Accept", "application/json, text/*"), n.withCredentials && (d.withCredentials = n.withCredentials), n.timeout && (d.timeout = n.timeout), d.responseType = l, n.headers)({}).hasOwnProperty.call(n.headers, m) && d.setRequestHeader(m, n.headers[m]);
+                    p = !0, f.call(this)
+                }, d.open(s, e, !1 !== n.async, "string" == typeof n.user ? n.user : void 0, "string" == typeof n.password ? n.password : void 0), u && null != c && !a(n, /^content-type$/i) && d.setRequestHeader("Content-Type", "application/json; charset=utf-8"), "function" == typeof n.deserialize || a(n, /^accept$/i) || d.setRequestHeader("Accept", "application/json, text/*"), n.withCredentials && (d.withCredentials = n.withCredentials), n.timeout && (d.timeout = n.timeout), d.responseType = l, n.headers) ({}).hasOwnProperty.call(n.headers, m) && d.setRequestHeader(m, n.headers[m]);
                 d.onreadystatechange = function (t) {
                     if (!p && 4 === t.target.readyState) try {
                         var o, s = t.target.status >= 200 && t.target.status < 300 || 304 === t.target.status || /^file:\/\//i.test(e),
@@ -8563,8 +8564,8 @@ flarum.core = function (t) {
                 if (d = null, null != s) {
                     var k = a(s);
                     if (!C.some((function (t) {
-                            return t.check(k)
-                        }))) throw new ReferenceError("Default route doesn't match any known routes")
+                        return t.check(k)
+                    }))) throw new ReferenceError("Default route doesn't match any known routes")
                 }
 
                 function j() {
@@ -8593,7 +8594,7 @@ flarum.core = function (t) {
                                                 h = null == o || "function" != typeof o.view && "function" != typeof o ? "div" : o, f = r.params, m = i, v = null, g = s.render ? s : null, 2 === N ? n.redraw() : (N = 2, n.redraw.sync())
                                             }
                                         };
-                                    return void(s.view || "function" == typeof s ? (s = {}, u(c)) : s.onmatch ? S.then((function () {
+                                    return void (s.view || "function" == typeof s ? (s = {}, u(c)) : s.onmatch ? S.then((function () {
                                         return s.onmatch(r.params, i, a)
                                     })).then(u, o) : u("div"))
                                 }
@@ -8871,8 +8872,8 @@ flarum.core = function (t) {
             if (this.isShown && this.options.backdrop) {
                 var o = t.support.transition && r;
                 if (this.$backdrop = t(document.createElement("div")).addClass("modal-backdrop " + r).appendTo(this.$body), this.$element.on("click.dismiss.bs.modal", t.proxy((function (t) {
-                        this.ignoreBackdropClick ? this.ignoreBackdropClick = !1 : t.target === t.currentTarget && ("static" == this.options.backdrop ? this.$element[0].focus() : this.hide())
-                    }), this)), o && this.$backdrop[0].offsetWidth, this.$backdrop.addClass("in"), !n) return;
+                    this.ignoreBackdropClick ? this.ignoreBackdropClick = !1 : t.target === t.currentTarget && ("static" == this.options.backdrop ? this.$element[0].focus() : this.hide())
+                }), this)), o && this.$backdrop[0].offsetWidth, this.$backdrop.addClass("in"), !n) return;
                 o ? this.$backdrop.one("bsTransitionEnd", n).emulateTransitionEnd(e.BACKDROP_TRANSITION_DURATION) : n()
             } else if (!this.isShown && this.$backdrop) {
                 this.$backdrop.removeClass("in");
@@ -8983,8 +8984,8 @@ flarum.core = function (t) {
             var s = e.nodeName.toLowerCase();
             if (-1 !== t.inArray(s, i)) return -1 === t.inArray(s, n) || Boolean(e.nodeValue.match(r) || e.nodeValue.match(o));
             for (var a = t(i).filter((function (t, e) {
-                    return e instanceof RegExp
-                })), c = 0, u = a.length; c < u; c++)
+                return e instanceof RegExp
+            })), c = 0, u = a.length; c < u; c++)
                 if (s.match(a[c])) return !0;
             return !1
         }
@@ -8996,14 +8997,14 @@ flarum.core = function (t) {
             var r = document.implementation.createHTMLDocument("sanitization");
             r.body.innerHTML = e;
             for (var o = t.map(n, (function (t, e) {
-                    return e
-                })), a = t(r.body).find("*"), c = 0, u = a.length; c < u; c++) {
+                return e
+            })), a = t(r.body).find("*"), c = 0, u = a.length; c < u; c++) {
                 var l = a[c],
                     d = l.nodeName.toLowerCase();
                 if (-1 !== t.inArray(d, o))
                     for (var p = t.map(l.attributes, (function (t) {
-                            return t
-                        })), h = [].concat(n["*"] || [], n[d] || []), f = 0, m = p.length; f < m; f++) s(p[f], h) || l.removeAttribute(p[f].nodeName);
+                        return t
+                    })), h = [].concat(n["*"] || [], n[d] || []), f = 0, m = p.length; f < m; f++) s(p[f], h) || l.removeAttribute(p[f].nodeName);
                 else l.parentNode.removeChild(l)
             }
             return r.body.innerHTML
@@ -9030,10 +9031,10 @@ flarum.core = function (t) {
             whiteList: i
         }, c.prototype.init = function (e, n, i) {
             if (this.enabled = !0, this.type = e, this.$element = t(n), this.options = this.getOptions(i), this.$viewport = this.options.viewport && t(document).find(t.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : this.options.viewport.selector || this.options.viewport), this.inState = {
-                    click: !1,
-                    hover: !1,
-                    focus: !1
-                }, this.$element[0] instanceof document.constructor && !this.options.selector) throw new Error("`selector` option must be specified when initializing " + this.type + " on the window.document object!");
+                click: !1,
+                hover: !1,
+                focus: !1
+            }, this.$element[0] instanceof document.constructor && !this.options.selector) throw new Error("`selector` option must be specified when initializing " + this.type + " on the window.document object!");
             for (var r = this.options.trigger.split(" "), o = r.length; o--;) {
                 var s = r[o];
                 if ("click" == s) this.$element.on("click." + this.type, this.options.selector, t.proxy(this.toggle, this));
@@ -9295,8 +9296,8 @@ flarum.core = function (t) {
     ! function (t) {
         function e(e) {
             if ("string" == typeof e.data && (e.data = {
-                    keys: e.data
-                }), e.data && e.data.keys && "string" == typeof e.data.keys) {
+                keys: e.data
+            }), e.data && e.data.keys && "string" == typeof e.data.keys) {
                 var n = e.handler,
                     i = e.data.keys.toLowerCase().split(" ");
                 e.handler = function (e) {
@@ -9439,8 +9440,8 @@ flarum.core = function (t) {
             return r(e), r
         }, n.merge = r, n.combine = i, n.scanMerge = function (t, e) {
             var n = t.map((function (t) {
-                    return t[0]
-                })),
+                return t[0]
+            })),
                 r = i((function () {
                     var i = arguments[arguments.length - 1];
                     return n.forEach((function (n, r) {
@@ -9494,9 +9495,9 @@ flarum.core = function (t) {
 
         function i(t, e) {
             var i = e.every((function (t) {
-                    if (t.constructor !== n) throw new Error("Ensure that each item passed to stream.combine/stream.merge/lift is a stream");
-                    return "active" === t._state
-                })),
+                if (t.constructor !== n) throw new Error("Ensure that each item passed to stream.combine/stream.merge/lift is a stream");
+                return "active" === t._state
+            })),
                 r = i ? n(t.apply(null, e.concat([e]))) : n(),
                 o = [],
                 s = e.map((function (n) {
@@ -9679,7 +9680,7 @@ flarum.core = function (t) {
                         if ((p = t[s]) < e && ++n > c && m("overflow"), p == e) {
                             for (u = n, l = 36; !(u < (d = l <= o ? 1 : l >= o + 26 ? 26 : l - o)); l += 36) N = u - d, y = 36 - d, C.push(f(w(d + N % y, 0))), u = h(N / y);
                             C.push(f(w(u, 0))), o = x(n, g, i == r), n = 0, ++i
-                        }++n, ++e
+                        } ++n, ++e
                 }
                 return C.join("")
             }
@@ -9708,7 +9709,7 @@ flarum.core = function (t) {
     }).call(this, n(146)(t), n(50))
 }, function (t, e) {
     t.exports = function (t) {
-        return t.webpackPolyfill || (t.deprecate = function () {}, t.paths = [], t.children || (t.children = []), Object.defineProperty(t, "loaded", {
+        return t.webpackPolyfill || (t.deprecate = function () { }, t.paths = [], t.children || (t.children = []), Object.defineProperty(t, "loaded", {
             enumerable: !0,
             get: function () {
                 return t.l
@@ -9756,7 +9757,7 @@ flarum.core = function (t) {
     }, n.prototype.removeCanvas = function () {
         this.canvas.parentNode.removeChild(this.canvas)
     };
-    var i = function () {};
+    var i = function () { };
     /*!
      * quantize.js Copyright 2008 Nick Rabinowitz.
      * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
@@ -9767,14 +9768,14 @@ flarum.core = function (t) {
      * Licensed under the BSD License: http://www.opensource.org/licenses/bsd-license.php
      */
     if (i.prototype.getColor = function (t, e) {
-            return this.getPalette(t, 5, e)[0]
-        }, i.prototype.getPalette = function (t, e, i) {
-            void 0 === e && (e = 10), (void 0 === i || 1 > i) && (i = 10);
-            for (var r, s, a, c, u = new n(t), l = u.getImageData().data, d = u.getPixelCount(), p = [], h = 0; d > h; h += i) s = l[(r = 4 * h) + 0], a = l[r + 1], c = l[r + 2], l[r + 3] >= 125 && (s > 250 && a > 250 && c > 250 || p.push([s, a, c]));
-            var f = o.quantize(p, e),
-                m = f ? f.palette() : null;
-            return u.removeCanvas(), m
-        }, !r) var r = {
+        return this.getPalette(t, 5, e)[0]
+    }, i.prototype.getPalette = function (t, e, i) {
+        void 0 === e && (e = 10), (void 0 === i || 1 > i) && (i = 10);
+        for (var r, s, a, c, u = new n(t), l = u.getImageData().data, d = u.getPixelCount(), p = [], h = 0; d > h; h += i) s = l[(r = 4 * h) + 0], a = l[r + 1], c = l[r + 2], l[r + 3] >= 125 && (s > 250 && a > 250 && c > 250 || p.push([s, a, c]));
+        var f = o.quantize(p, e),
+            m = f ? f.palette() : null;
+        return u.removeCanvas(), m
+    }, !r) var r = {
         map: function (t, e) {
             var n = {};
             return e ? t.map((function (t, i) {
@@ -9875,19 +9876,19 @@ flarum.core = function (t) {
                             for (l = n.b1; l <= n.b2; l++) d += e[t(c, u, l)] || 0;
                         p += d, h[c] = p
                     } else if (a == o)
-                        for (c = n.g1; c <= n.g2; c++) {
-                            for (d = 0, u = n.r1; u <= n.r2; u++)
-                                for (l = n.b1; l <= n.b2; l++) d += e[t(u, c, l)] || 0;
-                            p += d, h[c] = p
-                        } else
-                            for (c = n.b1; c <= n.b2; c++) {
-                                for (d = 0, u = n.r1; u <= n.r2; u++)
-                                    for (l = n.g1; l <= n.g2; l++) d += e[t(u, l, c)] || 0;
-                                p += d, h[c] = p
-                            }
+                    for (c = n.g1; c <= n.g2; c++) {
+                        for (d = 0, u = n.r1; u <= n.r2; u++)
+                            for (l = n.b1; l <= n.b2; l++) d += e[t(u, c, l)] || 0;
+                        p += d, h[c] = p
+                    } else
+                    for (c = n.b1; c <= n.b2; c++) {
+                        for (d = 0, u = n.r1; u <= n.r2; u++)
+                            for (l = n.g1; l <= n.g2; l++) d += e[t(u, l, c)] || 0;
+                        p += d, h[c] = p
+                    }
                 return h.forEach((function (t, e) {
-                        f[e] = p - t
-                    })),
+                    f[e] = p - t
+                })),
                     function (t) {
                         var e, i, r, o, s, a = t + "1",
                             u = t + "2",
@@ -10006,8 +10007,8 @@ flarum.core = function (t) {
                     }));
                 h.push(p), c(h, d * n);
                 for (var f = new e((function (t, e) {
-                        return r.naturalOrder(t.count() * t.volume(), e.count() * e.volume())
-                    })); h.size();) f.push(h.pop());
+                    return r.naturalOrder(t.count() * t.volume(), e.count() * e.volume())
+                })); h.size();) f.push(h.pop());
                 c(f, n - f.size());
                 for (var m = new i; f.size();) m.push(f.pop());
                 return m
@@ -10015,7 +10016,7 @@ flarum.core = function (t) {
         }
     }();
     t.exports = i
-}, function (t, e) {}, , function (t, e, n) {
+}, function (t, e) { }, , function (t, e, n) {
     "use strict";
     n.r(e), n.d(e, "Extend", (function () {
         return i.a
@@ -10197,7 +10198,7 @@ flarum.core = function (t) {
                 return t && t !== this.attrs.originalContent
             }, n.headerItems = function () {
                 return new l.a
-            }, n.onsubmit = function () {}, n.loaded = function () {
+            }, n.onsubmit = function () { }, n.loaded = function () {
                 this.loading = !1, m.redraw()
             }, e
         }(d.a),
@@ -10208,56 +10209,56 @@ flarum.core = function (t) {
         app.composer.isFullScreen() && (app.composer.minimize(), t.stopPropagation())
     }
     var D = function (t) {
-            function e() {
-                return t.apply(this, arguments) || this
-            }
-            Object(o.a)(e, t), e.initAttrs = function (e) {
-                t.initAttrs.call(this, e), e.placeholder = e.placeholder || Object(P.a)(app.translator.trans("core.forum.composer_reply.body_placeholder")), e.submitLabel = e.submitLabel || app.translator.trans("core.forum.composer_reply.submit_button"), e.confirmExit = e.confirmExit || Object(P.a)(app.translator.trans("core.forum.composer_reply.discard_confirmation"))
-            };
-            var n = e.prototype;
-            return n.headerItems = function () {
-                var e = t.prototype.headerItems.call(this),
-                    n = this.attrs.discussion;
-                return e.add("title", m("h3", null, Object(b.a)("fas fa-reply"), " ", m(f.a, {
-                    href: app.route.discussion(n),
-                    onclick: _
-                }, n.title()))), e
-            }, n.jumpToPreview = function (t) {
-                _(t), m.route.set(app.route.discussion(this.attrs.discussion, "reply"))
-            }, n.data = function () {
-                return {
-                    content: this.composer.fields.content(),
-                    relationships: {
-                        discussion: this.attrs.discussion
-                    }
+        function e() {
+            return t.apply(this, arguments) || this
+        }
+        Object(o.a)(e, t), e.initAttrs = function (e) {
+            t.initAttrs.call(this, e), e.placeholder = e.placeholder || Object(P.a)(app.translator.trans("core.forum.composer_reply.body_placeholder")), e.submitLabel = e.submitLabel || app.translator.trans("core.forum.composer_reply.submit_button"), e.confirmExit = e.confirmExit || Object(P.a)(app.translator.trans("core.forum.composer_reply.discard_confirmation"))
+        };
+        var n = e.prototype;
+        return n.headerItems = function () {
+            var e = t.prototype.headerItems.call(this),
+                n = this.attrs.discussion;
+            return e.add("title", m("h3", null, Object(b.a)("fas fa-reply"), " ", m(f.a, {
+                href: app.route.discussion(n),
+                onclick: _
+            }, n.title()))), e
+        }, n.jumpToPreview = function (t) {
+            _(t), m.route.set(app.route.discussion(this.attrs.discussion, "reply"))
+        }, n.data = function () {
+            return {
+                content: this.composer.fields.content(),
+                relationships: {
+                    discussion: this.attrs.discussion
                 }
-            }, n.onsubmit = function () {
-                var t = this,
-                    e = this.attrs.discussion;
-                this.loading = !0, m.redraw();
-                var n = this.data();
-                app.store.createRecord("posts").save(n).then((function (n) {
-                    if (app.viewingDiscussion(e)) {
-                        var i = app.current.get("stream");
-                        i.update().then((function () {
-                            return i.goToNumber(n.number())
-                        }))
-                    } else {
-                        var r, o = E.a.component({
-                            className: "Button Button--link",
-                            onclick: function () {
-                                m.route.set(app.route.post(n)), app.alerts.dismiss(r)
-                            }
-                        }, app.translator.trans("core.forum.composer_reply.view_button"));
-                        r = app.alerts.show({
-                            type: "success",
-                            controls: [o]
-                        }, app.translator.trans("core.forum.composer_reply.posted_message"))
-                    }
-                    t.composer.hide()
-                }), this.loaded.bind(this))
-            }, e
-        }(A),
+            }
+        }, n.onsubmit = function () {
+            var t = this,
+                e = this.attrs.discussion;
+            this.loading = !0, m.redraw();
+            var n = this.data();
+            app.store.createRecord("posts").save(n).then((function (n) {
+                if (app.viewingDiscussion(e)) {
+                    var i = app.current.get("stream");
+                    i.update().then((function () {
+                        return i.goToNumber(n.number())
+                    }))
+                } else {
+                    var r, o = E.a.component({
+                        className: "Button Button--link",
+                        onclick: function () {
+                            m.route.set(app.route.post(n)), app.alerts.dismiss(r)
+                        }
+                    }, app.translator.trans("core.forum.composer_reply.view_button"));
+                    r = app.alerts.show({
+                        type: "success",
+                        controls: [o]
+                    }, app.translator.trans("core.forum.composer_reply.posted_message"))
+                }
+                t.composer.hide()
+            }), this.loaded.bind(this))
+        }, e
+    }(A),
         I = n(13),
         M = n(9),
         L = function (t) {
@@ -10317,7 +10318,7 @@ flarum.core = function (t) {
                     errorHandler: this.onerror.bind(this)
                 }).then((function () {
                     e.success = !0, e.alert = null
-                })).catch((function () {})).then(this.loaded.bind(this))
+                })).catch((function () { })).then(this.loaded.bind(this))
             }, n.onerror = function (e) {
                 404 === e.status && (e.alert.content = app.translator.trans("core.forum.forgot_password.not_found_message")), t.prototype.onerror.call(this, e)
             }, e
@@ -10508,8 +10509,8 @@ flarum.core = function (t) {
                 app.modal.show(L, e)
             }, n.signUp = function () {
                 var t = {
-                        password: this.password()
-                    },
+                    password: this.password()
+                },
                     e = this.identification();
                 t[-1 !== e.indexOf("@") ? "email" : "username"] = e, app.modal.show(H, t)
             }, n.onready = function () {
@@ -10595,7 +10596,7 @@ flarum.core = function (t) {
                 return e instanceof pt && i.add("reply", !app.session.user || t.canReply() ? E.a.component({
                     icon: "fas fa-reply",
                     onclick: function () {
-                        return n.replyAction.bind(t)(!0, !1).catch((function () {}))
+                        return n.replyAction.bind(t)(!0, !1).catch((function () { }))
                     }
                 }, app.translator.trans(app.session.user ? "core.forum.discussion_controls.reply_button" : "core.forum.discussion_controls.log_in_to_reply_button")) : E.a.component({
                     icon: "fas fa-reply",
@@ -10828,9 +10829,9 @@ flarum.core = function (t) {
                 var t, e = this.attrs.state,
                     n = e.getParams();
                 if (e.isInitialLoading() || e.isLoadingNext() ? t = m(S.a, null) : e.hasNext() && (t = E.a.component({
-                        className: "Button",
-                        onclick: e.loadNext.bind(e)
-                    }, app.translator.trans("core.forum.discussion_list.load_more_button"))), e.isEmpty()) {
+                    className: "Button",
+                    onclick: e.loadNext.bind(e)
+                }, app.translator.trans("core.forum.discussion_list.load_more_button"))), e.isEmpty()) {
                     var i = app.translator.trans("core.forum.discussion_list.empty_text");
                     return m("div", {
                         className: "DiscussionList"
@@ -10977,7 +10978,7 @@ flarum.core = function (t) {
                 return m("article", {
                     className: "Post ReplyPlaceholder",
                     onclick: function () {
-                        q.replyAction.call(t.attrs.discussion, !0).catch((function () {}))
+                        q.replyAction.call(t.attrs.discussion, !0).catch((function () { }))
                     }
                 }, m("header", {
                     className: "Post-header"
@@ -11929,55 +11930,55 @@ flarum.core = function (t) {
         }(d.a);
     Ct.MIN_SEARCH_LEN = 3;
     var Tt = function (t) {
-            function e() {
-                return t.apply(this, arguments) || this
+        function e() {
+            return t.apply(this, arguments) || this
+        }
+        Object(o.a)(e, t);
+        var n = e.prototype;
+        return n.view = function () {
+            return m("ul", {
+                className: "Header-controls"
+            }, Object(p.a)(this.items().toArray()))
+        }, n.items = function () {
+            var t = new l.a;
+            if (t.add("search", Ct.component({
+                state: app.search
+            }), 30), app.forum.attribute("showLanguageSelector") && Object.keys(app.data.locales).length > 1) {
+                var e = [],
+                    n = function (t) {
+                        e.push(E.a.component({
+                            active: app.data.locale === t,
+                            icon: app.data.locale !== t || "fas fa-check",
+                            onclick: function () {
+                                app.session.user ? app.session.user.savePreferences({
+                                    locale: t
+                                }).then((function () {
+                                    return window.location.reload()
+                                })) : (document.cookie = "locale=" + t + "; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT", window.location.reload())
+                            }
+                        }, app.data.locales[t]))
+                    };
+                for (var i in app.data.locales) n(i);
+                t.add("locale", gt.a.component({
+                    buttonClassName: "Button Button--link",
+                    accessibleToggleLabel: app.translator.trans("core.forum.header.locale_dropdown_accessible_label")
+                }, e), 20)
             }
-            Object(o.a)(e, t);
-            var n = e.prototype;
-            return n.view = function () {
-                return m("ul", {
-                    className: "Header-controls"
-                }, Object(p.a)(this.items().toArray()))
-            }, n.items = function () {
-                var t = new l.a;
-                if (t.add("search", Ct.component({
-                        state: app.search
-                    }), 30), app.forum.attribute("showLanguageSelector") && Object.keys(app.data.locales).length > 1) {
-                    var e = [],
-                        n = function (t) {
-                            e.push(E.a.component({
-                                active: app.data.locale === t,
-                                icon: app.data.locale !== t || "fas fa-check",
-                                onclick: function () {
-                                    app.session.user ? app.session.user.savePreferences({
-                                        locale: t
-                                    }).then((function () {
-                                        return window.location.reload()
-                                    })) : (document.cookie = "locale=" + t + "; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT", window.location.reload())
-                                }
-                            }, app.data.locales[t]))
-                        };
-                    for (var i in app.data.locales) n(i);
-                    t.add("locale", gt.a.component({
-                        buttonClassName: "Button Button--link",
-                        accessibleToggleLabel: app.translator.trans("core.forum.header.locale_dropdown_accessible_label")
-                    }, e), 20)
+            return app.session.user ? (t.add("notifications", yt.component({
+                state: app.notifications
+            }), 10), t.add("session", vt.component(), 0)) : (app.forum.attribute("allowSignUp") && t.add("signUp", E.a.component({
+                className: "Button Button--link",
+                onclick: function () {
+                    return app.modal.show(H)
                 }
-                return app.session.user ? (t.add("notifications", yt.component({
-                    state: app.notifications
-                }), 10), t.add("session", vt.component(), 0)) : (app.forum.attribute("allowSignUp") && t.add("signUp", E.a.component({
-                    className: "Button Button--link",
-                    onclick: function () {
-                        return app.modal.show(H)
-                    }
-                }, app.translator.trans("core.forum.header.sign_up_link")), 10), t.add("logIn", E.a.component({
-                    className: "Button Button--link",
-                    onclick: function () {
-                        return app.modal.show(B)
-                    }
-                }, app.translator.trans("core.forum.header.log_in_link")), 0)), t
-            }, e
-        }(d.a),
+            }, app.translator.trans("core.forum.header.sign_up_link")), 10), t.add("logIn", E.a.component({
+                className: "Button Button--link",
+                onclick: function () {
+                    return app.modal.show(B)
+                }
+            }, app.translator.trans("core.forum.header.log_in_link")), 0)), t
+        }, e
+    }(d.a),
         St = function (t) {
             function e() {
                 return t.apply(this, arguments) || this
@@ -12164,8 +12165,8 @@ flarum.core = function (t) {
             }, n.show = function () {
                 var t = this;
                 if (this.animateHeightChange().then((function () {
-                        return t.focus()
-                    })), "phone" === app.screen()) {
+                    return t.focus()
+                })), "phone" === app.screen()) {
                     var e = document.documentElement,
                         n = Math.min(e.scrollTop, e.scrollHeight - e.clientHeight);
                     this.$().css("top", $(".App").is(".mobile-safari") ? n : 0), this.showBackdrop()
@@ -12241,7 +12242,7 @@ flarum.core = function (t) {
                 }), m("div", {
                     className: "Notification-excerpt"
                 }, this.excerpt()))
-            }, n.icon = function () {}, n.href = function () {}, n.content = function () {}, n.excerpt = function () {}, n.markAsRead = function () {
+            }, n.icon = function () { }, n.href = function () { }, n.content = function () { }, n.excerpt = function () { }, n.markAsRead = function () {
                 this.attrs.notification.isRead() || (app.session.user.pushAttributes({
                     unreadNotificationCount: app.session.user.unreadNotificationCount() - 1
                 }), this.attrs.notification.save({
@@ -12271,52 +12272,52 @@ flarum.core = function (t) {
         app.composer.isFullScreen() && (app.composer.minimize(), t.stopPropagation())
     }
     var Dt = function (t) {
-            function e() {
-                return t.apply(this, arguments) || this
+        function e() {
+            return t.apply(this, arguments) || this
+        }
+        Object(o.a)(e, t), e.initAttrs = function (e) {
+            t.initAttrs.call(this, e), e.submitLabel = e.submitLabel || app.translator.trans("core.forum.composer_edit.submit_button"), e.confirmExit = e.confirmExit || app.translator.trans("core.forum.composer_edit.discard_confirmation"), e.originalContent = e.originalContent || e.post.content(), e.user = e.user || e.post.user(), e.post.editedContent = e.originalContent
+        };
+        var n = e.prototype;
+        return n.headerItems = function () {
+            var e = t.prototype.headerItems.call(this),
+                n = this.attrs.post;
+            return e.add("title", m("h3", null, Object(b.a)("fas fa-pencil-alt"), " ", m(f.a, {
+                href: app.route.discussion(n.discussion(), n.number()),
+                onclick: _t
+            }, app.translator.trans("core.forum.composer_edit.post_link", {
+                number: n.number(),
+                discussion: n.discussion().title()
+            })))), e
+        }, n.jumpToPreview = function (t) {
+            _t(t), m.route.set(app.route.post(this.attrs.post))
+        }, n.data = function () {
+            return {
+                content: this.composer.fields.content()
             }
-            Object(o.a)(e, t), e.initAttrs = function (e) {
-                t.initAttrs.call(this, e), e.submitLabel = e.submitLabel || app.translator.trans("core.forum.composer_edit.submit_button"), e.confirmExit = e.confirmExit || app.translator.trans("core.forum.composer_edit.discard_confirmation"), e.originalContent = e.originalContent || e.post.content(), e.user = e.user || e.post.user(), e.post.editedContent = e.originalContent
-            };
-            var n = e.prototype;
-            return n.headerItems = function () {
-                var e = t.prototype.headerItems.call(this),
-                    n = this.attrs.post;
-                return e.add("title", m("h3", null, Object(b.a)("fas fa-pencil-alt"), " ", m(f.a, {
-                    href: app.route.discussion(n.discussion(), n.number()),
-                    onclick: _t
-                }, app.translator.trans("core.forum.composer_edit.post_link", {
-                    number: n.number(),
-                    discussion: n.discussion().title()
-                })))), e
-            }, n.jumpToPreview = function (t) {
-                _t(t), m.route.set(app.route.post(this.attrs.post))
-            }, n.data = function () {
-                return {
-                    content: this.composer.fields.content()
+        }, n.onsubmit = function () {
+            var t = this,
+                e = this.attrs.post.discussion();
+            this.loading = !0;
+            var n = this.data();
+            this.attrs.post.save(n).then((function (n) {
+                if (app.viewingDiscussion(e)) app.current.get("stream").goToNumber(n.number());
+                else {
+                    var i, r = E.a.component({
+                        className: "Button Button--link",
+                        onclick: function () {
+                            m.route.set(app.route.post(n)), app.alerts.dismiss(i)
+                        }
+                    }, app.translator.trans("core.forum.composer_edit.view_button"));
+                    i = app.alerts.show({
+                        type: "success",
+                        controls: [r]
+                    }, app.translator.trans("core.forum.composer_edit.edited_message"))
                 }
-            }, n.onsubmit = function () {
-                var t = this,
-                    e = this.attrs.post.discussion();
-                this.loading = !0;
-                var n = this.data();
-                this.attrs.post.save(n).then((function (n) {
-                    if (app.viewingDiscussion(e)) app.current.get("stream").goToNumber(n.number());
-                    else {
-                        var i, r = E.a.component({
-                            className: "Button Button--link",
-                            onclick: function () {
-                                m.route.set(app.route.post(n)), app.alerts.dismiss(i)
-                            }
-                        }, app.translator.trans("core.forum.composer_edit.view_button"));
-                        i = app.alerts.show({
-                            type: "success",
-                            controls: [r]
-                        }, app.translator.trans("core.forum.composer_edit.edited_message"))
-                    }
-                    t.composer.hide()
-                }), this.loaded.bind(this))
-            }, e
-        }(A),
+                t.composer.hide()
+            }), this.loaded.bind(this))
+        }, e
+    }(A),
         $t = {
             controls: function (t, e) {
                 var n = this,
@@ -12384,7 +12385,7 @@ flarum.core = function (t) {
                 if (confirm(Object(P.a)(app.translator.trans("core.forum.post_controls.delete_confirmation")))) return t && (t.loading = !0), this.delete().then((function () {
                     var t = e.discussion();
                     t.removePost(e.id()), t.postIds().length || (app.discussions.removeDiscussion(t), app.viewingDiscussion(t) && app.history.back())
-                })).catch((function () {})).then((function () {
+                })).catch((function () { })).then((function () {
                     t && (t.loading = !1), m.redraw()
                 }))
             }
@@ -12507,7 +12508,7 @@ flarum.core = function (t) {
                 }, this.content())))] : [m(S.a, {
                     display: "block"
                 })])
-            }, n.content = function () {}, n.show = function (t) {
+            }, n.content = function () { }, n.show = function (t) {
                 this.user = t, app.current.set("user", t), app.setTitle(t.displayName()), m.redraw()
             }, n.loadUser = function (t) {
                 var e = this,
@@ -13125,7 +13126,7 @@ flarum.core = function (t) {
                     className: "Button Button--primary IndexPage-newDiscussion",
                     itemClassName: "App-primaryControl",
                     onclick: function () {
-                        return t.newDiscussionAction().catch((function () {}))
+                        return t.newDiscussionAction().catch((function () { }))
                     },
                     disabled: !n
                 }, app.translator.trans(n ? "core.forum.index.start_discussion_button" : "core.forum.index.cannot_start_discussion_button"))), e.add("nav", gt.a.component({
@@ -13263,13 +13264,13 @@ flarum.core = function (t) {
         var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
         if (n) return (n = n.call(t)).next.bind(n);
         if (Array.isArray(t) || (n = function (t, e) {
-                if (!t) return;
-                if ("string" == typeof t) return oe(t, e);
-                var n = Object.prototype.toString.call(t).slice(8, -1);
-                "Object" === n && t.constructor && (n = t.constructor.name);
-                if ("Map" === n || "Set" === n) return Array.from(t);
-                if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return oe(t, e)
-            }(t)) || e && t && "number" == typeof t.length) {
+            if (!t) return;
+            if ("string" == typeof t) return oe(t, e);
+            var n = Object.prototype.toString.call(t).slice(8, -1);
+            "Object" === n && t.constructor && (n = t.constructor.name);
+            if ("Map" === n || "Set" === n) return Array.from(t);
+            if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return oe(t, e)
+        }(t)) || e && t && "number" == typeof t.length) {
             n && (t = n);
             var i = 0;
             return function () {
@@ -13290,56 +13291,56 @@ flarum.core = function (t) {
         return i
     }
     var se = function (t) {
-            function e(e, n) {
-                var i;
-                return (i = t.call(this, e, n, 20) || this).extraDiscussions = [], i
+        function e(e, n) {
+            var i;
+            return (i = t.call(this, e, n, 20) || this).extraDiscussions = [], i
+        }
+        Object(o.a)(e, t);
+        var n = e.prototype;
+        return n.requestParams = function () {
+            var t = {
+                include: ["user", "lastPostedUser"],
+                filter: {}
+            };
+            return t.sort = this.sortMap()[this.params.sort], this.params.q && (t.filter.q = this.params.q, t.include.push("mostRelevantPost", "mostRelevantPost.user")), t
+        }, n.loadPage = function (e) {
+            void 0 === e && (e = 1);
+            var n = app.preloadedApiDocument();
+            return n ? (this.initialLoading = !1, Promise.resolve(n)) : t.prototype.loadPage.call(this, e)
+        }, n.clear = function () {
+            t.prototype.clear.call(this), this.extraDiscussions = []
+        }, n.sortMap = function () {
+            var t = {};
+            return this.params.q && (t.relevance = ""), t.latest = "-lastPostedAt", t.top = "-commentCount", t.newest = "-createdAt", t.oldest = "createdAt", t
+        }, n.isSearchResults = function () {
+            return !!this.params.q
+        }, n.removeDiscussion = function (t) {
+            for (var e, n = re(this.pages); !(e = n()).done;) {
+                var i = e.value,
+                    r = i.items.indexOf(t);
+                if (-1 !== r) {
+                    i.items.splice(r, 1);
+                    break
+                }
             }
-            Object(o.a)(e, t);
-            var n = e.prototype;
-            return n.requestParams = function () {
-                var t = {
-                    include: ["user", "lastPostedUser"],
-                    filter: {}
-                };
-                return t.sort = this.sortMap()[this.params.sort], this.params.q && (t.filter.q = this.params.q, t.include.push("mostRelevantPost", "mostRelevantPost.user")), t
-            }, n.loadPage = function (e) {
-                void 0 === e && (e = 1);
-                var n = app.preloadedApiDocument();
-                return n ? (this.initialLoading = !1, Promise.resolve(n)) : t.prototype.loadPage.call(this, e)
-            }, n.clear = function () {
-                t.prototype.clear.call(this), this.extraDiscussions = []
-            }, n.sortMap = function () {
-                var t = {};
-                return this.params.q && (t.relevance = ""), t.latest = "-lastPostedAt", t.top = "-commentCount", t.newest = "-createdAt", t.oldest = "createdAt", t
-            }, n.isSearchResults = function () {
-                return !!this.params.q
-            }, n.removeDiscussion = function (t) {
-                for (var e, n = re(this.pages); !(e = n()).done;) {
-                    var i = e.value,
-                        r = i.items.indexOf(t);
-                    if (-1 !== r) {
-                        i.items.splice(r, 1);
-                        break
-                    }
-                }
-                var o = this.extraDiscussions.indexOf(t); - 1 !== o && this.extraDiscussions.splice(o), m.redraw()
-            }, n.addDiscussion = function (t) {
-                this.removeDiscussion(t), this.extraDiscussions.unshift(t), m.redraw()
-            }, n.getAllItems = function () {
-                return this.extraDiscussions.concat(t.prototype.getAllItems.call(this))
-            }, n.getPages = function () {
-                var e = t.prototype.getPages.call(this);
-                return this.extraDiscussions.length ? [{
-                    number: -1,
-                    items: this.extraDiscussions
-                }].concat(e) : e
-            }, ne(e, [{
-                key: "type",
-                get: function () {
-                    return "discussions"
-                }
-            }]), e
-        }(ie.a),
+            var o = this.extraDiscussions.indexOf(t); - 1 !== o && this.extraDiscussions.splice(o), m.redraw()
+        }, n.addDiscussion = function (t) {
+            this.removeDiscussion(t), this.extraDiscussions.unshift(t), m.redraw()
+        }, n.getAllItems = function () {
+            return this.extraDiscussions.concat(t.prototype.getAllItems.call(this))
+        }, n.getPages = function () {
+            var e = t.prototype.getPages.call(this);
+            return this.extraDiscussions.length ? [{
+                number: -1,
+                items: this.extraDiscussions
+            }].concat(e) : e
+        }, ne(e, [{
+            key: "type",
+            get: function () {
+                return "discussions"
+            }
+        }]), e
+    }(ie.a),
         ae = function (t) {
             function e() {
                 return t.apply(this, arguments) || this
@@ -13557,7 +13558,7 @@ flarum.core = function (t) {
                     }
                 }).then((function () {
                     e.success = !0
-                })).catch((function () {})).then(this.loaded.bind(this))) : this.hide()
+                })).catch((function () { })).then(this.loaded.bind(this))) : this.hide()
             }, n.onerror = function (e) {
                 401 === e.status && (e.alert.content = app.translator.trans("core.forum.change_email.incorrect_password_message")), t.prototype.onerror.call(this, e)
             }, e
@@ -13658,86 +13659,86 @@ flarum.core = function (t) {
         }(n(38).a);
     ve.scrollToPostNumber = null;
     var ge = function (t) {
-            t.routes = {
-                index: {
-                    path: "/all",
-                    component: Zt
-                },
-                discussion: {
-                    path: "/d/:id",
-                    component: pt,
-                    resolverClass: ve
-                },
-                "discussion.near": {
-                    path: "/d/:id/:near",
-                    component: pt,
-                    resolverClass: ve
-                },
-                user: {
-                    path: "/u/:username",
-                    component: te
-                },
-                "user.posts": {
-                    path: "/u/:username",
-                    component: te
-                },
-                "user.discussions": {
-                    path: "/u/:username/discussions",
-                    component: ae
-                },
-                settings: {
-                    path: "/settings",
-                    component: fe
-                },
-                notifications: {
-                    path: "/notifications",
-                    component: me
-                }
-            }, t.route.discussion = function (e, n) {
-                return t.route(n && 1 !== n ? "discussion.near" : "discussion", {
-                    id: e.slug(),
-                    near: n && 1 !== n ? n : void 0
-                })
-            }, t.route.post = function (e) {
-                return t.route.discussion(e.discussion(), e.number())
-            }, t.route.user = function (e) {
-                return t.route("user", {
-                    username: e.slug()
-                })
+        t.routes = {
+            index: {
+                path: "/all",
+                component: Zt
+            },
+            discussion: {
+                path: "/d/:id",
+                component: pt,
+                resolverClass: ve
+            },
+            "discussion.near": {
+                path: "/d/:id/:near",
+                component: pt,
+                resolverClass: ve
+            },
+            user: {
+                path: "/u/:username",
+                component: te
+            },
+            "user.posts": {
+                path: "/u/:username",
+                component: te
+            },
+            "user.discussions": {
+                path: "/u/:username/discussions",
+                component: ae
+            },
+            settings: {
+                path: "/settings",
+                component: fe
+            },
+            notifications: {
+                path: "/notifications",
+                component: me
             }
-        },
+        }, t.route.discussion = function (e, n) {
+            return t.route(n && 1 !== n ? "discussion.near" : "discussion", {
+                id: e.slug(),
+                near: n && 1 !== n ? n : void 0
+            })
+        }, t.route.post = function (e) {
+            return t.route.discussion(e.discussion(), e.number())
+        }, t.route.user = function (e) {
+            return t.route("user", {
+                username: e.slug()
+            })
+        }
+    },
         be = n(27);
 
     function ye(t) {
         var e = t.session.user;
         if (e && !e.isEmailConfirmed()) {
             var n = function (n) {
-                    function i() {
-                        return n.apply(this, arguments) || this
-                    }
-                    Object(o.a)(i, n);
-                    var r = i.prototype;
-                    return r.oninit = function (t) {
-                        n.prototype.oninit.call(this, t), this.loading = !1, this.sent = !1
-                    }, r.view = function () {
-                        return m(E.a, {
-                            class: "Button Button--link",
-                            onclick: this.onclick.bind(this),
-                            loading: this.loading,
-                            disabled: this.sent
-                        }, this.sent ? [Object(b.a)("fas fa-check"), " ", t.translator.trans("core.forum.user_email_confirmation.sent_message")] : t.translator.trans("core.forum.user_email_confirmation.resend_button"))
-                    }, r.onclick = function () {
-                        var n = this;
-                        this.loading = !0, m.redraw(), t.request({
-                            method: "POST",
-                            url: t.forum.attribute("apiUrl") + "/users/" + e.id() + "/send-confirmation"
-                        }).then((function () {
-                            n.loading = !1, n.sent = !0, m.redraw()
-                        })).catch((function () {
-                            n.loading = !1, m.redraw()
-                        }))
-                    }, i
-                }(d.a),
+                function i() {
+                    return n.apply(this, arguments) || this
+                }
+                Object(o.a)(i, n);
+                var r = i.prototype;
+                return r.oninit = function (t) {
+                    n.prototype.oninit.call(this, t), this.loading = !1, this.sent = !1
+                }, r.view = function () {
+                    return m(E.a, {
+                        class: "Button Button--link",
+                        onclick: this.onclick.bind(this),
+                        loading: this.loading,
+                        disabled: this.sent
+                    }, this.sent ? [Object(b.a)("fas fa-check"), " ", t.translator.trans("core.forum.user_email_confirmation.sent_message")] : t.translator.trans("core.forum.user_email_confirmation.resend_button"))
+                }, r.onclick = function () {
+                    var n = this;
+                    this.loading = !0, m.redraw(), t.request({
+                        method: "POST",
+                        url: t.forum.attribute("apiUrl") + "/users/" + e.id() + "/send-confirmation"
+                    }).then((function () {
+                        n.loading = !1, n.sent = !0, m.redraw()
+                    })).catch((function () {
+                        n.loading = !1, m.redraw()
+                    }))
+                }, i
+            }(d.a),
                 i = function (t) {
                     function e() {
                         return t.apply(this, arguments) || this
@@ -13852,48 +13853,48 @@ flarum.core = function (t) {
             }, e
         }(Te);
     var Oe = function (t) {
-            function e() {
-                var e;
-                return (e = t.call(this) || this).notificationComponents = {
-                    discussionRenamed: Pt
-                }, e.postComponents = {
-                    comment: Yt,
-                    discussionRenamed: Xt
-                }, e.pane = null, e.drawer = null, e.history = new a, e.notifications = new Ne(Object(r.a)(e)), e.search = new Se, e.composer = new jt, ge(Object(r.a)(e)), e.discussions = new se({}), e
-            }
-            Object(o.a)(e, t);
-            var n = e.prototype;
-            return n.mount = function () {
-                var e = this,
-                    n = this.forum.attribute("defaultRoute"),
-                    i = "index";
-                for (var r in this.routes) this.routes[r].path === n && (i = r);
-                this.routes[i].path = "/", this.history.push(i, this.translator.trans("core.forum.header.back_to_index_tooltip"), "/"), this.pane = new c(document.getElementById("app")), m.route.prefix = "", t.prototype.mount.call(this, this.forum.attribute("basePath")), m.mount(document.getElementById("app-navigation"), {
-                    view: function () {
-                        return xe.a.component({
-                            className: "App-backControl",
-                            drawer: !0
-                        })
-                    }
-                }), m.mount(document.getElementById("header-navigation"), xe.a), m.mount(document.getElementById("header-primary"), ht), m.mount(document.getElementById("header-secondary"), Tt), m.mount(document.getElementById("composer"), {
-                    view: function () {
-                        return At.component({
-                            state: e.composer
-                        })
-                    }
-                }), ye(this), $("#home-link").click((function (t) {
-                    t.ctrlKey || t.metaKey || 2 === t.which || (t.preventDefault(), app.history.home(), app.session.user && (app.store.find("users", app.session.user.id()), m.redraw()))
-                })), "ontouchstart" in window && navigator.vendor && navigator.vendor.includes("Apple") && navigator.userAgent && !navigator.userAgent.includes("CriOS") && !navigator.userAgent.includes("FxiOS") && $((function () {
-                    $(".App").addClass("mobile-safari")
-                }))
-            }, n.viewingDiscussion = function (t) {
-                return this.current.matches(pt, {
-                    discussion: t
-                })
-            }, n.authenticationComplete = function (t) {
-                t.loggedIn ? window.location.reload() : this.modal.show(H, t)
-            }, e
-        }(we.a),
+        function e() {
+            var e;
+            return (e = t.call(this) || this).notificationComponents = {
+                discussionRenamed: Pt
+            }, e.postComponents = {
+                comment: Yt,
+                discussionRenamed: Xt
+            }, e.pane = null, e.drawer = null, e.history = new a, e.notifications = new Ne(Object(r.a)(e)), e.search = new Se, e.composer = new jt, ge(Object(r.a)(e)), e.discussions = new se({}), e
+        }
+        Object(o.a)(e, t);
+        var n = e.prototype;
+        return n.mount = function () {
+            var e = this,
+                n = this.forum.attribute("defaultRoute"),
+                i = "index";
+            for (var r in this.routes) this.routes[r].path === n && (i = r);
+            this.routes[i].path = "/", this.history.push(i, this.translator.trans("core.forum.header.back_to_index_tooltip"), "/"), this.pane = new c(document.getElementById("app")), m.route.prefix = "", t.prototype.mount.call(this, this.forum.attribute("basePath")), m.mount(document.getElementById("app-navigation"), {
+                view: function () {
+                    return xe.a.component({
+                        className: "App-backControl",
+                        drawer: !0
+                    })
+                }
+            }), m.mount(document.getElementById("header-navigation"), xe.a), m.mount(document.getElementById("header-primary"), ht), m.mount(document.getElementById("header-secondary"), Tt), m.mount(document.getElementById("composer"), {
+                view: function () {
+                    return At.component({
+                        state: e.composer
+                    })
+                }
+            }), ye(this), $("#home-link").click((function (t) {
+                t.ctrlKey || t.metaKey || 2 === t.which || (t.preventDefault(), app.history.home(), app.session.user && (app.store.find("users", app.session.user.id()), m.redraw()))
+            })), "ontouchstart" in window && navigator.vendor && navigator.vendor.includes("Apple") && navigator.userAgent && !navigator.userAgent.includes("CriOS") && !navigator.userAgent.includes("FxiOS") && $((function () {
+                $(".App").addClass("mobile-safari")
+            }))
+        }, n.viewingDiscussion = function (t) {
+            return this.current.matches(pt, {
+                discussion: t
+            })
+        }, n.authenticationComplete = function (t) {
+            t.loggedIn ? window.location.reload() : this.modal.show(H, t)
+        }, e
+    }(we.a),
         ke = new Oe;
     window.app = ke;
     var je = ke,
@@ -14513,18 +14514,18 @@ flarum.core = function (t) {
         return values
     }
 
-    function Logger() {}
+    function Logger() { }
     Logger.prototype = {
-        add: function (type, msg, context) {},
-        clear: function () {},
-        setAttribute: function (attrName) {},
-        setTag: function (tag) {},
-        unsetAttribute: function () {},
-        unsetTag: function () {},
-        debug: function (msg, context) {},
-        err: function (msg, context) {},
-        info: function (msg, context) {},
-        warn: function (msg, context) {}
+        add: function (type, msg, context) { },
+        clear: function () { },
+        setAttribute: function (attrName) { },
+        setTag: function (tag) { },
+        unsetAttribute: function () { },
+        unsetTag: function () { },
+        debug: function (msg, context) { },
+        err: function (msg, context) { },
+        info: function (msg, context) { },
+        warn: function (msg, context) { }
     };
 
     function Tag(type, name, pos, len, priority) {
@@ -14813,7 +14814,7 @@ flarum.core = function (t) {
                     pos = startPos + m[0][0].length;
                     try {
                         parseBBCode()
-                    } catch (e) {}
+                    } catch (e) { }
                 });
 
                 function addBBCodeEndTag() {
@@ -15169,7 +15170,7 @@ flarum.core = function (t) {
                     if (title > '') {
                         tag.setAttribute('title', decode(title))
                     }
-                }(function () {
+                } (function () {
                     var setextLines = {};
 
                     function parse() {
@@ -17341,9 +17342,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var s = Object.create(null);
         if (n.r(s), Object.defineProperty(s, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var a in t) n.d(s, a, function (e) {
                 return t[e]
             }.bind(null, a));
@@ -17583,9 +17584,9 @@ module.exports = function (t) {
         if (4 & a && "object" == typeof t && t && t.__esModule) return t;
         var e = Object.create(null);
         if (o.r(e), Object.defineProperty(e, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & a && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & a && "string" != typeof t)
             for (var s in t) o.d(e, s, function (a) {
                 return t[a]
             }.bind(null, s));
@@ -17770,7 +17771,7 @@ module.exports = function (t) {
                     }), t.cache = a.sort((function (t, a) {
                         return a.createdAt() - t.createdAt()
                     }))
-                })).catch((function () {})).then((function () {
+                })).catch((function () { })).then((function () {
                     t.loading = !1, m.redraw()
                 })))
             }, t
@@ -17895,7 +17896,7 @@ module.exports = function (t) {
                     errorHandler: this.onerror.bind(this)
                 }).then((function () {
                     return a.success = !0
-                })).catch((function () {})).then(this.loaded.bind(this))
+                })).catch((function () { })).then(this.loaded.bind(this))
             }, a
         }(E.a),
         q = function () {
@@ -18069,9 +18070,9 @@ module.exports = function (t) {
         if (4 & r && "object" == typeof t && t && t.__esModule) return t;
         var o = Object.create(null);
         if (e.r(o), Object.defineProperty(o, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & r && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & r && "string" != typeof t)
             for (var n in t) e.d(o, n, function (r) {
                 return t[r]
             }.bind(null, n));
@@ -18094,7 +18095,7 @@ module.exports = function (t) {
         return o
     }));
     var o = function () {
-        function t() {}
+        function t() { }
         return t.prototype.sortMap = function () {
             return {
                 username_az: "username",
@@ -18245,9 +18246,9 @@ module.exports = function (t) {
                     e = r.getParams(),
                     o = h.a.forum.attribute("userDirectorySmallCards");
                 if (r.isLoading() ? t = G.a.component() : r.moreResults && (t = B.a.component({
-                        className: "Button",
-                        onclick: r.loadMore.bind(r)
-                    }, h.a.translator.trans("fof-user-directory.forum.page.load_more_button"))), r.empty()) {
+                    className: "Button",
+                    onclick: r.loadMore.bind(r)
+                }, h.a.translator.trans("fof-user-directory.forum.page.load_more_button"))), r.empty()) {
                     var n = h.a.translator.trans("fof-user-directory.forum.page.empty_text");
                     return m("div", {
                         className: "DiscussionList"
@@ -18291,9 +18292,9 @@ module.exports = function (t) {
             var r = t.prototype;
             return r.requestParams = function () {
                 var t = {
-                        include: [],
-                        filter: {}
-                    },
+                    include: [],
+                    filter: {}
+                },
                     r = this.params.sort || app.forum.attribute("userDirectoryDefaultSort");
                 return t.sort = this.sortMap()[r], this.params.q && (t.filter.q = this.params.q), t
             }, r.sortMap = function () {
@@ -18567,9 +18568,9 @@ module.exports = function (t) {
         if (4 & n && "object" == typeof t && t && t.__esModule) return t;
         var o = Object.create(null);
         if (e.r(o), Object.defineProperty(o, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & n && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & n && "string" != typeof t)
             for (var a in t) e.d(o, a, function (n) {
                 return t[n]
             }.bind(null, a));
@@ -18727,9 +18728,9 @@ module.exports = function (e) {
         if (4 & d && "object" == typeof e && e && e.__esModule) return e;
         var u = Object.create(null);
         if (a.r(u), Object.defineProperty(u, "default", {
-                enumerable: !0,
-                value: e
-            }), 2 & d && "string" != typeof e)
+            enumerable: !0,
+            value: e
+        }), 2 & d && "string" != typeof e)
             for (var o in e) a.d(u, o, function (d) {
                 return e[d]
             }.bind(null, o));
@@ -18845,43 +18846,43 @@ module.exports = function (e) {
         }(a.n(p).a),
         h = function () {
             var e = {
-                    base: "https://twemoji.maxcdn.com/v/13.0.0/",
-                    ext: ".png",
-                    size: "72x72",
-                    className: "emoji",
-                    convert: {
-                        fromCodePoint: function (e) {
-                            var d = "string" == typeof e ? parseInt(e, 16) : e;
-                            if (d < 65536) return t(d);
-                            return t(55296 + ((d -= 65536) >> 10), 56320 + (1023 & d))
-                        },
-                        toCodePoint: p
+                base: "https://twemoji.maxcdn.com/v/13.0.0/",
+                ext: ".png",
+                size: "72x72",
+                className: "emoji",
+                convert: {
+                    fromCodePoint: function (e) {
+                        var d = "string" == typeof e ? parseInt(e, 16) : e;
+                        if (d < 65536) return t(d);
+                        return t(55296 + ((d -= 65536) >> 10), 56320 + (1023 & d))
                     },
-                    onerror: function () {
-                        this.parentNode && this.parentNode.replaceChild(c(this.alt, !1), this)
-                    },
-                    parse: function (d, a) {
-                        a && "function" != typeof a || (a = {
-                            callback: a
-                        });
-                        return ("string" == typeof d ? l : _)(d, {
-                            callback: a.callback || f,
-                            attributes: "function" == typeof a.attributes ? a.attributes : g,
-                            base: "string" == typeof a.base ? a.base : e.base,
-                            ext: a.ext || e.ext,
-                            size: a.folder || (u = a.size || e.size, "number" == typeof u ? u + "x" + u : u),
-                            className: a.className || e.className,
-                            onerror: a.onerror || e.onerror
-                        });
-                        var u
-                    },
-                    replace: m,
-                    test: function (e) {
-                        a.lastIndex = 0;
-                        var d = a.test(e);
-                        return a.lastIndex = 0, d
-                    }
+                    toCodePoint: p
                 },
+                onerror: function () {
+                    this.parentNode && this.parentNode.replaceChild(c(this.alt, !1), this)
+                },
+                parse: function (d, a) {
+                    a && "function" != typeof a || (a = {
+                        callback: a
+                    });
+                    return ("string" == typeof d ? l : _)(d, {
+                        callback: a.callback || f,
+                        attributes: "function" == typeof a.attributes ? a.attributes : g,
+                        base: "string" == typeof a.base ? a.base : e.base,
+                        ext: a.ext || e.ext,
+                        size: a.folder || (u = a.size || e.size, "number" == typeof u ? u + "x" + u : u),
+                        className: a.className || e.className,
+                        onerror: a.onerror || e.onerror
+                    });
+                    var u
+                },
+                replace: m,
+                test: function (e) {
+                    a.lastIndex = 0;
+                    var d = a.test(e);
+                    return a.lastIndex = 0, d
+                }
+            },
                 d = {
                     "&": "&amp;",
                     "<": "&lt;",
@@ -18911,9 +18912,9 @@ module.exports = function (e) {
 
             function _(e, d) {
                 for (var u, o, n, t, f, _, l, s, g, m, p, b, h, w = function e(d, a) {
-                        for (var u, o, n = d.childNodes, t = n.length; t--;) 3 === (o = (u = n[t]).nodeType) ? a.push(u) : 1 !== o || "ownerSVGElement" in u || r.test(u.nodeName.toLowerCase()) || e(u, a);
-                        return a
-                    }(e, []), k = w.length; k--;) {
+                    for (var u, o, n = d.childNodes, t = n.length; t--;) 3 === (o = (u = n[t]).nodeType) ? a.push(u) : 1 !== o || "ownerSVGElement" in u || r.test(u.nodeName.toLowerCase()) || e(u, a);
+                    return a
+                }(e, []), k = w.length; k--;) {
                     for (n = !1, t = document.createDocumentFragment(), _ = (f = w[k]).nodeValue, s = 0; l = a.exec(_);) {
                         if ((g = l.index) !== s && t.appendChild(c(_.slice(s, g), !0)), b = i(p = l[0]), s = g + p.length, h = d.callback(b, d), b && h) {
                             for (o in (m = new Image).onerror = d.onerror, m.setAttribute("draggable", "false"), u = d.attributes(p, b)) u.hasOwnProperty(o) && 0 !== o.indexOf("on") && !m.hasAttribute(o) && m.setAttribute(o, u[o]);
@@ -19027,7 +19028,7 @@ module.exports = function (e) {
                                             var o = n[u],
                                                 r = Array.isArray(o),
                                                 t = 0;
-                                            for (o = r ? o : o[Symbol.iterator]();;) {
+                                            for (o = r ? o : o[Symbol.iterator](); ;) {
                                                 var f;
                                                 if (r) {
                                                     if (t >= o.length) break;
@@ -19133,9 +19134,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var r = Object.create(null);
         if (n.r(r), Object.defineProperty(r, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var a in t) n.d(r, a, function (e) {
                 return t[e]
             }.bind(null, a));
@@ -19315,7 +19316,7 @@ module.exports = function (t) {
     t.exports = flarum.core.compat["utils/extract"]
 }, , function (t, e) {
     t.exports = flarum.core.compat["components/DiscussionComposer"]
-}, function (t, e) {}, function (t, e) {
+}, function (t, e) { }, function (t, e) {
     t.exports = flarum.core.compat["utils/mixin"]
 }, function (t, e) {
     t.exports = flarum.core.compat["utils/computed"]
@@ -19391,8 +19392,8 @@ module.exports = function (t) {
             }, n.view = function () {
                 if (this.loading) return m(y.a, null);
                 var t = this.tags.filter((function (t) {
-                        return null !== t.position()
-                    })),
+                    return null !== t.position()
+                })),
                     e = this.tags.filter((function (t) {
                         return null === t.position()
                     }));
@@ -19502,56 +19503,56 @@ module.exports = function (t) {
         i.done ? e(c) : Promise.resolve(c).then(r, a)
     }
     var E = function () {
-            function t() {
-                this.loadedIncludes = new Set
+        function t() {
+            this.loadedIncludes = new Set
+        }
+        return t.prototype.load = function () {
+            var t, e = (t = D.a.mark((function t(e) {
+                var n, r = this;
+                return D.a.wrap((function (t) {
+                    for (; ;) switch (t.prev = t.next) {
+                        case 0:
+                            if (void 0 === e && (e = []), 0 !== (n = e.filter((function (t) {
+                                return !r.loadedIncludes.has(t)
+                            }))).length) {
+                                t.next = 4;
+                                break
+                            }
+                            return t.abrupt("return", Promise.resolve(app.store.all("tags")));
+                        case 4:
+                            return t.abrupt("return", app.store.find("tags", {
+                                include: n.join(",")
+                            }).then((function (t) {
+                                return n.forEach((function (t) {
+                                    return r.loadedIncludes.add(t)
+                                })), t
+                            })));
+                        case 5:
+                        case "end":
+                            return t.stop()
+                    }
+                }), t)
+            })), function () {
+                var e = this,
+                    n = arguments;
+                return new Promise((function (r, a) {
+                    var o = t.apply(e, n);
+
+                    function s(t) {
+                        S(o, r, a, s, i, "next", t)
+                    }
+
+                    function i(t) {
+                        S(o, r, a, s, i, "throw", t)
+                    }
+                    s(void 0)
+                }))
+            });
+            return function (t) {
+                return e.apply(this, arguments)
             }
-            return t.prototype.load = function () {
-                var t, e = (t = D.a.mark((function t(e) {
-                    var n, r = this;
-                    return D.a.wrap((function (t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                if (void 0 === e && (e = []), 0 !== (n = e.filter((function (t) {
-                                        return !r.loadedIncludes.has(t)
-                                    }))).length) {
-                                    t.next = 4;
-                                    break
-                                }
-                                return t.abrupt("return", Promise.resolve(app.store.all("tags")));
-                            case 4:
-                                return t.abrupt("return", app.store.find("tags", {
-                                    include: n.join(",")
-                                }).then((function (t) {
-                                    return n.forEach((function (t) {
-                                        return r.loadedIncludes.add(t)
-                                    })), t
-                                })));
-                            case 5:
-                            case "end":
-                                return t.stop()
-                        }
-                    }), t)
-                })), function () {
-                    var e = this,
-                        n = arguments;
-                    return new Promise((function (r, a) {
-                        var o = t.apply(e, n);
-
-                        function s(t) {
-                            S(o, r, a, s, i, "next", t)
-                        }
-
-                        function i(t) {
-                            S(o, r, a, s, i, "throw", t)
-                        }
-                        s(void 0)
-                    }))
-                });
-                return function (t) {
-                    return e.apply(this, arguments)
-                }
-            }(), t
-        }(),
+        }(), t
+    }(),
         A = n(1),
         M = n(36),
         R = n.n(M),
@@ -19589,9 +19590,9 @@ module.exports = function (t) {
         K = function () {
             Object(A.extend)(u.a.prototype, "navItems", (function (t) {
                 if (t.add("tags", m(H.a, {
-                        icon: "fas fa-th-large",
-                        href: app.route("tags")
-                    }, app.translator.trans("flarum-tags.forum.index.tags_link")), -10), !app.current.matches(N)) {
+                    icon: "fas fa-th-large",
+                    href: app.route("tags")
+                }, app.translator.trans("flarum-tags.forum.index.tags_link")), -10), !app.current.matches(N)) {
                     t.add("separator", R.a.component(), -12);
                     var e = app.search.stickyParams(),
                         n = app.store.all("tags"),
@@ -19739,187 +19740,187 @@ module.exports = function (t) {
         }))
     }
     var bt = function (t) {
-            function e() {
-                return t.apply(this, arguments) || this
+        function e() {
+            return t.apply(this, arguments) || this
+        }
+        Object(p.a)(e, t);
+        var n = e.prototype;
+        return n.oninit = function (e) {
+            var n = this;
+            t.prototype.oninit.call(this, e), this.tagsLoading = !0, this.selected = [], this.filter = vt()(""), this.focused = !1, this.minPrimary = app.forum.attribute("minPrimaryTags"), this.maxPrimary = app.forum.attribute("maxPrimaryTags"), this.minSecondary = app.forum.attribute("minSecondaryTags"), this.maxSecondary = app.forum.attribute("maxSecondaryTags"), this.navigator = new ht.a, this.navigator.onUp((function () {
+                return n.setIndex(n.getCurrentNumericIndex() - 1, !0)
+            })).onDown((function () {
+                return n.setIndex(n.getCurrentNumericIndex() + 1, !0)
+            })).onSelect(this.select.bind(this)).onRemove((function () {
+                return n.selected.splice(n.selected.length - 1, 1)
+            })), app.tagList.load(["parent"]).then((function () {
+                n.tagsLoading = !1, n.tags = Object(j.a)(yt(n.attrs.discussion)), n.attrs.selectedTags ? n.attrs.selectedTags.map(n.addTag.bind(n)) : n.attrs.discussion && n.attrs.discussion.tags().map(n.addTag.bind(n)), n.index = n.tags[0].id(), m.redraw()
+            }))
+        }, n.primaryCount = function () {
+            return this.selected.filter((function (t) {
+                return t.isPrimary()
+            })).length
+        }, n.secondaryCount = function () {
+            return this.selected.filter((function (t) {
+                return !t.isPrimary()
+            })).length
+        }, n.addTag = function (t) {
+            if (t.canStartDiscussion()) {
+                var e = t.parent();
+                e && -1 === this.selected.indexOf(e) && this.selected.push(e), -1 === this.selected.indexOf(t) && this.selected.push(t)
             }
-            Object(p.a)(e, t);
-            var n = e.prototype;
-            return n.oninit = function (e) {
-                var n = this;
-                t.prototype.oninit.call(this, e), this.tagsLoading = !0, this.selected = [], this.filter = vt()(""), this.focused = !1, this.minPrimary = app.forum.attribute("minPrimaryTags"), this.maxPrimary = app.forum.attribute("maxPrimaryTags"), this.minSecondary = app.forum.attribute("minSecondaryTags"), this.maxSecondary = app.forum.attribute("maxSecondaryTags"), this.navigator = new ht.a, this.navigator.onUp((function () {
-                    return n.setIndex(n.getCurrentNumericIndex() - 1, !0)
-                })).onDown((function () {
-                    return n.setIndex(n.getCurrentNumericIndex() + 1, !0)
-                })).onSelect(this.select.bind(this)).onRemove((function () {
-                    return n.selected.splice(n.selected.length - 1, 1)
-                })), app.tagList.load(["parent"]).then((function () {
-                    n.tagsLoading = !1, n.tags = Object(j.a)(yt(n.attrs.discussion)), n.attrs.selectedTags ? n.attrs.selectedTags.map(n.addTag.bind(n)) : n.attrs.discussion && n.attrs.discussion.tags().map(n.addTag.bind(n)), n.index = n.tags[0].id(), m.redraw()
-                }))
-            }, n.primaryCount = function () {
-                return this.selected.filter((function (t) {
-                    return t.isPrimary()
-                })).length
-            }, n.secondaryCount = function () {
-                return this.selected.filter((function (t) {
-                    return !t.isPrimary()
-                })).length
-            }, n.addTag = function (t) {
-                if (t.canStartDiscussion()) {
-                    var e = t.parent();
-                    e && -1 === this.selected.indexOf(e) && this.selected.push(e), -1 === this.selected.indexOf(t) && this.selected.push(t)
+        }, n.removeTag = function (t) {
+            var e = this.selected.indexOf(t); - 1 !== e && (this.selected.splice(e, 1), this.selected.filter((function (e) {
+                return e.parent() === t
+            })).forEach(this.removeTag.bind(this)))
+        }, n.className = function () {
+            return "TagDiscussionModal"
+        }, n.title = function () {
+            return this.attrs.discussion ? app.translator.trans("flarum-tags.forum.choose_tags.edit_title", {
+                title: m("em", null, this.attrs.discussion.title())
+            }) : app.translator.trans("flarum-tags.forum.choose_tags.title")
+        }, n.getInstruction = function (t, e) {
+            if (t < this.minPrimary) {
+                var n = this.minPrimary - t;
+                return app.translator.trans("flarum-tags.forum.choose_tags.choose_primary_placeholder", {
+                    count: n
+                })
+            }
+            if (e < this.minSecondary) {
+                var r = this.minSecondary - e;
+                return app.translator.trans("flarum-tags.forum.choose_tags.choose_secondary_placeholder", {
+                    count: r
+                })
+            }
+            return ""
+        }, n.content = function () {
+            var t = this;
+            if (this.tagsLoading) return m(y.a, null);
+            var e = this.tags,
+                n = this.filter().toLowerCase(),
+                r = this.primaryCount(),
+                a = this.secondaryCount();
+            e = e.filter((function (e) {
+                var n = e.parent();
+                return !1 === n || -1 !== t.selected.indexOf(n)
+            })), r >= this.maxPrimary && (e = e.filter((function (e) {
+                return !e.isPrimary() || -1 !== t.selected.indexOf(e)
+            }))), a >= this.maxSecondary && (e = e.filter((function (e) {
+                return e.isPrimary() || -1 !== t.selected.indexOf(e)
+            }))), n && (e = e.filter((function (t) {
+                return t.name().substr(0, n.length).toLowerCase() === n
+            }))), -1 === e.indexOf(this.index) && (this.index = e[0]);
+            var o = Math.max(dt()(this.getInstruction(r, a)).length, this.filter().length);
+            return [m("div", {
+                className: "Modal-body"
+            }, m("div", {
+                className: "TagDiscussionModal-form"
+            }, m("div", {
+                className: "TagDiscussionModal-form-input"
+            }, m("div", {
+                className: "TagsInput FormControl " + (this.focused ? "focus" : ""),
+                onclick: function () {
+                    return t.$(".TagsInput input").focus()
                 }
-            }, n.removeTag = function (t) {
-                var e = this.selected.indexOf(t); - 1 !== e && (this.selected.splice(e, 1), this.selected.filter((function (e) {
-                    return e.parent() === t
-                })).forEach(this.removeTag.bind(this)))
-            }, n.className = function () {
-                return "TagDiscussionModal"
-            }, n.title = function () {
-                return this.attrs.discussion ? app.translator.trans("flarum-tags.forum.choose_tags.edit_title", {
-                    title: m("em", null, this.attrs.discussion.title())
-                }) : app.translator.trans("flarum-tags.forum.choose_tags.title")
-            }, n.getInstruction = function (t, e) {
-                if (t < this.minPrimary) {
-                    var n = this.minPrimary - t;
-                    return app.translator.trans("flarum-tags.forum.choose_tags.choose_primary_placeholder", {
-                        count: n
-                    })
-                }
-                if (e < this.minSecondary) {
-                    var r = this.minSecondary - e;
-                    return app.translator.trans("flarum-tags.forum.choose_tags.choose_secondary_placeholder", {
-                        count: r
-                    })
-                }
-                return ""
-            }, n.content = function () {
-                var t = this;
-                if (this.tagsLoading) return m(y.a, null);
-                var e = this.tags,
-                    n = this.filter().toLowerCase(),
-                    r = this.primaryCount(),
-                    a = this.secondaryCount();
-                e = e.filter((function (e) {
-                    var n = e.parent();
-                    return !1 === n || -1 !== t.selected.indexOf(n)
-                })), r >= this.maxPrimary && (e = e.filter((function (e) {
-                    return !e.isPrimary() || -1 !== t.selected.indexOf(e)
-                }))), a >= this.maxSecondary && (e = e.filter((function (e) {
-                    return e.isPrimary() || -1 !== t.selected.indexOf(e)
-                }))), n && (e = e.filter((function (t) {
-                    return t.name().substr(0, n.length).toLowerCase() === n
-                }))), -1 === e.indexOf(this.index) && (this.index = e[0]);
-                var o = Math.max(dt()(this.getInstruction(r, a)).length, this.filter().length);
-                return [m("div", {
-                    className: "Modal-body"
-                }, m("div", {
-                    className: "TagDiscussionModal-form"
-                }, m("div", {
-                    className: "TagDiscussionModal-form-input"
-                }, m("div", {
-                    className: "TagsInput FormControl " + (this.focused ? "focus" : ""),
+            }, m("span", {
+                className: "TagsInput-selected"
+            }, this.selected.map((function (e) {
+                return m("span", {
+                    className: "TagsInput-tag",
                     onclick: function () {
-                        return t.$(".TagsInput input").focus()
+                        t.removeTag(e), t.onready()
                     }
-                }, m("span", {
-                    className: "TagsInput-selected"
-                }, this.selected.map((function (e) {
-                    return m("span", {
-                        className: "TagsInput-tag",
-                        onclick: function () {
-                            t.removeTag(e), t.onready()
-                        }
-                    }, Object(_.a)(e))
-                }))), m("input", {
-                    className: "FormControl",
-                    placeholder: dt()(this.getInstruction(r, a)),
-                    bidi: this.filter,
-                    style: {
-                        width: o + "ch"
-                    },
-                    onkeydown: this.navigator.navigate.bind(this.navigator),
-                    onfocus: function () {
-                        return t.focused = !0
-                    },
-                    onblur: function () {
-                        return t.focused = !1
-                    }
-                }))), m("div", {
-                    className: "TagDiscussionModal-form-submit App-primaryControl"
-                }, m(ot.a, {
-                    type: "submit",
-                    className: "Button Button--primary",
-                    disabled: !this.meetsRequirements(r, a),
-                    icon: "fas fa-check"
-                }, app.translator.trans("flarum-tags.forum.choose_tags.submit_button"))))), m("div", {
-                    className: "Modal-footer"
-                }, m("ul", {
-                    className: "TagDiscussionModal-list SelectTagList"
-                }, e.filter((function (e) {
-                    return n || !e.parent() || -1 !== t.selected.indexOf(e.parent())
-                })).map((function (e) {
-                    return m("li", {
-                        "data-index": e.id(),
-                        className: G()({
-                            pinned: null !== e.position(),
-                            child: !!e.parent(),
-                            colored: !!e.color(),
-                            selected: -1 !== t.selected.indexOf(e),
-                            active: t.index === e
-                        }),
-                        style: {
-                            color: e.color()
-                        },
-                        onmouseover: function () {
-                            return t.index = e
-                        },
-                        onclick: t.toggleTag.bind(t, e)
-                    }, Object(w.a)(e), m("span", {
-                        className: "SelectTagListItem-name"
-                    }, pt()(e.name(), n)), e.description() ? m("span", {
-                        className: "SelectTagListItem-description"
-                    }, e.description()) : "")
-                }))))]
-            }, n.meetsRequirements = function (t, e) {
-                return !!app.forum.attribute("canBypassTagCounts") || t >= this.minPrimary && e >= this.minSecondary
-            }, n.toggleTag = function (t) {
-                -1 !== this.selected.indexOf(t) ? this.removeTag(t) : this.addTag(t), this.filter() && (this.filter(""), this.index = this.tags[0]), this.onready()
-            }, n.select = function (t) {
-                t.metaKey || t.ctrlKey || -1 !== this.selected.indexOf(this.index) ? this.selected.length && this.$('button[type="submit"]').click() : this.getItem(this.index)[0].dispatchEvent(new Event("click"))
-            }, n.selectableItems = function () {
-                return this.$(".TagDiscussionModal-list > li")
-            }, n.getCurrentNumericIndex = function () {
-                return this.selectableItems().index(this.getItem(this.index))
-            }, n.getItem = function (t) {
-                return this.selectableItems().filter('[data-index="' + t.id() + '"]')
-            }, n.setIndex = function (t, e) {
-                var n = this.selectableItems(),
-                    r = n.parent();
-                t < 0 ? t = n.length - 1 : t >= n.length && (t = 0);
-                var a = n.eq(t);
-                if (this.index = app.store.getById("tags", a.attr("data-index")), m.redraw(), e) {
-                    var o, s = r.scrollTop(),
-                        i = r.offset().top,
-                        c = i + r.outerHeight(),
-                        u = a.offset().top,
-                        l = u + a.outerHeight();
-                    u < i ? o = s - i + u - parseInt(r.css("padding-top"), 10) : l > c && (o = s - c + l + parseInt(r.css("padding-bottom"), 10)), void 0 !== o && r.stop(!0).animate({
-                        scrollTop: o
-                    }, 100)
+                }, Object(_.a)(e))
+            }))), m("input", {
+                className: "FormControl",
+                placeholder: dt()(this.getInstruction(r, a)),
+                bidi: this.filter,
+                style: {
+                    width: o + "ch"
+                },
+                onkeydown: this.navigator.navigate.bind(this.navigator),
+                onfocus: function () {
+                    return t.focused = !0
+                },
+                onblur: function () {
+                    return t.focused = !1
                 }
-            }, n.onsubmit = function (t) {
-                t.preventDefault();
-                var e = this.attrs.discussion,
-                    n = this.selected;
-                e && e.save({
-                    relationships: {
-                        tags: n
-                    }
-                }).then((function () {
-                    app.current.matches(ut.a) && app.current.get("stream").update(), m.redraw()
-                })), this.attrs.onsubmit && this.attrs.onsubmit(n), this.hide()
-            }, e
-        }(it.a),
+            }))), m("div", {
+                className: "TagDiscussionModal-form-submit App-primaryControl"
+            }, m(ot.a, {
+                type: "submit",
+                className: "Button Button--primary",
+                disabled: !this.meetsRequirements(r, a),
+                icon: "fas fa-check"
+            }, app.translator.trans("flarum-tags.forum.choose_tags.submit_button"))))), m("div", {
+                className: "Modal-footer"
+            }, m("ul", {
+                className: "TagDiscussionModal-list SelectTagList"
+            }, e.filter((function (e) {
+                return n || !e.parent() || -1 !== t.selected.indexOf(e.parent())
+            })).map((function (e) {
+                return m("li", {
+                    "data-index": e.id(),
+                    className: G()({
+                        pinned: null !== e.position(),
+                        child: !!e.parent(),
+                        colored: !!e.color(),
+                        selected: -1 !== t.selected.indexOf(e),
+                        active: t.index === e
+                    }),
+                    style: {
+                        color: e.color()
+                    },
+                    onmouseover: function () {
+                        return t.index = e
+                    },
+                    onclick: t.toggleTag.bind(t, e)
+                }, Object(w.a)(e), m("span", {
+                    className: "SelectTagListItem-name"
+                }, pt()(e.name(), n)), e.description() ? m("span", {
+                    className: "SelectTagListItem-description"
+                }, e.description()) : "")
+            }))))]
+        }, n.meetsRequirements = function (t, e) {
+            return !!app.forum.attribute("canBypassTagCounts") || t >= this.minPrimary && e >= this.minSecondary
+        }, n.toggleTag = function (t) {
+            -1 !== this.selected.indexOf(t) ? this.removeTag(t) : this.addTag(t), this.filter() && (this.filter(""), this.index = this.tags[0]), this.onready()
+        }, n.select = function (t) {
+            t.metaKey || t.ctrlKey || -1 !== this.selected.indexOf(this.index) ? this.selected.length && this.$('button[type="submit"]').click() : this.getItem(this.index)[0].dispatchEvent(new Event("click"))
+        }, n.selectableItems = function () {
+            return this.$(".TagDiscussionModal-list > li")
+        }, n.getCurrentNumericIndex = function () {
+            return this.selectableItems().index(this.getItem(this.index))
+        }, n.getItem = function (t) {
+            return this.selectableItems().filter('[data-index="' + t.id() + '"]')
+        }, n.setIndex = function (t, e) {
+            var n = this.selectableItems(),
+                r = n.parent();
+            t < 0 ? t = n.length - 1 : t >= n.length && (t = 0);
+            var a = n.eq(t);
+            if (this.index = app.store.getById("tags", a.attr("data-index")), m.redraw(), e) {
+                var o, s = r.scrollTop(),
+                    i = r.offset().top,
+                    c = i + r.outerHeight(),
+                    u = a.offset().top,
+                    l = u + a.outerHeight();
+                u < i ? o = s - i + u - parseInt(r.css("padding-top"), 10) : l > c && (o = s - c + l + parseInt(r.css("padding-bottom"), 10)), void 0 !== o && r.stop(!0).animate({
+                    scrollTop: o
+                }, 100)
+            }
+        }, n.onsubmit = function (t) {
+            t.preventDefault();
+            var e = this.attrs.discussion,
+                n = this.selected;
+            e && e.save({
+                relationships: {
+                    tags: n
+                }
+            }).then((function () {
+                app.current.matches(ut.a) && app.current.get("stream").update(), m.redraw()
+            })), this.attrs.onsubmit && this.attrs.onsubmit(n), this.hide()
+        }, e
+    }(it.a),
         xt = function () {
             Object(A.extend)(rt.a, "moderationControls", (function (t, e) {
                 e.canTag() && t.add("tags", m(ot.a, {
@@ -20050,8 +20051,8 @@ module.exports = function (t) {
     n(30)
 }, function (t, e, n) {
     var r = function () {
-            return this || "object" == typeof self && self
-        }() || Function("return this")(),
+        return this || "object" == typeof self && self
+    }() || Function("return this")(),
         a = r.regeneratorRuntime && Object.getOwnPropertyNames(r).indexOf("regeneratorRuntime") >= 0,
         o = a && r.regeneratorRuntime;
     if (r.regeneratorRuntime = void 0, t.exports = n(54), a) r.regeneratorRuntime = o;
@@ -20210,7 +20211,7 @@ module.exports = function (t) {
                         if ("throw" === a) throw o;
                         return L()
                     }
-                    for (n.method = a, n.arg = o;;) {
+                    for (n.method = a, n.arg = o; ;) {
                         var s = n.delegate;
                         if (s) {
                             var i = O(s, n);
@@ -20253,11 +20254,11 @@ module.exports = function (t) {
             }
         }
 
-        function v() {}
+        function v() { }
 
-        function y() {}
+        function y() { }
 
-        function b() {}
+        function b() { }
 
         function x(t) {
             ["next", "throw", "return"].forEach((function (e) {
@@ -20392,9 +20393,9 @@ module.exports = function (t) {
         if (4 & o && "object" == typeof t && t && t.__esModule) return t;
         var r = Object.create(null);
         if (n.r(r), Object.defineProperty(r, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & o && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & o && "string" != typeof t)
             for (var s in t) n.d(r, s, function (o) {
                 return t[o]
             }.bind(null, s));
@@ -20648,22 +20649,22 @@ module.exports = function (t) {
         })), Object(r.extend)(v.a, "userControls", (function (t, o, n) {
             if (app.session.user && !(n instanceof h.a)) {
                 var r = {
-                        none: {
-                            label: app.translator.trans("flarum-subscriptions.forum.discussion_controls.follow_button"),
-                            icon: "fas fa-star",
-                            save: "follow"
-                        },
-                        follow: {
-                            label: app.translator.trans("flarum-subscriptions.forum.discussion_controls.unfollow_button"),
-                            icon: "far fa-star",
-                            save: null
-                        },
-                        ignore: {
-                            label: app.translator.trans("flarum-subscriptions.forum.discussion_controls.unignore_button"),
-                            icon: "fas fa-eye",
-                            save: null
-                        }
+                    none: {
+                        label: app.translator.trans("flarum-subscriptions.forum.discussion_controls.follow_button"),
+                        icon: "fas fa-star",
+                        save: "follow"
                     },
+                    follow: {
+                        label: app.translator.trans("flarum-subscriptions.forum.discussion_controls.unfollow_button"),
+                        icon: "far fa-star",
+                        save: null
+                    },
+                    ignore: {
+                        label: app.translator.trans("flarum-subscriptions.forum.discussion_controls.unignore_button"),
+                        icon: "fas fa-eye",
+                        save: null
+                    }
+                },
                     s = o.subscription() || "none";
                 t.add("subscription", w.a.component({
                     icon: r[s].icon,
@@ -20749,9 +20750,9 @@ module.exports = function (t) {
         if (4 & o && "object" == typeof t && t && t.__esModule) return t;
         var e = Object.create(null);
         if (n.r(e), Object.defineProperty(e, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & o && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & o && "string" != typeof t)
             for (var r in t) n.d(e, r, function (o) {
                 return t[o]
             }.bind(null, r));
@@ -20898,9 +20899,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var o = Object.create(null);
         if (n.r(o), Object.defineProperty(o, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var r in t) n.d(o, r, function (e) {
                 return t[e]
             }.bind(null, r));
@@ -21216,22 +21217,22 @@ module.exports = function (t) {
                     if (e.hide(), e.active = !1, r) {
                         i = h.substring(o).toLowerCase(), s = i.match(/^["|“]((?:(?!"#).)+)$/), i = s && s[1] || i;
                         var b = function (t, n, o, s) {
-                                void 0 === s && (s = "");
-                                var a = _()(t);
-                                return i && (a.children = [V()(a.text, i)], delete a.text), m("button", {
-                                    className: "PostPreview " + s,
-                                    onclick: function () {
-                                        return function (t) {
-                                            app.composer.editor.replaceBeforeCursor(r - 1, t + " "), e.hide()
-                                        }(n)
-                                    },
-                                    onmouseenter: function () {
-                                        e.setIndex($(this).parent().index())
-                                    }
-                                }, m("span", {
-                                    className: "PostPreview-content"
-                                }, K()(t), a, " ", " ", o))
-                            },
+                            void 0 === s && (s = "");
+                            var a = _()(t);
+                            return i && (a.children = [V()(a.text, i)], delete a.text), m("button", {
+                                className: "PostPreview " + s,
+                                onclick: function () {
+                                    return function (t) {
+                                        app.composer.editor.replaceBeforeCursor(r - 1, t + " "), e.hide()
+                                    }(n)
+                                },
+                                onmouseenter: function () {
+                                    e.setIndex($(this).parent().index())
+                                }
+                            }, m("span", {
+                                className: "PostPreview-content"
+                            }, K()(t), a, " ", " ", o))
+                        },
                             y = function (t) {
                                 return [t.username(), t.displayName()].some((function (t) {
                                     return t.toLowerCase().substr(0, i.length) === i
@@ -21240,8 +21241,8 @@ module.exports = function (t) {
                             g = function () {
                                 var n = [];
                                 if (i && p.forEach((function (t) {
-                                        y(t) && n.push(b(t, '@"' + N(t) + '"#' + t.id(), "", "MentionsDropdown-user"))
-                                    })), app.composer.bodyMatches(Y.a) || app.composer.bodyMatches(S.a)) {
+                                    y(t) && n.push(b(t, '@"' + N(t) + '"#' + t.id(), "", "MentionsDropdown-user"))
+                                })), app.composer.bodyMatches(Y.a) || app.composer.bodyMatches(S.a)) {
                                     var o = app.composer.body.attrs,
                                         s = o.post,
                                         a = s && s.discussion() || o.discussion;
@@ -21394,8 +21395,8 @@ module.exports = function (t) {
                             i = $('<ul class="Dropdown-menu PostMention-preview fade"/>');
                         n.append(i);
                         var s = function () {
-                                return $('.PostStream-item[data-id="' + r + '"]')
-                            },
+                            return $('.PostStream-item[data-id="' + r + '"]')
+                        },
                             a = function () {
                                 var t = s(),
                                     a = !1;
@@ -21406,10 +21407,10 @@ module.exports = function (t) {
                                 }
                                 if (!a) {
                                     var p = function () {
-                                            var t = i.outerHeight(!0),
-                                                e = 0;
-                                            o.offset().top - t < $(window).scrollTop() + $("#header").outerHeight() ? e += o.outerHeight(!0) : e -= t, i.show().css("top", o.offset().top - n.offset().top + e).css("left", o.offsetParent().offset().left - n.offset().left).css("max-width", o.offsetParent().width())
-                                        },
+                                        var t = i.outerHeight(!0),
+                                            e = 0;
+                                        o.offset().top - t < $(window).scrollTop() + $("#header").outerHeight() ? e += o.outerHeight(!0) : e -= t, i.show().css("top", o.offset().top - n.offset().top + e).css("left", o.offsetParent().offset().left - n.offset().left).css("max-width", o.offsetParent().width())
+                                    },
                                         f = function (t) {
                                             var n = t.discussion();
                                             m.render(i[0], [n !== e.discussion() ? m("li", null, m("span", {
@@ -21443,109 +21444,109 @@ module.exports = function (t) {
             }
             Object(o.extend)(p.a.prototype, "oncreate", t), Object(o.extend)(p.a.prototype, "onupdate", t)
         }(),
-        function () {
-            function t() {
-                this.$(".Post-mentionedBy-preview").removeClass("in").one("transitionend", (function () {
-                    $(this).hide()
-                }))
-            }
-            g.a.prototype.mentionedBy = b.a.hasMany("mentionedBy"), Object(o.extend)(p.a.prototype, "oncreate", (function () {
-                var e, n = this,
-                    o = this.attrs.post.mentionedBy();
-                if (o && o.length) {
-                    var r = $('<ul class="Dropdown-menu Post-mentionedBy-preview fade"/>');
-                    this.$().append(r);
-                    var i = this.$(),
-                        s = this.$(".Post-mentionedBy"),
-                        a = function () {
-                            !r.hasClass("in") && r.is(":visible") || (m.render(r[0], o.map((function (e) {
-                                return m("li", {
-                                    "data-number": e.number()
-                                }, l.a.component({
-                                    post: e,
-                                    onclick: t.bind(n)
-                                }))
-                            }))), r.show().css("top", s.offset().top - i.offset().top + s.outerHeight(!0)).css("left", s.offsetParent().offset().left - i.offset().left).css("max-width", i.width()), setTimeout((function () {
-                                return r.off("transitionend").addClass("in")
-                            })))
-                        };
-                    s.add(r).hover((function () {
-                        clearTimeout(e), e = setTimeout(a, 250)
-                    }), (function () {
-                        clearTimeout(e), e = setTimeout(t, 250)
-                    })), this.$().find(".Post-mentionedBy-summary a").hover((function () {
-                        r.find('[data-number="' + $(this).data("number") + '"]').addClass("active")
-                    }), (function () {
-                        r.find("[data-number]").removeClass("active")
+            function () {
+                function t() {
+                    this.$(".Post-mentionedBy-preview").removeClass("in").one("transitionend", (function () {
+                        $(this).hide()
                     }))
                 }
-            })), Object(o.extend)(p.a.prototype, "footerItems", (function (e) {
-                var n = this,
-                    o = this.attrs.post.mentionedBy();
-                if (o && o.length) {
-                    var r = [],
-                        i = o.sort((function (t) {
-                            return t.user() === app.session.user ? -1 : 0
-                        })).filter((function (t) {
-                            var e = t.user();
-                            if (-1 === r.indexOf(e)) return r.push(e), !0
-                        })),
-                        s = i.length > 4,
-                        a = i.slice(0, s ? 3 : 4).map((function (e) {
-                            var o = e.user();
-                            return m(w.a, {
-                                href: app.route.post(e),
-                                onclick: t.bind(n),
-                                "data-number": e.number()
-                            }, app.session.user === o ? app.translator.trans("flarum-mentions.forum.post.you_text") : _()(o))
-                        }));
-                    if (s) {
-                        var u = i.length - a.length;
-                        a.push(app.translator.trans("flarum-mentions.forum.post.others_text", {
-                            count: u
+                g.a.prototype.mentionedBy = b.a.hasMany("mentionedBy"), Object(o.extend)(p.a.prototype, "oncreate", (function () {
+                    var e, n = this,
+                        o = this.attrs.post.mentionedBy();
+                    if (o && o.length) {
+                        var r = $('<ul class="Dropdown-menu Post-mentionedBy-preview fade"/>');
+                        this.$().append(r);
+                        var i = this.$(),
+                            s = this.$(".Post-mentionedBy"),
+                            a = function () {
+                                !r.hasClass("in") && r.is(":visible") || (m.render(r[0], o.map((function (e) {
+                                    return m("li", {
+                                        "data-number": e.number()
+                                    }, l.a.component({
+                                        post: e,
+                                        onclick: t.bind(n)
+                                    }))
+                                }))), r.show().css("top", s.offset().top - i.offset().top + s.outerHeight(!0)).css("left", s.offsetParent().offset().left - i.offset().left).css("max-width", i.width()), setTimeout((function () {
+                                    return r.off("transitionend").addClass("in")
+                                })))
+                            };
+                        s.add(r).hover((function () {
+                            clearTimeout(e), e = setTimeout(a, 250)
+                        }), (function () {
+                            clearTimeout(e), e = setTimeout(t, 250)
+                        })), this.$().find(".Post-mentionedBy-summary a").hover((function () {
+                            r.find('[data-number="' + $(this).data("number") + '"]').addClass("active")
+                        }), (function () {
+                            r.find("[data-number]").removeClass("active")
                         }))
                     }
-                    e.add("replies", m("div", {
-                        className: "Post-mentionedBy"
-                    }, m("span", {
-                        className: "Post-mentionedBy-summary"
-                    }, j()("fas fa-reply"), app.translator.trans("flarum-mentions.forum.post.mentioned_by" + (i[0].user() === app.session.user ? "_self" : "") + "_text", {
-                        count: a.length,
-                        users: C()(a)
-                    }))))
-                }
-            }))
-        }(), Object(o.extend)(p.a.prototype, "actionItems", (function (t) {
-            var e = this.attrs.post;
-            e.isHidden() || app.session.user && !e.discussion().canReply() || t.add("reply", m(O.a, {
-                className: "Button Button--link",
-                onclick: function () {
-                    return E(e)
-                }
-            }, app.translator.trans("flarum-mentions.forum.post.reply_link")))
-        })), U(), rt(), i.a.notificationComponents.postMentioned = at, i.a.notificationComponents.userMentioned = ut, Object(o.extend)(a.a.prototype, "notificationTypes", (function (t) {
-            t.add("postMentioned", {
-                name: "postMentioned",
-                icon: "fas fa-reply",
-                label: i.a.translator.trans("flarum-mentions.forum.settings.notify_post_mentioned_label")
-            }), t.add("userMentioned", {
-                name: "userMentioned",
-                icon: "fas fa-at",
-                label: i.a.translator.trans("flarum-mentions.forum.settings.notify_user_mentioned_label")
-            })
-        })), i.a.routes["user.mentions"] = {
-            path: "/u/:username/mentions",
-            component: dt
-        }, Object(o.extend)(pt.a.prototype, "navItems", (function (t) {
-            var e = this.user;
-            t.add("mentions", lt.a.component({
-                href: i.a.route("user.mentions", {
-                    username: e.slug()
-                }),
-                name: "mentions",
-                icon: "fas fa-at"
-            }, i.a.translator.trans("flarum-mentions.forum.user.mentions_link")), 80)
-        })), u.getPlainContent.removeSelectors.push("a.PostMention")
+                })), Object(o.extend)(p.a.prototype, "footerItems", (function (e) {
+                    var n = this,
+                        o = this.attrs.post.mentionedBy();
+                    if (o && o.length) {
+                        var r = [],
+                            i = o.sort((function (t) {
+                                return t.user() === app.session.user ? -1 : 0
+                            })).filter((function (t) {
+                                var e = t.user();
+                                if (-1 === r.indexOf(e)) return r.push(e), !0
+                            })),
+                            s = i.length > 4,
+                            a = i.slice(0, s ? 3 : 4).map((function (e) {
+                                var o = e.user();
+                                return m(w.a, {
+                                    href: app.route.post(e),
+                                    onclick: t.bind(n),
+                                    "data-number": e.number()
+                                }, app.session.user === o ? app.translator.trans("flarum-mentions.forum.post.you_text") : _()(o))
+                            }));
+                        if (s) {
+                            var u = i.length - a.length;
+                            a.push(app.translator.trans("flarum-mentions.forum.post.others_text", {
+                                count: u
+                            }))
+                        }
+                        e.add("replies", m("div", {
+                            className: "Post-mentionedBy"
+                        }, m("span", {
+                            className: "Post-mentionedBy-summary"
+                        }, j()("fas fa-reply"), app.translator.trans("flarum-mentions.forum.post.mentioned_by" + (i[0].user() === app.session.user ? "_self" : "") + "_text", {
+                            count: a.length,
+                            users: C()(a)
+                        }))))
+                    }
+                }))
+            }(), Object(o.extend)(p.a.prototype, "actionItems", (function (t) {
+                var e = this.attrs.post;
+                e.isHidden() || app.session.user && !e.discussion().canReply() || t.add("reply", m(O.a, {
+                    className: "Button Button--link",
+                    onclick: function () {
+                        return E(e)
+                    }
+                }, app.translator.trans("flarum-mentions.forum.post.reply_link")))
+            })), U(), rt(), i.a.notificationComponents.postMentioned = at, i.a.notificationComponents.userMentioned = ut, Object(o.extend)(a.a.prototype, "notificationTypes", (function (t) {
+                t.add("postMentioned", {
+                    name: "postMentioned",
+                    icon: "fas fa-reply",
+                    label: i.a.translator.trans("flarum-mentions.forum.settings.notify_post_mentioned_label")
+                }), t.add("userMentioned", {
+                    name: "userMentioned",
+                    icon: "fas fa-at",
+                    label: i.a.translator.trans("flarum-mentions.forum.settings.notify_user_mentioned_label")
+                })
+            })), i.a.routes["user.mentions"] = {
+                path: "/u/:username/mentions",
+                component: dt
+            }, Object(o.extend)(pt.a.prototype, "navItems", (function (t) {
+                var e = this.user;
+                t.add("mentions", lt.a.component({
+                    href: i.a.route("user.mentions", {
+                        username: e.slug()
+                    }),
+                    name: "mentions",
+                    icon: "fas fa-at"
+                }, i.a.translator.trans("flarum-mentions.forum.user.mentions_link")), 80)
+            })), u.getPlainContent.removeSelectors.push("a.PostMention")
     }))
 }]);
 
@@ -21582,9 +21583,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var n = Object.create(null);
         if (o.r(n), Object.defineProperty(n, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var r in t) o.d(n, r, function (e) {
                 return t[e]
             }.bind(null, r));
@@ -21735,8 +21736,8 @@ module.exports = function (t) {
             t.add("bold", O("bold", "b")), t.add("italic", O("italic", "i"))
         })), Object(n.extend)(i.a.prototype, "toolbarItems", (function (e) {
             var o = function (e, o) {
-                    return t.translator.trans("flarum-markdown.forum.composer." + e + "_tooltip") + (o ? " <" + _ + "-" + o + ">" : "")
-                },
+                return t.translator.trans("flarum-markdown.forum.composer." + e + "_tooltip") + (o ? " <" + _ + "-" + o + ">" : "")
+            },
                 n = function (t) {
                     return function () {
                         return w(t)
@@ -21821,9 +21822,9 @@ module.exports = function (o) {
         if (4 & t && "object" == typeof o && o && o.__esModule) return o;
         var e = Object.create(null);
         if (n.r(e), Object.defineProperty(e, "default", {
-                enumerable: !0,
-                value: o
-            }), 2 & t && "string" != typeof o)
+            enumerable: !0,
+            value: o
+        }), 2 & t && "string" != typeof o)
             for (var r in o) n.d(e, r, function (t) {
                 return o[t]
             }.bind(null, r));
@@ -21976,9 +21977,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var n = Object.create(null);
         if (o.r(n), Object.defineProperty(n, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var r in t) o.d(n, r, function (e) {
                 return t[e]
             }.bind(null, r));
@@ -22199,9 +22200,9 @@ module.exports = function (t) {
         if (4 & o && "object" == typeof t && t && t.__esModule) return t;
         var r = Object.create(null);
         if (e.r(r), Object.defineProperty(r, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & o && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & o && "string" != typeof t)
             for (var n in t) e.d(r, n, function (o) {
                 return t[o]
             }.bind(null, n));
@@ -22321,9 +22322,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var o = Object.create(null);
         if (i.r(o), Object.defineProperty(o, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var a in t) i.d(o, a, function (e) {
                 return t[e]
             }.bind(null, a));
@@ -22590,121 +22591,121 @@ module.exports = function (t) {
         $ = ["text/html", "text/css", "text/javascript", "application/json", "application/ld+json", "text/javascript", "application/x-httpd-php"],
         q = ["application/x-abiword", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf"];
     var V = function (t) {
-            function e() {
-                return t.apply(this, arguments) || this
-            }
-            Object(d.a)(e, t);
-            var i = e.prototype;
-            return i.oninit = function (e) {
-                t.prototype.oninit.call(this, e), app.fileListState.setUser(e.attrs.user || app.session.user), this.inModal = e.attrs.selectable, this.restrictFileType = e.attrs.restrictFileType || null, this.downloadOnClick = this.attrs.downloadOnClick || !1, this.filesBeingHidden = [], this.user = app.fileListState.user
-            }, i.view = function () {
-                var t = this,
-                    e = app.fileListState;
-                return m("div", {
-                    className: "fof-upload-file-list",
-                    "aria-live": "polite"
-                }, e.isLoading() && 0 === e.files.length && m("div", {
-                    className: "fof-upload-loading"
-                }, app.translator.trans("fof-upload.forum.file_list.loading"), m(O.a, null)), this.inModal && e.empty() && m("p", {
-                    className: "fof-upload-empty"
-                }, m("i", {
-                    className: "fas fa-cloud-upload-alt fof-upload-empty-icon"
-                }), app.translator.trans("fof-upload.forum.file_list.modal_empty_" + ("phone" !== app.screen() ? "desktop" : "phone"))), !this.inModal && e.empty() && m("p", {
-                    className: "fof-upload-empty"
-                }, app.translator.trans("fof-upload.forum.file_list.empty")), m("ul", null, e.files.map((function (e) {
-                    var i, o = (i = e.type(), H.includes(i) ? "image" : i.includes("image/") ? "far fa-file-image" : i.includes("video/") ? "far fa-file-video" : I.indexOf(i) >= 0 ? "far fa-file-archive" : "application/pdf" === i ? "far fa-file-pdf" : q.indexOf(i) >= 0 ? "far fa-file-word" : i.includes("audio/") ? "far fa-file-audio" : $.indexOf(i) >= 0 ? "far fa-file-code" : "far fa-file"),
-                        a = !t.restrictFileType || t.isSelectable(e),
-                        n = L()(["fof-file", "image" === o && "fof-file-type-image", t.attrs.selectedFiles && t.attrs.selectedFiles.indexOf(e.id()) >= 0 && "fof-file-selected"]),
-                        s = e.baseName(),
-                        r = t.filesBeingHidden.includes(e.uuid());
-                    return m("li", {
-                        "aria-busy": r
-                    }, app.session.user && (t.user === app.session.user || app.session.user.deleteOthersMediaLibrary()) && m(N.a, {
-                        className: "Button Button--icon fof-file-delete",
-                        icon: "far fa-trash-alt",
-                        "aria-label": app.translator.trans("fof-upload.forum.file_list.delete_file_a11y_label", {
-                            fileName: s
-                        }),
-                        disabled: r,
-                        onclick: t.hideFile.bind(t, e)
-                    }), m("button", {
-                        className: n,
-                        onclick: function () {
-                            return t.onFileClick(e)
-                        },
-                        disabled: !a || r,
-                        "aria-label": P()(app.translator.trans("fof-upload.forum.file_list.select_file_a11y_label", {
-                            fileName: s
-                        }))
-                    }, m("figure", null, "image" === o ? m("img", {
-                        src: e.url(),
-                        className: "fof-file-image-preview",
-                        draggable: !1,
-                        alt: ""
-                    }) : m("span", {
-                        className: "fof-file-icon",
-                        role: "presentation"
-                    }, m("i", {
-                        className: "fa-fw " + o
-                    })), m("figcaption", {
-                        className: "fof-file-name"
-                    }, s), r && m("span", {
-                        class: "fof-file-loading",
-                        role: "status",
-                        "aria-label": app.translator.trans("fof-upload.forum.file_list.hide_file.loading")
-                    }, m(O.a, null)))))
-                }))), e.hasMoreResults() && m("div", {
-                    className: "fof-load-more-files"
-                }, m(N.a, {
-                    className: "Button Button--primary",
-                    disabled: e.isLoading(),
-                    loading: e.isLoading(),
+        function e() {
+            return t.apply(this, arguments) || this
+        }
+        Object(d.a)(e, t);
+        var i = e.prototype;
+        return i.oninit = function (e) {
+            t.prototype.oninit.call(this, e), app.fileListState.setUser(e.attrs.user || app.session.user), this.inModal = e.attrs.selectable, this.restrictFileType = e.attrs.restrictFileType || null, this.downloadOnClick = this.attrs.downloadOnClick || !1, this.filesBeingHidden = [], this.user = app.fileListState.user
+        }, i.view = function () {
+            var t = this,
+                e = app.fileListState;
+            return m("div", {
+                className: "fof-upload-file-list",
+                "aria-live": "polite"
+            }, e.isLoading() && 0 === e.files.length && m("div", {
+                className: "fof-upload-loading"
+            }, app.translator.trans("fof-upload.forum.file_list.loading"), m(O.a, null)), this.inModal && e.empty() && m("p", {
+                className: "fof-upload-empty"
+            }, m("i", {
+                className: "fas fa-cloud-upload-alt fof-upload-empty-icon"
+            }), app.translator.trans("fof-upload.forum.file_list.modal_empty_" + ("phone" !== app.screen() ? "desktop" : "phone"))), !this.inModal && e.empty() && m("p", {
+                className: "fof-upload-empty"
+            }, app.translator.trans("fof-upload.forum.file_list.empty")), m("ul", null, e.files.map((function (e) {
+                var i, o = (i = e.type(), H.includes(i) ? "image" : i.includes("image/") ? "far fa-file-image" : i.includes("video/") ? "far fa-file-video" : I.indexOf(i) >= 0 ? "far fa-file-archive" : "application/pdf" === i ? "far fa-file-pdf" : q.indexOf(i) >= 0 ? "far fa-file-word" : i.includes("audio/") ? "far fa-file-audio" : $.indexOf(i) >= 0 ? "far fa-file-code" : "far fa-file"),
+                    a = !t.restrictFileType || t.isSelectable(e),
+                    n = L()(["fof-file", "image" === o && "fof-file-type-image", t.attrs.selectedFiles && t.attrs.selectedFiles.indexOf(e.id()) >= 0 && "fof-file-selected"]),
+                    s = e.baseName(),
+                    r = t.filesBeingHidden.includes(e.uuid());
+                return m("li", {
+                    "aria-busy": r
+                }, app.session.user && (t.user === app.session.user || app.session.user.deleteOthersMediaLibrary()) && m(N.a, {
+                    className: "Button Button--icon fof-file-delete",
+                    icon: "far fa-trash-alt",
+                    "aria-label": app.translator.trans("fof-upload.forum.file_list.delete_file_a11y_label", {
+                        fileName: s
+                    }),
+                    disabled: r,
+                    onclick: t.hideFile.bind(t, e)
+                }), m("button", {
+                    className: n,
                     onclick: function () {
-                        return e.loadMore()
+                        return t.onFileClick(e)
+                    },
+                    disabled: !a || r,
+                    "aria-label": P()(app.translator.trans("fof-upload.forum.file_list.select_file_a11y_label", {
+                        fileName: s
+                    }))
+                }, m("figure", null, "image" === o ? m("img", {
+                    src: e.url(),
+                    className: "fof-file-image-preview",
+                    draggable: !1,
+                    alt: ""
+                }) : m("span", {
+                    className: "fof-file-icon",
+                    role: "presentation"
+                }, m("i", {
+                    className: "fa-fw " + o
+                })), m("figcaption", {
+                    className: "fof-file-name"
+                }, s), r && m("span", {
+                    class: "fof-file-loading",
+                    role: "status",
+                    "aria-label": app.translator.trans("fof-upload.forum.file_list.hide_file.loading")
+                }, m(O.a, null)))))
+            }))), e.hasMoreResults() && m("div", {
+                className: "fof-load-more-files"
+            }, m(N.a, {
+                className: "Button Button--primary",
+                disabled: e.isLoading(),
+                loading: e.isLoading(),
+                onclick: function () {
+                    return e.loadMore()
+                }
+            }, app.translator.trans("fof-upload.forum.file_list.load_more_files_btn"))))
+        }, i.onFileClick = function (t) {
+            this.attrs.onFileSelect ? this.attrs.onFileSelect(t) : this.attrs.downloadOnClick && window.open(t.url())
+        }, i.isSelectable = function (t) {
+            var e = t.type();
+            return Array.isArray(this.restrictFileType) ? this.restrictFileType.indexOf(e) >= 0 : "image" === this.restrictFileType ? e.includes("image/") : "audio" === this.restrictFileType ? e.includes("audio/") : "video" === this.restrictFileType && e.includes("video/")
+        }, i.hideFile = function (t) {
+            var e = this,
+                i = t.uuid();
+            if (!this.filesBeingHidden.includes(i))
+                if (this.filesBeingHidden.push(i), confirm(P()(app.translator.trans("fof-upload.forum.file_list.hide_file.hide_confirmation", {
+                    fileName: t.baseName()
+                })))) app.request({
+                    method: "PATCH",
+                    url: app.forum.attribute("apiUrl") + "/fof/upload/hide",
+                    body: {
+                        uuid: i
                     }
-                }, app.translator.trans("fof-upload.forum.file_list.load_more_files_btn"))))
-            }, i.onFileClick = function (t) {
-                this.attrs.onFileSelect ? this.attrs.onFileSelect(t) : this.attrs.downloadOnClick && window.open(t.url())
-            }, i.isSelectable = function (t) {
-                var e = t.type();
-                return Array.isArray(this.restrictFileType) ? this.restrictFileType.indexOf(e) >= 0 : "image" === this.restrictFileType ? e.includes("image/") : "audio" === this.restrictFileType ? e.includes("audio/") : "video" === this.restrictFileType && e.includes("video/")
-            }, i.hideFile = function (t) {
-                var e = this,
-                    i = t.uuid();
-                if (!this.filesBeingHidden.includes(i))
-                    if (this.filesBeingHidden.push(i), confirm(P()(app.translator.trans("fof-upload.forum.file_list.hide_file.hide_confirmation", {
-                            fileName: t.baseName()
-                        })))) app.request({
-                        method: "PATCH",
-                        url: app.forum.attribute("apiUrl") + "/fof/upload/hide",
-                        body: {
-                            uuid: i
-                        }
-                    }).then((function () {
-                        app.alerts.show(R.a, {
-                            type: "success"
-                        }, app.translator.trans("fof-upload.forum.file_list.hide_file.hide_success"))
-                    })).catch((function () {
-                        app.alerts.show(R.a, {
-                            type: "error"
-                        }, app.translator.trans("fof-upload.forum.file_list.hide_file.hide_fail", {
-                            fileName: t.fileName()
-                        }))
-                    })).then((function () {
-                        var t = app.fileListState,
-                            o = t.files.findIndex((function (t) {
-                                return i === t.uuid()
-                            }));
-                        t.files.splice(o, 1);
-                        var a = e.filesBeingHidden.indexOf(i);
-                        e.filesBeingHidden.splice(a, 1)
-                    }));
-                    else {
-                        var o = this.filesBeingHidden.indexOf(i);
-                        this.filesBeingHidden.splice(o, 1)
-                    }
-            }, e
-        }(w.a),
+                }).then((function () {
+                    app.alerts.show(R.a, {
+                        type: "success"
+                    }, app.translator.trans("fof-upload.forum.file_list.hide_file.hide_success"))
+                })).catch((function () {
+                    app.alerts.show(R.a, {
+                        type: "error"
+                    }, app.translator.trans("fof-upload.forum.file_list.hide_file.hide_fail", {
+                        fileName: t.fileName()
+                    }))
+                })).then((function () {
+                    var t = app.fileListState,
+                        o = t.files.findIndex((function (t) {
+                            return i === t.uuid()
+                        }));
+                    t.files.splice(o, 1);
+                    var a = e.filesBeingHidden.indexOf(i);
+                    e.filesBeingHidden.splice(a, 1)
+                }));
+                else {
+                    var o = this.filesBeingHidden.indexOf(i);
+                    this.filesBeingHidden.splice(o, 1)
+                }
+        }, e
+    }(w.a),
         G = function (t) {
             function e() {
                 return t.apply(this, arguments) || this
@@ -22914,9 +22915,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var r = Object.create(null);
         if (o.r(r), Object.defineProperty(r, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var n in t) o.d(r, n, function (e) {
                 return t[e]
             }.bind(null, n));
@@ -23024,7 +23025,7 @@ module.exports = function (t) {
                     }
                     t = m("div", {
                         className: "UserBio-content",
-                        onclick: o ? this.edit.bind(this) : function () {}
+                        onclick: o ? this.edit.bind(this) : function () { }
                     }, r)
                 }
                 return m("div", {
@@ -23045,7 +23046,7 @@ module.exports = function (t) {
                     o = this.attrs.user;
                 o.bio() !== t && (this.loading = !0, o.save({
                     bio: t
-                }).catch((function () {})).then((function () {
+                }).catch((function () { })).then((function () {
                     e.loading = !1, m.redraw()
                 }))), this.editing = !1, m.redraw()
             }, r
@@ -23097,9 +23098,9 @@ module.exports = function (t) {
         if (4 & e && "object" == typeof t && t && t.__esModule) return t;
         var o = Object.create(null);
         if (a.r(o), Object.defineProperty(o, "default", {
-                enumerable: !0,
-                value: t
-            }), 2 & e && "string" != typeof t)
+            enumerable: !0,
+            value: t
+        }), 2 & e && "string" != typeof t)
             for (var r in t) a.d(o, r, function (e) {
                 return t[e]
             }.bind(null, r));
@@ -23242,11 +23243,11 @@ module.exports = function (t) {
                 this.loadedRelationships = {};
                 var a = this.relationships();
                 if (a && Object.keys(a).forEach((function (t) {
-                        var o = a[t];
-                        o && o.data && (e.loadedRelationships[t] = v(o.data, (function (t) {
-                            return app.store.getById(t.type, t.id)
-                        })))
-                    })), "recipientUsers" in this.loadedRelationships || "recipientGroups" in this.loadedRelationships) {
+                    var o = a[t];
+                    o && o.data && (e.loadedRelationships[t] = v(o.data, (function (t) {
+                        return app.store.getById(t.type, t.id)
+                    })))
+                })), "recipientUsers" in this.loadedRelationships || "recipientGroups" in this.loadedRelationships) {
                     var o = new f.a;
                     (this.loadedRelationships.recipientUsers || []).forEach((function (t) {
                         t && o.add("users:" + t.id(), t)
@@ -23559,7 +23560,7 @@ module.exports = function (t) {
                     scheduledValidationError: ""
                 }).then((function () {
                     e.success = !0, e.hide.call(e)
-                })).catch((function () {})).then(this.loaded.bind(this))
+                })).catch((function () { })).then(this.loaded.bind(this))
             }, a.onsubmit = function (t) {
                 var e = this;
                 t.preventDefault(), this.loading = !0, this.attrs.draft.save({
@@ -23568,7 +23569,7 @@ module.exports = function (t) {
                     scheduledValidationError: ""
                 }).then((function () {
                     return e.success = !0
-                })).catch((function () {})).then(this.loaded.bind(this))
+                })).catch((function () { })).then(this.loaded.bind(this))
             }, e
         }(pt.a),
         vt = function () {
@@ -23605,7 +23606,7 @@ module.exports = function (t) {
                 var t = this;
                 app.cache.draftsLoaded || (this.loading = !0, m.redraw(), app.store.find("drafts").then((function () {
                     return app.cache.draftsLoaded = !0
-                }), (function () {})).then((function () {
+                }), (function () { })).then((function () {
                     t.loading = !1, m.redraw()
                 })))
             }, t
@@ -23627,13 +23628,13 @@ module.exports = function (t) {
         var a = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
         if (a) return (a = a.call(t)).next.bind(a);
         if (Array.isArray(t) || (a = function (t, e) {
-                if (!t) return;
-                if ("string" == typeof t) return _t(t, e);
-                var a = Object.prototype.toString.call(t).slice(8, -1);
-                "Object" === a && t.constructor && (a = t.constructor.name);
-                if ("Map" === a || "Set" === a) return Array.from(t);
-                if ("Arguments" === a || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a)) return _t(t, e)
-            }(t)) || e && t && "number" == typeof t.length) {
+            if (!t) return;
+            if ("string" == typeof t) return _t(t, e);
+            var a = Object.prototype.toString.call(t).slice(8, -1);
+            "Object" === a && t.constructor && (a = t.constructor.name);
+            if ("Map" === a || "Set" === a) return Array.from(t);
+            if ("Arguments" === a || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a)) return _t(t, e)
+        }(t)) || e && t && "number" == typeof t.length) {
             a && (t = a);
             var o = 0;
             return function () {
@@ -23677,24 +23678,24 @@ module.exports = function (t) {
             if (!a) return !1;
             if (!app.composer.fields.content()) return !1;
             for (var o, r = function (e) {
-                    return ("content" === e ? app.composer.fields.content() : t[e]) || ""
-                }, n = xt(a); !(o = n()).done;) {
+                return ("content" === e ? app.composer.fields.content() : t[e]) || ""
+            }, n = xt(a); !(o = n()).done;) {
                 var s = o.value;
                 if (!e && r(s) || e && r(s) != e.data.attributes[s]) return !0
             }
             if (!t.relationships && !e.relationships()) return !1;
             for (var i = function (t, e, a) {
-                    if (!(t.relationships[a] && t.relationships[a].length || a in e.relationships() && e.relationships()[a].data.length)) return !0;
-                    if (!(a in e.relationships()) || t.relationships[a].length !== e.relationships()[a].data.length) return !1;
-                    var o = function (t) {
-                            return "function" == typeof t.id ? t.id() : t.id
-                        },
-                        r = v(t.relationships[a], o),
-                        n = v(e.relationships()[a].data, o);
-                    return !r.some((function (t, e) {
-                        return t !== n[e]
-                    }))
-                }, c = 0, d = Object.keys(t.relationships); c < d.length; c++) {
+                if (!(t.relationships[a] && t.relationships[a].length || a in e.relationships() && e.relationships()[a].data.length)) return !0;
+                if (!(a in e.relationships()) || t.relationships[a].length !== e.relationships()[a].data.length) return !1;
+                var o = function (t) {
+                    return "function" == typeof t.id ? t.id() : t.id
+                },
+                    r = v(t.relationships[a], o),
+                    n = v(e.relationships()[a].data, o);
+                return !r.some((function (t, e) {
+                    return t !== n[e]
+                }))
+            }, c = 0, d = Object.keys(t.relationships); c < d.length; c++) {
                 var u = d[c];
                 if (e) {
                     if (!i(t, e, u)) return !0
@@ -23820,9 +23821,9 @@ module.exports = function (e) {
         if (4 & t && "object" == typeof e && e && e.__esModule) return e;
         var o = Object.create(null);
         if (n.r(o), Object.defineProperty(o, "default", {
-                enumerable: !0,
-                value: e
-            }), 2 & t && "string" != typeof e)
+            enumerable: !0,
+            value: e
+        }), 2 & t && "string" != typeof e)
             for (var r in e) n.d(o, r, function (t) {
                 return e[t]
             }.bind(null, r));
@@ -23970,7 +23971,7 @@ module.exports = function (e) {
             '"' === i.charAt(0) && (i = i.slice(1, -1));
             try {
                 t[c[0].replace(o, decodeURIComponent)] = i.replace(o, decodeURIComponent)
-            } catch (e) {}
+            } catch (e) { }
         }
         return t
     }
